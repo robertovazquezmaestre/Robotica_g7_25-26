@@ -1,73 +1,64 @@
 void SpecificWorker::compute()
 {
-    try
-    {
-        // -----------------------
-        // 1 Leer datos LIDAR
-        // -----------------------
-        auto data = lidar3d_proxy->getLidarDataWithThreshold2d("helios", 5000, 1);
-        if (data.points.empty())
-        {
-            qWarning() << "No points received";
-            return;
-        }
+	// -----------------------
+	// 1 Leer datos del LIDAR
+	// -----------------------
+	std::optional<RoboCompLidar3D::TPoints> filter_data;
+	try
+	{
+		// Obtener datos 3D del LIDAR con umbral
+		auto data = lidar3d_proxy->getLidarDataWithThreshold2d("helios", 5000, 1);
 
-        // -----------------------
-        // 2 Filtrar datos 3D → 2D (mínimos por ángulo)
-        // -----------------------
-        const auto filter_data = filter_min_distance_cppitertools(data.points);
-        if (!filter_data.has_value()) return;
+		// Mostrar información de depuración
+		qInfo() << "Full" << data.points.size();
 
-        // -----------------------
-        // 3 Dibujar en Qt
-        // -----------------------
-        draw_lidar(filter_data.value(), &viewer->scene);
+		if (data.points.empty())
+		{
+			qWarning() << "No points received";
+			return;
+		}
 
-        // -----------------------
-        // 4 Configurar ángulos frontales
-        // -----------------------
-    	const float FRONT_LEFT_ANGLE  = M_PI / 2;    // +90° izquierda
-    	const float FRONT_RIGHT_ANGLE = -M_PI / 2;   // -90° derecha
+		// -----------------------
+		// 2 Filtrar datos 3D → 2D
+		// -----------------------
+		filter_data = filter_min_distance_cppitertools(data.points);
 
-        // -----------------------
-        // 5 Buscar distancia mínima en el frente
-        // -----------------------
-        float min_dist = 1e6;  // inicializamos con un valor muy grande
+		qInfo() << "Filtered points:" << filter_data.value().size();
 
-        for (const auto& p : filter_data.value())
-        {
-            if (p.phi >= FRONT_RIGHT_ANGLE && p.phi <= FRONT_LEFT_ANGLE)
-            {
-                float dist = std::sqrt(p.x*p.x + p.y*p.y); // distancia radial
-                if (dist < min_dist) min_dist = dist;
-            }
-        }
+		// -----------------------
+		// 3 Dibujar los puntos filtrados en Qt
+		// -----------------------
+		if (filter_data.has_value())
+			draw_lidar(filter_data.value(), &viewer->scene);
+	}
+	catch(const Ice::Exception &e)
+	{
+		std::cout << "Error reading from Lidar: " << e << std::endl;
+		return;
+	}
 
-        // -----------------------
-        // 6 Decidir movimiento
-        // -----------------------
-        float safe_distance = 400; // mm
-        float advance_speed = 200;  // mm/s
-        float rotation_speed = 0;   // rad/s
+	// -----------------------
+	// 4 Decidir velocidades usando chocachoca
+	// -----------------------
+	float advance_speed = 0, rotation_speed = 0;
+	if (filter_data.has_value())
+		chocachoca(filter_data, advance_speed, rotation_speed);
 
-        if (min_dist < safe_distance)
-        {
-            // Obstáculo cerca → girar en lugar de avanzar
-            advance_speed = 0;
-            rotation_speed = 0.5; // giro a velocidad constante
-        }
+	// -----------------------
+	// 5 Enviar velocidades al robot
+	// -----------------------
+	try
+	{
+		omnirobot_proxy->setSpeedBase(0, advance_speed, rotation_speed);
+	}
+	catch (const Ice::Exception &e)
+	{
+		std::cout << "Error sending speed to robot: " << e.what() << std::endl;
+		return;
+	}
 
-        // Enviar comando al robot
-    	omnirobot_proxy->setSpeedBase(0, advance_speed, rotation_speed);
-
-
-        // -----------------------
-        // 7 Actualizar posición del robot en la GUI
-        // -----------------------
-        update_ropot_position();
-    }
-    catch(const Ice::Exception &e)
-    {
-        std::cout << "Error reading from Lidar: " << e << std::endl;
-    }
+	// -----------------------
+	// 6 Actualizar posición del robot en la GUI (opcional)
+	// -----------------------
+	update_ropot_position();
 }
