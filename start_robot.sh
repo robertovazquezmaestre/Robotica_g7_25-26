@@ -29,7 +29,8 @@ sleep 3
 
 # Iniciar Webots en segunda pestaña
 echo "Abriendo Webots..."
-create_tab "Webots" "cd ~/robocomp/components/webots-shadow/worlds && ~/bin/prime-run webots Shadow.wbt"
+create_tab "Webots" "cd ~/robocomp/components/webots-shadow/worlds && ~/bin/prime-run webots SimpleWorld.wbt"
+#create_tab "Webots" "cd ~/robocomp/components/webots-shadow/worlds && ~/bin/prime-run webots Shadow.wbt"                                                                                                                     
 
 sleep 2
 
@@ -41,17 +42,21 @@ sleep 2
 
 # Iniciar Lidar3D en cuarta pestaña
 echo "Iniciando Lidar3D..."
-create_tab "Lidar3D" "cd ~/robocomp/components/robocomp-robolab/components/hardware/laser/lidar3D && bin/Lidar3D etc/config_helios_webots"
+create_tab "Lidar3D" "cd ~/robocomp/components/robocomp-robolab/components/hardware/laser/lidar3D && bin/Lidar3D etc/config_pearl_webots"
 
 sleep 2
 
 # Iniciar chocachoca en quinta pestaña
 echo "Iniciando componente chocachoca..."
-create_tab "chocachoca" "cd ~/robocomp/components/Robotica_g7_25-26/actividad1 && bin/chocachoca etc/config"
+create_tab "chocachoca" "cd ~/robocomp/components/Robotica_g7_25-26/Prueba && bin/chocachoca etc/config"
 
 sleep 2
 
-# Iniciar joystick en sexta pestaña
+#Iniciar aspirador en sexta pestaña
+echo "Iniciando aspirador..."
+create_tab "Aspirador" "cd ~/robocomp/components/beta-robotica-class/aspirador && bin/aspirador etc/config"
+
+# Iniciar joystick en séptima pestaña
 echo "Iniciando joystick..."
 create_tab "Joystick" "cd ~/robocomp/components/robocomp-robolab/components/hardware/external_control/joystickpublish && bin/JoystickPublish etc/config_shadow"
 
