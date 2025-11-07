@@ -33,6 +33,30 @@
 #include <vector>
 #include <optional>
 #include <abstract_graphic_viewer/abstract_graphic_viewer.h>
+#include "common_types.h"
+#include "hungarian.h"
+#include "ransac_line_detector.h"
+#include "munkres.hpp"
+#include "room_detector.h"
+struct NominalRoom
+{
+    float width; //  mm
+    float length;
+    Corners corners;
+    explicit NominalRoom(const float width_=10000.f, const float length_=5000.f, Corners  corners_ = {}) : width(width_), length(length_), corners(std::move(corners_)){};
+    Corners transform_corners_to(const Eigen::Affine2d &transform) const  // for room to robot pass the inverse of robot_pose
+    {
+        Corners transformed_corners;
+        for(const auto &[p, _, __] : corners)
+        {
+            auto ep = Eigen::Vector2d{p.x(), p.y()};
+            Eigen::Vector2d tp = transform * ep;
+            transformed_corners.emplace_back(QPointF{static_cast<float>(tp.x()), static_cast<float>(tp.y())}, 0.f, 0.f);
+        }
+        return transformed_corners;
+    }
+};
+
 
 
 class SpecificWorker : public GenericWorker
@@ -111,6 +135,19 @@ private:
     float calcularDistanciaMinima(const std::optional<RoboCompLidar3D::TPoints>& lidar_data, bool bandera);///< Calcula la dostancia mínima entre FRONT_LEFT_ANGLE y FRONT_RIGHT_ANGLE, si bandera  traue se evalua para 360
     float distanciaAnguloPromedio (const std::optional<RoboCompLidar3D::TPoints>& lidar_data, float ang);
     float calcularDistanciaMinima(const std::optional<RoboCompLidar3D::TPoints>& lidar_data, float rangoA, float rangoB);
+
+    AbstractGraphicViewer *viewer_room;  // new frame to show the room
+    Eigen::Affine2d robot_pose;  // Eigen type to represent a rotation+translation
+    rc::Room_Detector room_detector;  // object to compute the corners
+    rc::Hungarian hungarian; // object to match the two sets of corners
+    QGraphicsPolygonItem *room_draw_robot; // to draw the robot inside the room
+
+    NominalRoom room{10000.f, 5000.f,
+            {{QPointF{-5000.f, -2500.f}, 0.f, 0.f},
+                   {QPointF{5000.f, -2500.f}, 0.f, 0.f},
+                   {QPointF{5000.f, 2500.f}, 0.f, 0.f},
+                   {QPointF{-5000.f, 2500.f}, 0.f, 0.f}}};
+
 signals:
     // void customSignal(); ///< Señal personalizada (si se necesita)
 };

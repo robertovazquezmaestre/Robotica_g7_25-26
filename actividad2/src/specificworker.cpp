@@ -83,17 +83,29 @@ void SpecificWorker::initialize()
 	dist = std::uniform_int_distribution<int>(0, 9);
 	this->dimensions = QRectF(-6000, -3000, 12000, 6000);
 	viewer = new AbstractGraphicViewer(this->frame, this->dimensions);
-	viewer2 = new AbstractGraphicViewer(this->frame_room, this->dimensions);
+	//viewer2 = new AbstractGraphicViewer(this->frame_room, this->dimensions);
 	this->resize(900,450);
 	viewer->show();
-	viewer2->show();
+	//viewer2->show();
 	const auto rob = viewer->add_robot(ROBOT_LENGTH, ROBOT_LENGTH, 0, 190, QColor("Blue"));
 	robot_polygon = std::get<0>(rob);
-	const auto rob2 = viewer2->add_robot(ROBOT_LENGTH, ROBOT_LENGTH, 0, 190, QColor("Blue"));
-	robot_polygon2 = std::get<0>(rob);
+	//const auto rob2 = viewer2->add_robot(ROBOT_LENGTH, ROBOT_LENGTH, 0, 190, QColor("Blue"));
+	//robot_polygon2 = std::get<0>(rob);
 
 	connect(viewer, &AbstractGraphicViewer::new_mouse_coordinates, this, &SpecificWorker::new_target_slot);
 	//connect(viewer2, &AbstractGraphicViewer::new_mouse_coordinates, this, &SpecificWorker::new_target_slot);
+	viewer_room = new AbstractGraphicViewer(this->frame_room, this->dimensions);
+	auto [rr, re] = viewer_room->add_robot(ROBOT_LENGTH, ROBOT_LENGTH, 0, 100, QColor("Blue"));
+	room_draw_robot = rr;
+
+	// draw room in viewer_room
+	viewer_room->scene.addRect(this->dimensions, QPen(Qt::black, 30));
+	viewer_room->show();
+
+	// initialise robot pose
+	robot_pose.setIdentity();
+	robot_pose.translate(Eigen::Vector2d(0.0,0.0));
+
 }
 
 
@@ -125,7 +137,7 @@ void SpecificWorker::compute()
 	// -----------------------
 	float advance_speed = 0, rotation_speed = 0;
 	std::tuple<RobotMode,float,float> result;
-
+	/*
 	switch(current_mode)
 	{
 		case RobotMode::FORWARD:
@@ -145,7 +157,7 @@ void SpecificWorker::compute()
 			result = {RobotMode::IDLE, 0, 0};
 			break;
 	}
-
+	*/
 	// Actualizar el estado
 	current_mode = std::get<0>(result);
 	advance_speed = std::get<1>(result);
@@ -156,7 +168,7 @@ void SpecificWorker::compute()
 	// -----------------------
 	try
 	{
-		omnirobot_proxy->setSpeedBase(0, advance_speed, rotation_speed);
+		//omnirobot_proxy->setSpeedBase(0, advance_speed, rotation_speed);
 	}
 	catch(const Ice::Exception &e)
 	{

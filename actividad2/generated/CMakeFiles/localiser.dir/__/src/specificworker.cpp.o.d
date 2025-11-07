@@ -1,8 +1,8 @@
 generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/src/specificworker.cpp \
+ /home/usuario/Robotica_g7/actividad2/src/specificworker.cpp \
  /usr/include/stdc-predef.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/src/specificworker.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/genericworker.h \
+ /home/usuario/Robotica_g7/actividad2/src/specificworker.h \
+ /home/usuario/Robotica_g7/actividad2/generated/genericworker.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -921,7 +921,7 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiversion.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/include/ui_mainUI.h \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/include/ui_mainUI.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qapplication.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -951,7 +951,7 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
- /home/usuario/robocomp/classes/grafcetStep/GRAFCETStep.h \
+ /home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.h \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/QState \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstate.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetaobject.h \
@@ -961,7 +961,7 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qtstatemachineexports.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
  /usr/include/c++/13/iostream \
- /home/usuario/robocomp/classes/ConfigLoader/ConfigLoader.h \
+ /home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.h \
  /usr/include/c++/13/fstream \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
@@ -1017,15 +1017,15 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/local/include/toml++/impl/toml_formatter.inl \
  /usr/local/include/toml++/impl/json_formatter.inl \
  /usr/local/include/toml++/impl/yaml_formatter.inl \
- /home/usuario/robocomp/classes/ConfigLoader/ConfigLoader.tpp \
- /home/usuario/robocomp/classes/ConfigLoader/ConfigLoader.h \
+ /home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.tpp \
+ /home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.h \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/QStateMachine \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstatemachine.h \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstate.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QEvent \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QtCore \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/GenericBase.h \
+ /home/usuario/Robotica_g7/actividad2/generated/GenericBase.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/13/cassert /usr/include/Ice/ProxyHandle.h \
@@ -1068,9 +1068,9 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
  /usr/include/c++/13/bits/deque.tcc /usr/include/Ice/FactoryTableInit.h \
  /usr/include/Ice/DefaultValueFactory.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/Lidar3D.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/OmniRobot.h \
- /home/usuario/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
+ /home/usuario/Robotica_g7/actividad2/generated/Lidar3D.h \
+ /home/usuario/Robotica_g7/actividad2/generated/OmniRobot.h \
+ /home/robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsScene \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsscene.h \
@@ -1093,44 +1093,8 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsPolygonItem \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsitem.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpainterpath.h \
- /usr/local/include/cppitertools/itertools.hpp \
- /usr/local/include/cppitertools/accumulate.hpp \
- /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \
- /usr/local/include/cppitertools/internal/iterbase.hpp \
- /usr/local/include/cppitertools/internal/iterbase.hpp \
- /usr/local/include/cppitertools/batched.hpp \
- /usr/local/include/cppitertools/internal/iteratoriterator.hpp \
- /usr/local/include/cppitertools/chain.hpp \
- /usr/local/include/cppitertools/internal/iter_tuples.hpp \
- /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \
- /usr/local/include/cppitertools/chunked.hpp \
- /usr/local/include/cppitertools/combinations.hpp \
- /usr/local/include/cppitertools/combinations_with_replacement.hpp \
- /usr/local/include/cppitertools/compress.hpp \
- /usr/local/include/cppitertools/count.hpp \
- /usr/local/include/cppitertools/range.hpp \
- /usr/local/include/cppitertools/cycle.hpp \
- /usr/local/include/cppitertools/dropwhile.hpp \
- /usr/local/include/cppitertools/filter.hpp \
- /usr/local/include/cppitertools/enumerate.hpp \
- /usr/local/include/cppitertools/filterfalse.hpp \
- /usr/local/include/cppitertools/groupby.hpp \
- /usr/local/include/cppitertools/imap.hpp \
- /usr/local/include/cppitertools/starmap.hpp \
- /usr/local/include/cppitertools/zip.hpp \
- /usr/local/include/cppitertools/permutations.hpp \
- /usr/local/include/cppitertools/powerset.hpp \
- /usr/local/include/cppitertools/product.hpp \
- /usr/local/include/cppitertools/repeat.hpp \
- /usr/local/include/cppitertools/reversed.hpp \
- /usr/local/include/cppitertools/slice.hpp \
- /usr/local/include/cppitertools/sliding_window.hpp \
- /usr/local/include/cppitertools/sorted.hpp \
- /usr/local/include/cppitertools/takewhile.hpp \
- /usr/local/include/cppitertools/unique_everseen.hpp \
- /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
- /usr/local/include/cppitertools/unique_justseen.hpp \
+ /home/usuario/Robotica_g7/actividad2/src/common_types.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QPointF \
  /usr/include/Eigen/Dense /usr/include/Eigen/Core \
  /usr/include/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/include/Eigen/src/Core/util/Macros.h \
@@ -1311,4 +1275,234 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/Eigen/src/Eigenvalues/RealQZ.h \
  /usr/include/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
  /usr/include/Eigen/src/Eigenvalues/./RealQZ.h \
- /usr/include/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
+ /usr/include/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+ /usr/include/boost/circular_buffer.hpp \
+ /usr/include/boost/circular_buffer_fwd.hpp /usr/include/boost/config.hpp \
+ /usr/include/boost/config/user.hpp \
+ /usr/include/boost/config/detail/select_compiler_config.hpp \
+ /usr/include/boost/config/compiler/gcc.hpp \
+ /usr/include/boost/config/detail/select_stdlib_config.hpp \
+ /usr/include/boost/config/stdlib/libstdcpp3.hpp \
+ /usr/include/boost/config/detail/select_platform_config.hpp \
+ /usr/include/boost/config/platform/linux.hpp \
+ /usr/include/boost/config/detail/posix_features.hpp \
+ /usr/include/boost/config/detail/suffix.hpp \
+ /usr/include/boost/config/helper_macros.hpp \
+ /usr/include/boost/config/detail/cxx_composite.hpp \
+ /usr/include/boost/config/workaround.hpp \
+ /usr/include/boost/static_assert.hpp \
+ /usr/include/boost/detail/workaround.hpp \
+ /usr/include/boost/type_traits/is_convertible.hpp \
+ /usr/include/boost/type_traits/intrinsics.hpp \
+ /usr/include/boost/type_traits/detail/config.hpp \
+ /usr/include/boost/version.hpp \
+ /usr/include/boost/type_traits/integral_constant.hpp \
+ /usr/include/boost/type_traits/is_complete.hpp \
+ /usr/include/boost/type_traits/declval.hpp \
+ /usr/include/boost/type_traits/add_rvalue_reference.hpp \
+ /usr/include/boost/type_traits/is_void.hpp \
+ /usr/include/boost/type_traits/is_reference.hpp \
+ /usr/include/boost/type_traits/is_lvalue_reference.hpp \
+ /usr/include/boost/type_traits/is_rvalue_reference.hpp \
+ /usr/include/boost/type_traits/remove_reference.hpp \
+ /usr/include/boost/type_traits/is_function.hpp \
+ /usr/include/boost/type_traits/detail/is_function_cxx_11.hpp \
+ /usr/include/boost/type_traits/detail/yes_no_type.hpp \
+ /usr/include/boost/type_traits/is_array.hpp \
+ /usr/include/boost/type_traits/is_arithmetic.hpp \
+ /usr/include/boost/type_traits/is_integral.hpp \
+ /usr/include/boost/type_traits/is_floating_point.hpp \
+ /usr/include/boost/type_traits/is_abstract.hpp \
+ /usr/include/boost/type_traits/add_lvalue_reference.hpp \
+ /usr/include/boost/type_traits/add_reference.hpp \
+ /usr/include/boost/circular_buffer/debug.hpp \
+ /usr/include/boost/circular_buffer/details.hpp \
+ /usr/include/boost/throw_exception.hpp \
+ /usr/include/boost/exception/exception.hpp \
+ /usr/include/boost/assert/source_location.hpp \
+ /usr/include/boost/current_function.hpp /usr/include/boost/cstdint.hpp \
+ /usr/include/boost/core/allocator_access.hpp \
+ /usr/include/boost/core/pointer_traits.hpp \
+ /usr/include/boost/core/addressof.hpp /usr/include/boost/move/move.hpp \
+ /usr/include/boost/move/detail/config_begin.hpp \
+ /usr/include/boost/move/utility.hpp \
+ /usr/include/boost/move/detail/workaround.hpp \
+ /usr/include/boost/move/utility_core.hpp \
+ /usr/include/boost/move/core.hpp \
+ /usr/include/boost/move/detail/config_end.hpp \
+ /usr/include/boost/move/detail/meta_utils.hpp \
+ /usr/include/boost/move/detail/meta_utils_core.hpp \
+ /usr/include/boost/move/detail/addressof.hpp \
+ /usr/include/boost/move/traits.hpp \
+ /usr/include/boost/move/detail/type_traits.hpp \
+ /usr/include/boost/move/iterator.hpp \
+ /usr/include/boost/move/detail/iterator_traits.hpp \
+ /usr/include/boost/move/algorithm.hpp \
+ /usr/include/boost/move/algo/move.hpp \
+ /usr/include/boost/move/detail/iterator_to_raw_pointer.hpp \
+ /usr/include/boost/move/detail/to_raw_pointer.hpp \
+ /usr/include/boost/move/detail/pointer_element.hpp \
+ /usr/include/boost/type_traits/is_nothrow_move_constructible.hpp \
+ /usr/include/boost/type_traits/enable_if.hpp \
+ /usr/include/boost/core/no_exceptions_support.hpp \
+ /usr/include/boost/circular_buffer/base.hpp \
+ /usr/include/boost/concept_check.hpp \
+ /usr/include/boost/concept/assert.hpp \
+ /usr/include/boost/concept/detail/general.hpp \
+ /usr/include/boost/preprocessor/cat.hpp \
+ /usr/include/boost/preprocessor/config/config.hpp \
+ /usr/include/boost/concept/detail/backward_compatibility.hpp \
+ /usr/include/boost/concept/detail/has_constraints.hpp \
+ /usr/include/boost/type_traits/conditional.hpp \
+ /usr/include/boost/type_traits/conversion_traits.hpp \
+ /usr/include/boost/type_traits/is_same.hpp \
+ /usr/include/boost/concept/usage.hpp \
+ /usr/include/boost/concept/detail/concept_def.hpp \
+ /usr/include/boost/preprocessor/seq/for_each_i.hpp \
+ /usr/include/boost/preprocessor/arithmetic/dec.hpp \
+ /usr/include/boost/preprocessor/config/limits.hpp \
+ /usr/include/boost/preprocessor/arithmetic/limits/dec_256.hpp \
+ /usr/include/boost/preprocessor/arithmetic/inc.hpp \
+ /usr/include/boost/preprocessor/arithmetic/limits/inc_256.hpp \
+ /usr/include/boost/preprocessor/control/if.hpp \
+ /usr/include/boost/preprocessor/control/iif.hpp \
+ /usr/include/boost/preprocessor/logical/bool.hpp \
+ /usr/include/boost/preprocessor/logical/limits/bool_256.hpp \
+ /usr/include/boost/preprocessor/repetition/for.hpp \
+ /usr/include/boost/preprocessor/debug/error.hpp \
+ /usr/include/boost/preprocessor/facilities/empty.hpp \
+ /usr/include/boost/preprocessor/detail/auto_rec.hpp \
+ /usr/include/boost/preprocessor/detail/limits/auto_rec_256.hpp \
+ /usr/include/boost/preprocessor/repetition/detail/for.hpp \
+ /usr/include/boost/preprocessor/control/expr_iif.hpp \
+ /usr/include/boost/preprocessor/tuple/eat.hpp \
+ /usr/include/boost/preprocessor/repetition/detail/limits/for_256.hpp \
+ /usr/include/boost/preprocessor/repetition/limits/for_256.hpp \
+ /usr/include/boost/preprocessor/seq/seq.hpp \
+ /usr/include/boost/preprocessor/seq/elem.hpp \
+ /usr/include/boost/preprocessor/seq/limits/elem_256.hpp \
+ /usr/include/boost/preprocessor/seq/size.hpp \
+ /usr/include/boost/preprocessor/seq/limits/size_256.hpp \
+ /usr/include/boost/preprocessor/seq/detail/is_empty.hpp \
+ /usr/include/boost/preprocessor/logical/compl.hpp \
+ /usr/include/boost/preprocessor/tuple/elem.hpp \
+ /usr/include/boost/preprocessor/facilities/expand.hpp \
+ /usr/include/boost/preprocessor/facilities/overload.hpp \
+ /usr/include/boost/preprocessor/variadic/size.hpp \
+ /usr/include/boost/preprocessor/facilities/check_empty.hpp \
+ /usr/include/boost/preprocessor/variadic/has_opt.hpp \
+ /usr/include/boost/preprocessor/variadic/detail/has_opt.hpp \
+ /usr/include/boost/preprocessor/facilities/is_empty_variadic.hpp \
+ /usr/include/boost/preprocessor/punctuation/is_begin_parens.hpp \
+ /usr/include/boost/preprocessor/punctuation/detail/is_begin_parens.hpp \
+ /usr/include/boost/preprocessor/facilities/detail/is_empty.hpp \
+ /usr/include/boost/preprocessor/variadic/limits/size_64.hpp \
+ /usr/include/boost/preprocessor/tuple/rem.hpp \
+ /usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp \
+ /usr/include/boost/preprocessor/variadic/elem.hpp \
+ /usr/include/boost/preprocessor/variadic/limits/elem_64.hpp \
+ /usr/include/boost/preprocessor/seq/enum.hpp \
+ /usr/include/boost/preprocessor/seq/limits/enum_256.hpp \
+ /usr/include/boost/preprocessor/comma_if.hpp \
+ /usr/include/boost/preprocessor/punctuation/comma_if.hpp \
+ /usr/include/boost/preprocessor/punctuation/comma.hpp \
+ /usr/include/boost/concept/detail/concept_undef.hpp \
+ /usr/include/boost/limits.hpp /usr/include/boost/core/empty_value.hpp \
+ /usr/include/boost/type_traits/is_stateless.hpp \
+ /usr/include/boost/type_traits/has_trivial_constructor.hpp \
+ /usr/include/boost/type_traits/is_pod.hpp \
+ /usr/include/boost/type_traits/is_scalar.hpp \
+ /usr/include/boost/type_traits/is_enum.hpp \
+ /usr/include/boost/type_traits/is_pointer.hpp \
+ /usr/include/boost/type_traits/is_member_pointer.hpp \
+ /usr/include/boost/type_traits/is_member_function_pointer.hpp \
+ /usr/include/boost/type_traits/detail/is_member_function_pointer_cxx_11.hpp \
+ /usr/include/boost/type_traits/is_default_constructible.hpp \
+ /usr/include/boost/type_traits/is_volatile.hpp \
+ /usr/include/boost/type_traits/has_trivial_copy.hpp \
+ /usr/include/boost/type_traits/is_copy_constructible.hpp \
+ /usr/include/boost/type_traits/is_constructible.hpp \
+ /usr/include/boost/type_traits/is_destructible.hpp \
+ /usr/include/boost/type_traits/has_trivial_destructor.hpp \
+ /usr/include/boost/type_traits/is_class.hpp \
+ /usr/include/boost/type_traits/is_empty.hpp \
+ /usr/include/boost/type_traits/remove_cv.hpp \
+ /usr/include/boost/type_traits/is_nothrow_move_assignable.hpp \
+ /usr/include/boost/type_traits/has_trivial_move_assign.hpp \
+ /usr/include/boost/type_traits/is_assignable.hpp \
+ /usr/include/boost/type_traits/has_nothrow_assign.hpp \
+ /usr/include/boost/type_traits/is_const.hpp \
+ /usr/include/boost/move/adl_move_swap.hpp \
+ /usr/include/boost/circular_buffer/space_optimized.hpp \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QLineF \
+ /usr/include/Eigen/src/Geometry/ParametrizedLine.h \
+ /home/usuario/Robotica_g7/actividad2/src/hungarian.h \
+ /usr/include/Eigen/Geometry \
+ /home/usuario/Robotica_g7/actividad2/src/munkres.hpp \
+ /home/usuario/Robotica_g7/actividad2/src/ransac_line_detector.h \
+ /home/usuario/Robotica_g7/actividad2/src/room_detector.h \
+ /usr/include/opencv4/opencv2/core.hpp \
+ /usr/include/opencv4/opencv2/core/cvdef.h \
+ /usr/include/opencv4/opencv2/core/version.hpp \
+ /usr/include/opencv4/opencv2/core/hal/interface.h \
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
+ /usr/include/opencv4/opencv2/core/base.hpp \
+ /usr/include/opencv4/opencv2/opencv_modules.hpp \
+ /usr/include/opencv4/opencv2/core/cvstd.hpp \
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp \
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp \
+ /usr/include/opencv4/opencv2/core/check.hpp \
+ /usr/include/opencv4/opencv2/core/traits.hpp \
+ /usr/include/opencv4/opencv2/core/matx.hpp \
+ /usr/include/opencv4/opencv2/core/saturate.hpp \
+ /usr/include/opencv4/opencv2/core/fast_math.hpp \
+ /usr/include/opencv4/opencv2/core/types.hpp \
+ /usr/include/opencv4/opencv2/core/mat.hpp \
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp \
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp \
+ /usr/include/opencv4/opencv2/core/persistence.hpp \
+ /usr/include/opencv4/opencv2/core/operations.hpp \
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp \
+ /usr/include/opencv4/opencv2/core/utility.hpp \
+ /usr/include/opencv4/opencv2/core/optim.hpp \
+ /usr/include/opencv4/opencv2/core/ovx.hpp \
+ /usr/include/opencv4/opencv2/core/cvdef.h /usr/include/c++/13/ranges \
+ /usr/local/include/cppitertools/itertools.hpp \
+ /usr/local/include/cppitertools/accumulate.hpp \
+ /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \
+ /usr/local/include/cppitertools/internal/iterbase.hpp \
+ /usr/local/include/cppitertools/internal/iterbase.hpp \
+ /usr/local/include/cppitertools/batched.hpp \
+ /usr/local/include/cppitertools/internal/iteratoriterator.hpp \
+ /usr/local/include/cppitertools/chain.hpp \
+ /usr/local/include/cppitertools/internal/iter_tuples.hpp \
+ /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \
+ /usr/local/include/cppitertools/chunked.hpp \
+ /usr/local/include/cppitertools/combinations.hpp \
+ /usr/local/include/cppitertools/combinations_with_replacement.hpp \
+ /usr/local/include/cppitertools/compress.hpp \
+ /usr/local/include/cppitertools/count.hpp \
+ /usr/local/include/cppitertools/range.hpp \
+ /usr/local/include/cppitertools/cycle.hpp \
+ /usr/local/include/cppitertools/dropwhile.hpp \
+ /usr/local/include/cppitertools/filter.hpp \
+ /usr/local/include/cppitertools/enumerate.hpp \
+ /usr/local/include/cppitertools/filterfalse.hpp \
+ /usr/local/include/cppitertools/groupby.hpp \
+ /usr/local/include/cppitertools/imap.hpp \
+ /usr/local/include/cppitertools/starmap.hpp \
+ /usr/local/include/cppitertools/zip.hpp \
+ /usr/local/include/cppitertools/permutations.hpp \
+ /usr/local/include/cppitertools/powerset.hpp \
+ /usr/local/include/cppitertools/product.hpp \
+ /usr/local/include/cppitertools/repeat.hpp \
+ /usr/local/include/cppitertools/reversed.hpp \
+ /usr/local/include/cppitertools/slice.hpp \
+ /usr/local/include/cppitertools/sliding_window.hpp \
+ /usr/local/include/cppitertools/sorted.hpp \
+ /usr/local/include/cppitertools/takewhile.hpp \
+ /usr/local/include/cppitertools/unique_everseen.hpp \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h \
+ /usr/local/include/cppitertools/unique_justseen.hpp

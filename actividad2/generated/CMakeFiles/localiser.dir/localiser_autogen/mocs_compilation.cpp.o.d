@@ -1,7 +1,7 @@
 generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/mocs_compilation.cpp \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/EWIEGA46WW/moc_genericworker.cpp \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/4B7W4TDGLD/moc_abstract_graphic_viewer.cpp \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/memoryfwd.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -196,11 +196,11 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/13/bits/ranges_algobase.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/EWIEGA46WW/../../genericworker.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/QtGui \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/QtGuiDepends \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QtCore \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QtCoreDepends \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/4B7W4TDGLD/../../../../../../robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h \
  /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
  /usr/include/assert.h /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
@@ -208,7 +208,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcore-config.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtconfigmacros.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcoreexports.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qsystemdetection.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qprocessordetection.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcompilerdetection.h \
@@ -254,14 +253,18 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qforeach.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/q20algorithm.h \
- /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
- /usr/include/c++/13/bits/algorithmfwd.h \
- /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/uniform_int_dist.h \
- /usr/include/c++/13/bits/ranges_algo.h \
- /usr/include/c++/13/pstl/glue_algorithm_defs.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/q20functional.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtgui-config.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiexports.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsexports.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qnamespace.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtmetamacros.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qchar.h \
  /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
@@ -272,20 +275,12 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/array \
+ /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
  /usr/include/c++/13/bits/move_only_function.h \
  /usr/include/c++/13/bits/mofunc_impl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/q20functional.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/q20iterator.h \
- /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/q23functional.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractanimation.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qnamespace.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtmetamacros.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs_impl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qchar.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringview.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearray.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qrefcount.h \
@@ -295,7 +290,10 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydatapointer.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydataops.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainertools_impl.h \
- /usr/include/c++/13/cstring \
+ /usr/include/c++/13/cstring /usr/include/c++/13/iterator \
+ /usr/include/c++/13/bits/stream_iterator.h /usr/include/c++/13/algorithm \
+ /usr/include/c++/13/bits/ranges_algo.h \
+ /usr/include/c++/13/pstl/glue_algorithm_defs.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayalgorithms.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayview.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringfwd.h \
@@ -346,22 +344,142 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/13/bits/locale_conv.h \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/format \
  /usr/include/c++/13/charconv /usr/include/c++/13/span \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstracteventdispatcher.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qeventloop.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractitemmodel.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmargins.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qkeysequence.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qicon.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsize.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qpixmap.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qpaintdevice.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qrect.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qpoint.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qcolor.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qrgb.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qrgba64.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qimage.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qpixelformat.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtransform.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qpolygon.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qregion.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qline.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtextstream.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringconverter_base.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer_impl.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata_impl.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qset.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qpalette.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qbrush.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qfont.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qfontmetrics.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qfontinfo.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qcursor.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsScene \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsscene.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsView \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qpainter.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qscrollarea.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsscene.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qpointer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qeventpoint.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector2d.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qpointingdevice.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputdevice.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qscreen.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QRect \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qrect.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsize.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtransform.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
+ /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/QOpenGLWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qopenglwidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/QSurfaceFormat \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qsurfaceformat.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qopengl.h /usr/include/GL/gl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglext.h \
+ /usr/include/inttypes.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QScrollBar \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qscrollbar.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QApplication \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qapplication.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qeventloop.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputmethod.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsPolygonItem \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsitem.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qpainterpath.h \
+ /usr/include/c++/13/iostream \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/UITLZZOD3R/moc_GRAFCETStep.cpp \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/UITLZZOD3R/../../../../../../robocomp/robocomp/classes/grafcetStep/GRAFCETStep.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/QState \
+ /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstate.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetaobject.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qabstractstate.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstatemachineglobal.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qtstatemachine-config.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qtstatemachineexports.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
+ /usr/include/c++/13/mutex /usr/include/c++/13/bits/unique_lock.h \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/EWIEGA46WW/moc_genericworker.cpp \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/EWIEGA46WW/../../genericworker.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/QtGui \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/QtGuiDepends \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QtCore \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QtCoreDepends \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/q20algorithm.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/q20functional.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/q20functional.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/q20iterator.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/q23functional.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractanimation.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstracteventdispatcher.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractitemmodel.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractnativeeventfilter.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractproxymodel.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractitemmodel.h \
@@ -373,10 +491,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMutex \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmutex.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtsan_impl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydata.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydataops.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydatapointer.h \
@@ -386,7 +500,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbindingstorage.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbitarray.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbuffer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearray.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayalgorithms.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearraylist.h \
@@ -395,14 +508,12 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayview.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcache.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcalendar.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcborarray.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcborvalue.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatetime.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcalendar.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcborcommon.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qregularexpression.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/quuid.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcborcommon.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcbormap.h \
@@ -451,8 +562,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfileinfo.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfileselector.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QStringList \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringlist.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfilesystemwatcher.h \
@@ -466,11 +575,9 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qthreadpool.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qthread.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
- /usr/include/c++/13/future /usr/include/c++/13/mutex \
- /usr/include/c++/13/bits/unique_lock.h \
- /usr/include/c++/13/condition_variable /usr/include/c++/13/stop_token \
- /usr/include/c++/13/bits/std_thread.h /usr/include/c++/13/semaphore \
- /usr/include/c++/13/bits/semaphore_base.h \
+ /usr/include/c++/13/future /usr/include/c++/13/condition_variable \
+ /usr/include/c++/13/stop_token /usr/include/c++/13/bits/std_thread.h \
+ /usr/include/c++/13/semaphore /usr/include/c++/13/bits/semaphore_base.h \
  /usr/include/c++/13/bits/atomic_timed_wait.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/semaphore.h \
@@ -478,7 +585,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/13/bits/atomic_futex.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qrunnable.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qexception.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qpointer.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qpromise.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfutureinterface.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfuturesynchronizer.h \
@@ -509,8 +615,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlibraryinfo.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qversionnumber.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qline.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qpoint.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlockfile.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qloggingcategory.h \
@@ -560,9 +664,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
  /usr/include/c++/13/bits/random.tcc \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qreadwritelock.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qrect.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qmargins.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qsize.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qrefcount.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qregularexpression.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qresource.h \
@@ -675,7 +776,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/prfchwintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/keylockerintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/amxfp16intrin.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qsize.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qsocketnotifier.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qsortfilterproxymodel.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qstack.h \
@@ -704,8 +804,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qthreadpool.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qthreadstorage.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimeline.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimezone.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtmetamacros.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtranslator.h \
@@ -722,7 +820,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariantlist.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariantmap.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
@@ -737,50 +834,16 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/q23functional.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcoreversion.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qtgui-config.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiexports.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qabstractfileiconprovider.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qicon.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpixmap.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpaintdevice.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qrect.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qcolor.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qrgb.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qrgba64.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qimage.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpixelformat.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qtransform.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpolygon.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qregion.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qline.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qabstracttextdocumentlayout.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextlayout.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qeventpoint.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector2d.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpointingdevice.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputdevice.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qscreen.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QRect \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qtransform.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qkeysequence.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qglyphrun.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qrawfont.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qfont.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qfontdatabase.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qbrush.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpalette.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qaccessible.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qaccessible_base.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qaccessiblebridge.h \
@@ -790,15 +853,12 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qaccessibleplugin.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qactiongroup.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qbackingstore.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindow.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QEvent \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMargins \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qsurface.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qsurfaceformat.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qcursor.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qbrush.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qclipboard.h \
@@ -809,7 +869,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qcursor.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qdesktopservices.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qdrag.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qeventpoint.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qfilesystemmodel.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdiriterator.h \
@@ -821,9 +880,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qgenericplugin.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qgenericpluginfactory.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qglyphrun.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputmethod.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qicon.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qiconengine.h \
@@ -846,13 +902,8 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qoffscreensurface.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qoffscreensurface_platform.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qoffscreensurface.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qopengl.h /usr/include/GL/gl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglext.h \
- /usr/include/inttypes.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/QSurfaceFormat \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qsurfaceformat.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopengl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext_platform.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglextrafunctions.h \
@@ -871,9 +922,6 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindow.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QPaintDevice \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpaintengine.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpainter.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qfontinfo.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qfontmetrics.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpainter.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpainterpath.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpalette.h \
@@ -922,25 +970,13 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiversion.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/include/ui_mainUI.h \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/include/ui_mainUI.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QApplication \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qapplication.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsexports.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QFrame \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLCDNumber \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlcdnumber.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlabel.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpicture.h \
@@ -950,19 +986,8 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QSpacerItem \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
- /home/usuario/robocomp/classes/grafcetStep/GRAFCETStep.h \
- /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/QState \
- /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstate.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetaobject.h \
- /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qabstractstate.h \
- /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstatemachineglobal.h \
- /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qtstatemachine-config.h \
- /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qtstatemachineexports.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
- /usr/include/c++/13/iostream \
- /home/usuario/robocomp/classes/ConfigLoader/ConfigLoader.h \
+ /home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.h \
+ /home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.h \
  /usr/include/c++/13/fstream \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
@@ -1018,15 +1043,15 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/local/include/toml++/impl/toml_formatter.inl \
  /usr/local/include/toml++/impl/json_formatter.inl \
  /usr/local/include/toml++/impl/yaml_formatter.inl \
- /home/usuario/robocomp/classes/ConfigLoader/ConfigLoader.tpp \
- /home/usuario/robocomp/classes/ConfigLoader/ConfigLoader.h \
+ /home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.tpp \
+ /home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.h \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/QStateMachine \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstatemachine.h \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstate.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QEvent \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QtCore \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/GenericBase.h \
+ /home/usuario/Robotica_g7/actividad2/generated/GenericBase.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/13/cassert /usr/include/Ice/ProxyHandle.h \
@@ -1069,36 +1094,385 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
  /usr/include/c++/13/bits/deque.tcc /usr/include/Ice/FactoryTableInit.h \
  /usr/include/Ice/DefaultValueFactory.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/Lidar3D.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/OmniRobot.h \
+ /home/usuario/Robotica_g7/actividad2/generated/Lidar3D.h \
+ /home/usuario/Robotica_g7/actividad2/generated/OmniRobot.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QScreen \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/VNU7RW3YIC/moc_specificworker.cpp \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/VNU7RW3YIC/../../../src/specificworker.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/genericworker.h \
- /home/usuario/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsScene \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsscene.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsView \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsview.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qscrollarea.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsscene.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
- /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/QOpenGLWidget \
- /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qopenglwidget.h \
- /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
- /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QScrollBar \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qscrollbar.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QApplication \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsPolygonItem \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsitem.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpainterpath.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/4B7W4TDGLD/moc_abstract_graphic_viewer.cpp \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/4B7W4TDGLD/../../../../../../robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/UITLZZOD3R/moc_GRAFCETStep.cpp \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/UITLZZOD3R/../../../../../../robocomp/classes/grafcetStep/GRAFCETStep.h
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/VNU7RW3YIC/moc_specificworker.cpp \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/VNU7RW3YIC/../../../src/specificworker.h \
+ /home/usuario/Robotica_g7/actividad2/generated/genericworker.h \
+ /home/robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/VNU7RW3YIC/../../../src/common_types.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QPointF \
+ /usr/include/Eigen/Dense /usr/include/Eigen/Core \
+ /usr/include/Eigen/src/Core/util/DisableStupidWarnings.h \
+ /usr/include/Eigen/src/Core/util/Macros.h \
+ /usr/include/Eigen/src/Core/util/ConfigureVectorization.h \
+ /usr/include/c++/13/complex \
+ /usr/include/Eigen/src/Core/util/MKL_support.h \
+ /usr/include/Eigen/src/Core/util/Constants.h \
+ /usr/include/Eigen/src/Core/util/Meta.h \
+ /usr/include/Eigen/src/Core/util/ForwardDeclarations.h \
+ /usr/include/Eigen/src/Core/util/StaticAssert.h \
+ /usr/include/Eigen/src/Core/util/XprHelper.h \
+ /usr/include/Eigen/src/Core/util/Memory.h \
+ /usr/include/Eigen/src/Core/util/IntegralConstant.h \
+ /usr/include/Eigen/src/Core/util/SymbolicIndex.h \
+ /usr/include/Eigen/src/Core/NumTraits.h \
+ /usr/include/Eigen/src/Core/MathFunctions.h \
+ /usr/include/Eigen/src/Core/GenericPacketMath.h \
+ /usr/include/Eigen/src/Core/MathFunctionsImpl.h \
+ /usr/include/Eigen/src/Core/arch/Default/ConjHelper.h \
+ /usr/include/Eigen/src/Core/arch/Default/Half.h \
+ /usr/include/Eigen/src/Core/arch/Default/BFloat16.h \
+ /usr/include/Eigen/src/Core/arch/Default/TypeCasting.h \
+ /usr/include/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h \
+ /usr/include/Eigen/src/Core/arch/SSE/PacketMath.h \
+ /usr/include/Eigen/src/Core/arch/SSE/TypeCasting.h \
+ /usr/include/Eigen/src/Core/arch/SSE/MathFunctions.h \
+ /usr/include/Eigen/src/Core/arch/SSE/Complex.h \
+ /usr/include/Eigen/src/Core/arch/Default/Settings.h \
+ /usr/include/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h \
+ /usr/include/Eigen/src/Core/functors/TernaryFunctors.h \
+ /usr/include/Eigen/src/Core/functors/BinaryFunctors.h \
+ /usr/include/Eigen/src/Core/functors/UnaryFunctors.h \
+ /usr/include/Eigen/src/Core/functors/NullaryFunctors.h \
+ /usr/include/Eigen/src/Core/functors/StlFunctors.h \
+ /usr/include/Eigen/src/Core/functors/AssignmentFunctors.h \
+ /usr/include/Eigen/src/Core/util/IndexedViewHelper.h \
+ /usr/include/Eigen/src/Core/util/ReshapedHelper.h \
+ /usr/include/Eigen/src/Core/ArithmeticSequence.h \
+ /usr/include/Eigen/src/Core/IO.h \
+ /usr/include/Eigen/src/Core/DenseCoeffsBase.h \
+ /usr/include/Eigen/src/Core/DenseBase.h \
+ /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+ /usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h \
+ /usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h \
+ /usr/include/eigen3/Eigen/src/plugins/ReshapedMethods.h \
+ /usr/include/eigen3/Eigen/src/plugins/ReshapedMethods.h \
+ /usr/include/Eigen/src/Core/MatrixBase.h \
+ /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+ /usr/include/Eigen/src/Core/EigenBase.h \
+ /usr/include/Eigen/src/Core/Product.h \
+ /usr/include/Eigen/src/Core/CoreEvaluators.h \
+ /usr/include/Eigen/src/Core/AssignEvaluator.h \
+ /usr/include/Eigen/src/Core/Assign.h \
+ /usr/include/Eigen/src/Core/ArrayBase.h \
+ /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
+ /usr/include/Eigen/src/Core/util/BlasUtil.h \
+ /usr/include/Eigen/src/Core/DenseStorage.h \
+ /usr/include/Eigen/src/Core/NestByValue.h \
+ /usr/include/Eigen/src/Core/ReturnByValue.h \
+ /usr/include/Eigen/src/Core/NoAlias.h \
+ /usr/include/Eigen/src/Core/PlainObjectBase.h \
+ /usr/include/Eigen/src/Core/Matrix.h /usr/include/Eigen/src/Core/Array.h \
+ /usr/include/Eigen/src/Core/CwiseTernaryOp.h \
+ /usr/include/Eigen/src/Core/CwiseBinaryOp.h \
+ /usr/include/Eigen/src/Core/CwiseUnaryOp.h \
+ /usr/include/Eigen/src/Core/CwiseNullaryOp.h \
+ /usr/include/Eigen/src/Core/CwiseUnaryView.h \
+ /usr/include/Eigen/src/Core/SelfCwiseBinaryOp.h \
+ /usr/include/Eigen/src/Core/Dot.h \
+ /usr/include/Eigen/src/Core/StableNorm.h \
+ /usr/include/Eigen/src/Core/Stride.h \
+ /usr/include/Eigen/src/Core/MapBase.h /usr/include/Eigen/src/Core/Map.h \
+ /usr/include/Eigen/src/Core/Ref.h /usr/include/Eigen/src/Core/Block.h \
+ /usr/include/Eigen/src/Core/VectorBlock.h \
+ /usr/include/Eigen/src/Core/IndexedView.h \
+ /usr/include/Eigen/src/Core/Reshaped.h \
+ /usr/include/Eigen/src/Core/Transpose.h \
+ /usr/include/Eigen/src/Core/DiagonalMatrix.h \
+ /usr/include/Eigen/src/Core/Diagonal.h \
+ /usr/include/Eigen/src/Core/DiagonalProduct.h \
+ /usr/include/Eigen/src/Core/Redux.h \
+ /usr/include/Eigen/src/Core/Visitor.h \
+ /usr/include/Eigen/src/Core/Fuzzy.h /usr/include/Eigen/src/Core/Swap.h \
+ /usr/include/Eigen/src/Core/CommaInitializer.h \
+ /usr/include/Eigen/src/Core/GeneralProduct.h \
+ /usr/include/Eigen/src/Core/Solve.h \
+ /usr/include/Eigen/src/Core/Inverse.h \
+ /usr/include/Eigen/src/Core/SolverBase.h \
+ /usr/include/Eigen/src/Core/PermutationMatrix.h \
+ /usr/include/Eigen/src/Core/Transpositions.h \
+ /usr/include/Eigen/src/Core/TriangularMatrix.h \
+ /usr/include/Eigen/src/Core/SelfAdjointView.h \
+ /usr/include/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
+ /usr/include/Eigen/src/Core/products/Parallelizer.h \
+ /usr/include/Eigen/src/Core/ProductEvaluators.h \
+ /usr/include/Eigen/src/Core/products/GeneralMatrixVector.h \
+ /usr/include/Eigen/src/Core/products/GeneralMatrixMatrix.h \
+ /usr/include/Eigen/src/Core/SolveTriangular.h \
+ /usr/include/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
+ /usr/include/Eigen/src/Core/products/SelfadjointMatrixVector.h \
+ /usr/include/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
+ /usr/include/Eigen/src/Core/products/SelfadjointProduct.h \
+ /usr/include/Eigen/src/Core/products/SelfadjointRank2Update.h \
+ /usr/include/Eigen/src/Core/products/TriangularMatrixVector.h \
+ /usr/include/Eigen/src/Core/products/TriangularMatrixMatrix.h \
+ /usr/include/Eigen/src/Core/products/TriangularSolverMatrix.h \
+ /usr/include/Eigen/src/Core/products/TriangularSolverVector.h \
+ /usr/include/Eigen/src/Core/BandMatrix.h \
+ /usr/include/Eigen/src/Core/CoreIterators.h \
+ /usr/include/Eigen/src/Core/ConditionEstimator.h \
+ /usr/include/Eigen/src/Core/BooleanRedux.h \
+ /usr/include/Eigen/src/Core/Select.h \
+ /usr/include/Eigen/src/Core/VectorwiseOp.h \
+ /usr/include/Eigen/src/Core/PartialReduxEvaluator.h \
+ /usr/include/Eigen/src/Core/Random.h \
+ /usr/include/Eigen/src/Core/Replicate.h \
+ /usr/include/Eigen/src/Core/Reverse.h \
+ /usr/include/Eigen/src/Core/ArrayWrapper.h \
+ /usr/include/Eigen/src/Core/StlIterators.h \
+ /usr/include/Eigen/src/Core/GlobalFunctions.h \
+ /usr/include/Eigen/src/Core/util/ReenableStupidWarnings.h \
+ /usr/include/Eigen/LU /usr/include/Eigen/src/misc/Kernel.h \
+ /usr/include/Eigen/src/misc/Image.h \
+ /usr/include/Eigen/src/LU/FullPivLU.h \
+ /usr/include/Eigen/src/LU/PartialPivLU.h \
+ /usr/include/Eigen/src/LU/Determinant.h \
+ /usr/include/Eigen/src/LU/InverseImpl.h \
+ /usr/include/Eigen/src/LU/arch/InverseSize4.h \
+ /usr/include/Eigen/Cholesky /usr/include/Eigen/Jacobi \
+ /usr/include/Eigen/src/Jacobi/Jacobi.h \
+ /usr/include/Eigen/src/Cholesky/LLT.h \
+ /usr/include/Eigen/src/Cholesky/LDLT.h /usr/include/Eigen/QR \
+ /usr/include/Eigen/Householder \
+ /usr/include/Eigen/src/Householder/Householder.h \
+ /usr/include/Eigen/src/Householder/HouseholderSequence.h \
+ /usr/include/Eigen/src/Householder/BlockHouseholder.h \
+ /usr/include/Eigen/src/QR/HouseholderQR.h \
+ /usr/include/Eigen/src/QR/FullPivHouseholderQR.h \
+ /usr/include/Eigen/src/QR/ColPivHouseholderQR.h \
+ /usr/include/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
+ /usr/include/Eigen/SVD /usr/include/Eigen/src/misc/RealSvd2x2.h \
+ /usr/include/Eigen/src/SVD/UpperBidiagonalization.h \
+ /usr/include/Eigen/src/SVD/SVDBase.h \
+ /usr/include/Eigen/src/SVD/JacobiSVD.h \
+ /usr/include/Eigen/src/SVD/BDCSVD.h /usr/include/Eigen/Geometry \
+ /usr/include/Eigen/src/Geometry/OrthoMethods.h \
+ /usr/include/Eigen/src/Geometry/EulerAngles.h \
+ /usr/include/Eigen/src/Geometry/Homogeneous.h \
+ /usr/include/Eigen/src/Geometry/RotationBase.h \
+ /usr/include/Eigen/src/Geometry/Rotation2D.h \
+ /usr/include/Eigen/src/Geometry/Quaternion.h \
+ /usr/include/Eigen/src/Geometry/AngleAxis.h \
+ /usr/include/Eigen/src/Geometry/Transform.h \
+ /usr/include/Eigen/src/Geometry/Translation.h \
+ /usr/include/Eigen/src/Geometry/Scaling.h \
+ /usr/include/Eigen/src/Geometry/Hyperplane.h \
+ /usr/include/Eigen/src/Geometry/ParametrizedLine.h \
+ /usr/include/Eigen/src/Geometry/AlignedBox.h \
+ /usr/include/Eigen/src/Geometry/Umeyama.h \
+ /usr/include/Eigen/src/Geometry/arch/Geometry_SIMD.h \
+ /usr/include/Eigen/Eigenvalues \
+ /usr/include/Eigen/src/Eigenvalues/Tridiagonalization.h \
+ /usr/include/Eigen/src/Eigenvalues/RealSchur.h \
+ /usr/include/Eigen/src/Eigenvalues/./HessenbergDecomposition.h \
+ /usr/include/Eigen/src/Eigenvalues/EigenSolver.h \
+ /usr/include/Eigen/src/Eigenvalues/./RealSchur.h \
+ /usr/include/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
+ /usr/include/Eigen/src/Eigenvalues/./Tridiagonalization.h \
+ /usr/include/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
+ /usr/include/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+ /usr/include/Eigen/src/Eigenvalues/ComplexSchur.h \
+ /usr/include/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
+ /usr/include/Eigen/src/Eigenvalues/./ComplexSchur.h \
+ /usr/include/Eigen/src/Eigenvalues/RealQZ.h \
+ /usr/include/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
+ /usr/include/Eigen/src/Eigenvalues/./RealQZ.h \
+ /usr/include/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+ /usr/include/boost/circular_buffer.hpp \
+ /usr/include/boost/circular_buffer_fwd.hpp /usr/include/boost/config.hpp \
+ /usr/include/boost/config/user.hpp \
+ /usr/include/boost/config/detail/select_compiler_config.hpp \
+ /usr/include/boost/config/compiler/gcc.hpp \
+ /usr/include/boost/config/detail/select_stdlib_config.hpp \
+ /usr/include/boost/config/stdlib/libstdcpp3.hpp \
+ /usr/include/boost/config/detail/select_platform_config.hpp \
+ /usr/include/boost/config/platform/linux.hpp \
+ /usr/include/boost/config/detail/posix_features.hpp \
+ /usr/include/boost/config/detail/suffix.hpp \
+ /usr/include/boost/config/helper_macros.hpp \
+ /usr/include/boost/config/detail/cxx_composite.hpp \
+ /usr/include/boost/config/workaround.hpp \
+ /usr/include/boost/static_assert.hpp \
+ /usr/include/boost/detail/workaround.hpp \
+ /usr/include/boost/type_traits/is_convertible.hpp \
+ /usr/include/boost/type_traits/intrinsics.hpp \
+ /usr/include/boost/type_traits/detail/config.hpp \
+ /usr/include/boost/version.hpp \
+ /usr/include/boost/type_traits/integral_constant.hpp \
+ /usr/include/boost/type_traits/is_complete.hpp \
+ /usr/include/boost/type_traits/declval.hpp \
+ /usr/include/boost/type_traits/add_rvalue_reference.hpp \
+ /usr/include/boost/type_traits/is_void.hpp \
+ /usr/include/boost/type_traits/is_reference.hpp \
+ /usr/include/boost/type_traits/is_lvalue_reference.hpp \
+ /usr/include/boost/type_traits/is_rvalue_reference.hpp \
+ /usr/include/boost/type_traits/remove_reference.hpp \
+ /usr/include/boost/type_traits/is_function.hpp \
+ /usr/include/boost/type_traits/detail/is_function_cxx_11.hpp \
+ /usr/include/boost/type_traits/detail/yes_no_type.hpp \
+ /usr/include/boost/type_traits/is_array.hpp \
+ /usr/include/boost/type_traits/is_arithmetic.hpp \
+ /usr/include/boost/type_traits/is_integral.hpp \
+ /usr/include/boost/type_traits/is_floating_point.hpp \
+ /usr/include/boost/type_traits/is_abstract.hpp \
+ /usr/include/boost/type_traits/add_lvalue_reference.hpp \
+ /usr/include/boost/type_traits/add_reference.hpp \
+ /usr/include/boost/circular_buffer/debug.hpp \
+ /usr/include/boost/circular_buffer/details.hpp \
+ /usr/include/boost/throw_exception.hpp \
+ /usr/include/boost/exception/exception.hpp \
+ /usr/include/boost/assert/source_location.hpp \
+ /usr/include/boost/current_function.hpp /usr/include/boost/cstdint.hpp \
+ /usr/include/boost/core/allocator_access.hpp \
+ /usr/include/boost/core/pointer_traits.hpp \
+ /usr/include/boost/core/addressof.hpp /usr/include/boost/move/move.hpp \
+ /usr/include/boost/move/detail/config_begin.hpp \
+ /usr/include/boost/move/utility.hpp \
+ /usr/include/boost/move/detail/workaround.hpp \
+ /usr/include/boost/move/utility_core.hpp \
+ /usr/include/boost/move/core.hpp \
+ /usr/include/boost/move/detail/config_end.hpp \
+ /usr/include/boost/move/detail/meta_utils.hpp \
+ /usr/include/boost/move/detail/meta_utils_core.hpp \
+ /usr/include/boost/move/detail/addressof.hpp \
+ /usr/include/boost/move/traits.hpp \
+ /usr/include/boost/move/detail/type_traits.hpp \
+ /usr/include/boost/move/iterator.hpp \
+ /usr/include/boost/move/detail/iterator_traits.hpp \
+ /usr/include/boost/move/algorithm.hpp \
+ /usr/include/boost/move/algo/move.hpp \
+ /usr/include/boost/move/detail/iterator_to_raw_pointer.hpp \
+ /usr/include/boost/move/detail/to_raw_pointer.hpp \
+ /usr/include/boost/move/detail/pointer_element.hpp \
+ /usr/include/boost/type_traits/is_nothrow_move_constructible.hpp \
+ /usr/include/boost/type_traits/enable_if.hpp \
+ /usr/include/boost/core/no_exceptions_support.hpp \
+ /usr/include/boost/circular_buffer/base.hpp \
+ /usr/include/boost/concept_check.hpp \
+ /usr/include/boost/concept/assert.hpp \
+ /usr/include/boost/concept/detail/general.hpp \
+ /usr/include/boost/preprocessor/cat.hpp \
+ /usr/include/boost/preprocessor/config/config.hpp \
+ /usr/include/boost/concept/detail/backward_compatibility.hpp \
+ /usr/include/boost/concept/detail/has_constraints.hpp \
+ /usr/include/boost/type_traits/conditional.hpp \
+ /usr/include/boost/type_traits/conversion_traits.hpp \
+ /usr/include/boost/type_traits/is_same.hpp \
+ /usr/include/boost/concept/usage.hpp \
+ /usr/include/boost/concept/detail/concept_def.hpp \
+ /usr/include/boost/preprocessor/seq/for_each_i.hpp \
+ /usr/include/boost/preprocessor/arithmetic/dec.hpp \
+ /usr/include/boost/preprocessor/config/limits.hpp \
+ /usr/include/boost/preprocessor/arithmetic/limits/dec_256.hpp \
+ /usr/include/boost/preprocessor/arithmetic/inc.hpp \
+ /usr/include/boost/preprocessor/arithmetic/limits/inc_256.hpp \
+ /usr/include/boost/preprocessor/control/if.hpp \
+ /usr/include/boost/preprocessor/control/iif.hpp \
+ /usr/include/boost/preprocessor/logical/bool.hpp \
+ /usr/include/boost/preprocessor/logical/limits/bool_256.hpp \
+ /usr/include/boost/preprocessor/repetition/for.hpp \
+ /usr/include/boost/preprocessor/debug/error.hpp \
+ /usr/include/boost/preprocessor/facilities/empty.hpp \
+ /usr/include/boost/preprocessor/detail/auto_rec.hpp \
+ /usr/include/boost/preprocessor/detail/limits/auto_rec_256.hpp \
+ /usr/include/boost/preprocessor/repetition/detail/for.hpp \
+ /usr/include/boost/preprocessor/control/expr_iif.hpp \
+ /usr/include/boost/preprocessor/tuple/eat.hpp \
+ /usr/include/boost/preprocessor/repetition/detail/limits/for_256.hpp \
+ /usr/include/boost/preprocessor/repetition/limits/for_256.hpp \
+ /usr/include/boost/preprocessor/seq/seq.hpp \
+ /usr/include/boost/preprocessor/seq/elem.hpp \
+ /usr/include/boost/preprocessor/seq/limits/elem_256.hpp \
+ /usr/include/boost/preprocessor/seq/size.hpp \
+ /usr/include/boost/preprocessor/seq/limits/size_256.hpp \
+ /usr/include/boost/preprocessor/seq/detail/is_empty.hpp \
+ /usr/include/boost/preprocessor/logical/compl.hpp \
+ /usr/include/boost/preprocessor/tuple/elem.hpp \
+ /usr/include/boost/preprocessor/facilities/expand.hpp \
+ /usr/include/boost/preprocessor/facilities/overload.hpp \
+ /usr/include/boost/preprocessor/variadic/size.hpp \
+ /usr/include/boost/preprocessor/facilities/check_empty.hpp \
+ /usr/include/boost/preprocessor/variadic/has_opt.hpp \
+ /usr/include/boost/preprocessor/variadic/detail/has_opt.hpp \
+ /usr/include/boost/preprocessor/facilities/is_empty_variadic.hpp \
+ /usr/include/boost/preprocessor/punctuation/is_begin_parens.hpp \
+ /usr/include/boost/preprocessor/punctuation/detail/is_begin_parens.hpp \
+ /usr/include/boost/preprocessor/facilities/detail/is_empty.hpp \
+ /usr/include/boost/preprocessor/variadic/limits/size_64.hpp \
+ /usr/include/boost/preprocessor/tuple/rem.hpp \
+ /usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp \
+ /usr/include/boost/preprocessor/variadic/elem.hpp \
+ /usr/include/boost/preprocessor/variadic/limits/elem_64.hpp \
+ /usr/include/boost/preprocessor/seq/enum.hpp \
+ /usr/include/boost/preprocessor/seq/limits/enum_256.hpp \
+ /usr/include/boost/preprocessor/comma_if.hpp \
+ /usr/include/boost/preprocessor/punctuation/comma_if.hpp \
+ /usr/include/boost/preprocessor/punctuation/comma.hpp \
+ /usr/include/boost/concept/detail/concept_undef.hpp \
+ /usr/include/boost/limits.hpp /usr/include/boost/core/empty_value.hpp \
+ /usr/include/boost/type_traits/is_stateless.hpp \
+ /usr/include/boost/type_traits/has_trivial_constructor.hpp \
+ /usr/include/boost/type_traits/is_pod.hpp \
+ /usr/include/boost/type_traits/is_scalar.hpp \
+ /usr/include/boost/type_traits/is_enum.hpp \
+ /usr/include/boost/type_traits/is_pointer.hpp \
+ /usr/include/boost/type_traits/is_member_pointer.hpp \
+ /usr/include/boost/type_traits/is_member_function_pointer.hpp \
+ /usr/include/boost/type_traits/detail/is_member_function_pointer_cxx_11.hpp \
+ /usr/include/boost/type_traits/is_default_constructible.hpp \
+ /usr/include/boost/type_traits/is_volatile.hpp \
+ /usr/include/boost/type_traits/has_trivial_copy.hpp \
+ /usr/include/boost/type_traits/is_copy_constructible.hpp \
+ /usr/include/boost/type_traits/is_constructible.hpp \
+ /usr/include/boost/type_traits/is_destructible.hpp \
+ /usr/include/boost/type_traits/has_trivial_destructor.hpp \
+ /usr/include/boost/type_traits/is_class.hpp \
+ /usr/include/boost/type_traits/is_empty.hpp \
+ /usr/include/boost/type_traits/remove_cv.hpp \
+ /usr/include/boost/type_traits/is_nothrow_move_assignable.hpp \
+ /usr/include/boost/type_traits/has_trivial_move_assign.hpp \
+ /usr/include/boost/type_traits/is_assignable.hpp \
+ /usr/include/boost/type_traits/has_nothrow_assign.hpp \
+ /usr/include/boost/type_traits/is_const.hpp \
+ /usr/include/boost/move/adl_move_swap.hpp \
+ /usr/include/boost/circular_buffer/space_optimized.hpp \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QLineF \
+ /usr/include/Eigen/src/Geometry/ParametrizedLine.h \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/VNU7RW3YIC/../../../src/hungarian.h \
+ /usr/include/Eigen/Geometry \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/VNU7RW3YIC/../../../src/munkres.hpp \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/VNU7RW3YIC/../../../src/ransac_line_detector.h \
+ /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/VNU7RW3YIC/../../../src/room_detector.h \
+ /usr/include/opencv4/opencv2/core.hpp \
+ /usr/include/opencv4/opencv2/core/cvdef.h \
+ /usr/include/opencv4/opencv2/core/version.hpp \
+ /usr/include/opencv4/opencv2/core/hal/interface.h \
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
+ /usr/include/opencv4/opencv2/core/base.hpp \
+ /usr/include/opencv4/opencv2/opencv_modules.hpp \
+ /usr/include/opencv4/opencv2/core/cvstd.hpp \
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp \
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp \
+ /usr/include/opencv4/opencv2/core/check.hpp \
+ /usr/include/opencv4/opencv2/core/traits.hpp \
+ /usr/include/opencv4/opencv2/core/matx.hpp \
+ /usr/include/opencv4/opencv2/core/saturate.hpp \
+ /usr/include/opencv4/opencv2/core/fast_math.hpp \
+ /usr/include/opencv4/opencv2/core/types.hpp \
+ /usr/include/opencv4/opencv2/core/mat.hpp \
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp \
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp \
+ /usr/include/opencv4/opencv2/core/persistence.hpp \
+ /usr/include/opencv4/opencv2/core/operations.hpp \
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp \
+ /usr/include/opencv4/opencv2/core/utility.hpp \
+ /usr/include/opencv4/opencv2/core/optim.hpp \
+ /usr/include/opencv4/opencv2/core/ovx.hpp \
+ /usr/include/opencv4/opencv2/core/cvdef.h /usr/include/c++/13/ranges
