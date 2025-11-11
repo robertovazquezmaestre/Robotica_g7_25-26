@@ -18,6 +18,17 @@
  */
 #include "specificworker.h"
 #include <cppitertools/itertools.hpp>
+#include <cppitertools/enumerate.hpp>
+
+#ifdef emit
+#undef emit
+#endif
+
+#include <execution>
+#include <numeric> // para std::iota
+#include <algorithm>
+
+
 //std::chrono::steady_clock::time_point start_time;
 
 
@@ -112,79 +123,77 @@ void SpecificWorker::initialize()
 
 void SpecificWorker::compute()
 {
-	//auto start_time = std::chrono::high_resolution_clock::now();
-	std::optional<RoboCompLidar3D::TPoints> filter_data;
+    std::optional<RoboCompLidar3D::TPoints> filter_data;
 
-	// -----------------------
-	// Leer LIDAR y filtrar
-	// -----------------------
-	try
-	{
-		auto data = lidar3d_proxy->getLidarDataWithThreshold2d("helios", 5000, 1);
-		if(data.points.empty()) return;
+    // -----------------------
+    // Leer LIDAR y filtrar
+    // -----------------------
+    try
+    {
+        auto data = lidar3d_proxy->getLidarDataWithThreshold2d("helios", 5000, 1);
+        if(data.points.empty()) return;
 
-		filter_data = filter_min_distance_cppitertools(data.points);
-		draw_lidar(filter_data.value(), &viewer->scene);
-	}
-	catch(const Ice::Exception &e)
-	{
-		std::cout << "Error reading Lidar: " << e << std::endl;
-		return;
-	}
+        filter_data = filter_min_distance_cppitertools(data.points);
+    	// Nuevo: filtrar puntos aislados
+    	filter_data = filter_isolated_points(filter_data.value(), 200.0f);
+        draw_lidar(filter_data.value(), &viewer->scene);
+    }
+    catch(const Ice::Exception &e)
+    {
+        std::cout << "Error reading Lidar: " << e << std::endl;
+        return;
+    }
 
-	// -----------------------
-	// State machine
-	// -----------------------
-	float advance_speed = 0, rotation_speed = 0;
-	std::tuple<RobotMode,float,float> result;
-	/*
-	switch(current_mode)
-	{
-		case RobotMode::FORWARD:
-			result = FORWARD_method(filter_data);
-			break;
-		case RobotMode::FOLLOW_WALL:
-			result = FOLLOW_WALL_method(filter_data);
-			break;
-		case RobotMode::SPIRAL:
-			result = SPIRAL_method(filter_data);
-			break;
-		case RobotMode::TURN:
-			result = TURN_method(filter_data);
-			break;
-		case RobotMode::IDLE:
-		default:
-			result = {RobotMode::IDLE, 0, 0};
-			break;
-	}
-	*/
-	// Actualizar el estado
-	current_mode = std::get<0>(result);
-	advance_speed = std::get<1>(result);
-	rotation_speed = std::get<2>(result);
+    // -----------------------
+    // Localización usando esquinas
+    // -----------------------
+    if (!filter_data.has_value() || filter_data->empty())
+        return;
 
-	// -----------------------
-	// Enviar velocidades al robot
-	// -----------------------
-	try
-	{
-		//omnirobot_proxy->setSpeedBase(0, advance_speed, rotation_speed);
-	}
-	catch(const Ice::Exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+    // 1 Extraer esquinas del LIDAR
+    auto measured_corners = room_detector.compute_corners(filter_data.value());
 
-	// -----------------------
-	// Actualizar posición GUI
-	// -----------------------
-	update_ropot_position();
-	//auto end_time = std::chrono::high_resolution_clock::now();
-	//auto elapsed_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
+    // 2 Transformar esquinas nominales al marco del robot
+    auto nominal_corners_robot = room.transform_corners_to(robot_pose.inverse());
 
-	//std::cout << "[compute] Tiempo de ejecución: " << elapsed_ms << " ms ("
-	//		  << 1000.0f / (elapsed_ms > 0 ? elapsed_ms : 1) << " Hz)" << std::endl;
+    // 3 Emparejar esquinas usando Hungarian
+    auto match = hungarian.match(measured_corners, nominal_corners_robot);
+
+    if (match.empty())
+        return;
+
+    // 4 Calcular corrección de pose con pseudoinversa
+    Eigen::MatrixXd W(match.size() * 2, 3);
+    Eigen::VectorXd b(match.size() * 2);
+
+    for (size_t i = 0; i < match.size(); ++i)
+    {
+        const auto& [meas_c, nom_c, _] = match[i];
+        const auto& [p_meas, __, ___] = meas_c;
+        const auto& [p_nom, ____, _____] = nom_c;
+
+        b(2*i)     = p_nom.x() - p_meas.x();
+        b(2*i+1)   = p_nom.y() - p_meas.y();
+
+        W.block<1,3>(2*i,0)   << 1.0, 0.0, -p_meas.y();
+        W.block<1,3>(2*i+1,0) << 0.0, 1.0,  p_meas.x();
+    }
+
+    Eigen::Vector3d r = (W.transpose() * W).inverse() * W.transpose() * b;
+
+    if (r.array().isNaN().any())
+        return;
+
+    // 5 Actualizar pose del robot
+    robot_pose.translate(Eigen::Vector2d(r(0), r(1)));
+    robot_pose.rotate(r(2));
+
+    // 6 Actualizar GUI
+    room_draw_robot->setPos(robot_pose.translation().x(), robot_pose.translation().y());
+    double angle = std::atan2(robot_pose.rotation()(1,0), robot_pose.rotation()(0,0));
+    room_draw_robot->setRotation(qRadiansToDegrees(angle));
 }
+
 
 
 
@@ -481,6 +490,42 @@ float SpecificWorker::calcularDistanciaMinima(const std::optional<RoboCompLidar3
 
 
 
+}
+
+RoboCompLidar3D::TPoints SpecificWorker::filter_isolated_points(
+	const RoboCompLidar3D::TPoints &points, float d) // distancia de 200 mm
+{
+	if(points.empty()) return {};
+
+	const float d_squared = d * d;
+	std::vector<bool> hasNeighbor(points.size(), false);
+
+	std::vector<size_t> indices(points.size());
+	std::iota(indices.begin(), indices.end(), size_t{0});
+
+	std::for_each(std::execution::par, indices.begin(), indices.end(), [&](size_t i)
+	{
+		const auto& p1 = points[i];
+		for(auto &&[j,p2] : iter::enumerate(points))
+		{
+			if(i == j) continue;
+			const float dx = p1.x - p2.x;
+			const float dy = p1.y - p2.y;
+			if(dx*dx + dy*dy <= d_squared)
+			{
+				hasNeighbor[i] = true;
+				break;
+			}
+		}
+	});
+
+	RoboCompLidar3D::TPoints result;
+	result.reserve(points.size());
+	for(auto &&[i, p] : iter::enumerate(points))
+		if(hasNeighbor[i])
+			result.push_back(points[i]);
+
+	return result;
 }
 
 

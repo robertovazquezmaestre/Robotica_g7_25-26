@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/393/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/393/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/usuario/Robotica_g7/actividad2
+CMAKE_SOURCE_DIR = /home/roberto-vazquez/Escritorio/Git/actividad2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/usuario/Robotica_g7/actividad2
+CMAKE_BINARY_DIR = /home/roberto-vazquez/Escritorio/Git/actividad2
 
 # Utility rule file for ICE_GenericBase_target.
 
@@ -69,8 +69,8 @@ include generated/CMakeFiles/ICE_GenericBase_target.dir/progress.make
 generated/CMakeFiles/ICE_GenericBase_target: generated/GenericBase.ice
 
 generated/GenericBase.ice: /home/robocomp/robocomp/interfaces/IDSLs/GenericBase.idsl
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/usuario/Robotica_g7/actividad2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating /home/usuario/Robotica_g7/actividad2/generated/GenericBase.ice from /home/robocomp/robocomp//interfaces/IDSLs/GenericBase.idsl"
-	cd /home/usuario/Robotica_g7/actividad2/generated && robocompdsl /home/robocomp/robocomp//interfaces/IDSLs/GenericBase.idsl /home/usuario/Robotica_g7/actividad2/generated/GenericBase.ice
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/roberto-vazquez/Escritorio/Git/actividad2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating /home/roberto-vazquez/Escritorio/Git/actividad2/generated/GenericBase.ice from /home/robocomp/robocomp//interfaces/IDSLs/GenericBase.idsl"
+	cd /home/roberto-vazquez/Escritorio/Git/actividad2/generated && robocompdsl /home/robocomp/robocomp//interfaces/IDSLs/GenericBase.idsl /home/roberto-vazquez/Escritorio/Git/actividad2/generated/GenericBase.ice
 
 generated/CMakeFiles/ICE_GenericBase_target.dir/codegen:
 .PHONY : generated/CMakeFiles/ICE_GenericBase_target.dir/codegen
@@ -85,10 +85,10 @@ generated/CMakeFiles/ICE_GenericBase_target.dir/build: ICE_GenericBase_target
 .PHONY : generated/CMakeFiles/ICE_GenericBase_target.dir/build
 
 generated/CMakeFiles/ICE_GenericBase_target.dir/clean:
-	cd /home/usuario/Robotica_g7/actividad2/generated && $(CMAKE_COMMAND) -P CMakeFiles/ICE_GenericBase_target.dir/cmake_clean.cmake
+	cd /home/roberto-vazquez/Escritorio/Git/actividad2/generated && $(CMAKE_COMMAND) -P CMakeFiles/ICE_GenericBase_target.dir/cmake_clean.cmake
 .PHONY : generated/CMakeFiles/ICE_GenericBase_target.dir/clean
 
 generated/CMakeFiles/ICE_GenericBase_target.dir/depend:
-	cd /home/usuario/Robotica_g7/actividad2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usuario/Robotica_g7/actividad2 /home/usuario/Robotica_g7/actividad2/generated /home/usuario/Robotica_g7/actividad2 /home/usuario/Robotica_g7/actividad2/generated /home/usuario/Robotica_g7/actividad2/generated/CMakeFiles/ICE_GenericBase_target.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/roberto-vazquez/Escritorio/Git/actividad2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/roberto-vazquez/Escritorio/Git/actividad2 /home/roberto-vazquez/Escritorio/Git/actividad2/generated /home/roberto-vazquez/Escritorio/Git/actividad2 /home/roberto-vazquez/Escritorio/Git/actividad2/generated /home/roberto-vazquez/Escritorio/Git/actividad2/generated/CMakeFiles/ICE_GenericBase_target.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : generated/CMakeFiles/ICE_GenericBase_target.dir/depend
 

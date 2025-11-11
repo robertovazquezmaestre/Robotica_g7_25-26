@@ -1,7 +1,7 @@
 generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
- /home/usuario/Robotica_g7/actividad2/src/room_detector.cpp \
+ /home/roberto-vazquez/Escritorio/Git/actividad2/src/room_detector.cpp \
  /usr/include/stdc-predef.h \
- /home/usuario/Robotica_g7/actividad2/src/room_detector.h \
+ /home/roberto-vazquez/Escritorio/Git/actividad2/src/room_detector.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -922,7 +922,7 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/q23functional.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcoreversion.h \
  /usr/include/c++/13/ranges \
- /home/usuario/Robotica_g7/actividad2/src/common_types.h \
+ /home/roberto-vazquez/Escritorio/Git/actividad2/src/common_types.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QPointF \
  /usr/include/Eigen/Dense /usr/include/Eigen/Geometry \
  /usr/include/Eigen/Eigenvalues \
@@ -1103,7 +1103,7 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/include/boost/circular_buffer/space_optimized.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QLineF \
  /usr/include/Eigen/src/Geometry/ParametrizedLine.h \
- /home/usuario/Robotica_g7/actividad2/generated/Lidar3D.h \
+ /home/roberto-vazquez/Escritorio/Git/actividad2/generated/Lidar3D.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/13/iostream /usr/include/Ice/ProxyHandle.h \
@@ -1169,7 +1169,7 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpixmap.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qfont.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
- /home/usuario/Robotica_g7/actividad2/src/ransac_line_detector.h \
+ /home/roberto-vazquez/Escritorio/Git/actividad2/src/ransac_line_detector.h \
  /usr/local/include/cppitertools/enumerate.hpp \
  /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \
  /usr/local/include/cppitertools/internal/iterbase.hpp \
@@ -1181,8 +1181,8 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/local/include/cppitertools/zip.hpp \
  /usr/local/include/cppitertools/internal/iter_tuples.hpp \
  /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \
- /home/usuario/Robotica_g7/actividad2/src/specificworker.h \
- /home/usuario/Robotica_g7/actividad2/generated/genericworker.h \
+ /home/roberto-vazquez/Escritorio/Git/actividad2/src/specificworker.h \
+ /home/roberto-vazquez/Escritorio/Git/actividad2/generated/genericworker.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QtGui \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QtGuiDepends \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QtCore \
@@ -1353,7 +1353,7 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiversion.h \
- /home/usuario/Robotica_g7/actividad2/generated/localiser_autogen/include/ui_mainUI.h \
+ /home/roberto-vazquez/Escritorio/Git/actividad2/generated/localiser_autogen/include/ui_mainUI.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qapplication.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QFrame \
@@ -1450,8 +1450,8 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstate.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QEvent \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
- /home/usuario/Robotica_g7/actividad2/generated/GenericBase.h \
- /home/usuario/Robotica_g7/actividad2/generated/OmniRobot.h \
+ /home/roberto-vazquez/Escritorio/Git/actividad2/generated/GenericBase.h \
+ /home/roberto-vazquez/Escritorio/Git/actividad2/generated/OmniRobot.h \
  /home/robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsView \
@@ -1473,5 +1473,5 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsPolygonItem \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsitem.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpainterpath.h \
- /home/usuario/Robotica_g7/actividad2/src/hungarian.h \
- /home/usuario/Robotica_g7/actividad2/src/munkres.hpp
+ /home/roberto-vazquez/Escritorio/Git/actividad2/src/hungarian.h \
+ /home/roberto-vazquez/Escritorio/Git/actividad2/src/munkres.hpp

@@ -53,6 +53,7 @@
   /usr/lib/x86_64-linux-gnu/libopencv_wechat_qrcode.so.4.6.0 \
   /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.6.0 \
   /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.6.0 \
+  /usr/lib/x86_64-linux-gnu/libtbb.so.12.11 \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgViewer.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosg.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgUtil.so \
@@ -122,6 +123,8 @@
   /lib/x86_64-linux-gnu/libsystemd.so.0 \
   /lib/x86_64-linux-gnu/libEGL.so.1 \
   /lib/x86_64-linux-gnu/libfontconfig.so.1 \
+  /lib/i386-linux-gnu/libX11.so.6 \
+  /usr/lib/i386-linux-gnu/libX11.so.6 \
   /lib/x86_64-linux-gnu/libX11.so.6 \
   /lib/x86_64-linux-gnu/libglib-2.0.so.0 \
   /lib/x86_64-linux-gnu/libQt6DBus.so.6 \
@@ -145,6 +148,8 @@
   /lib/x86_64-linux-gnu/liblzma.so.5 \
   /lib/x86_64-linux-gnu/libGLdispatch.so.0 \
   /lib/x86_64-linux-gnu/libexpat.so.1 \
+  /lib/i386-linux-gnu/libxcb.so.1 \
+  /usr/lib/i386-linux-gnu/libxcb.so.1 \
   /lib/x86_64-linux-gnu/libxcb.so.1 \
   /lib/x86_64-linux-gnu/libpcre2-8.so.0 \
   /lib/x86_64-linux-gnu/libdbus-1.so.3 \
@@ -153,10 +158,18 @@
   /lib/x86_64-linux-gnu/libicudata.so.74 \
   /lib/x86_64-linux-gnu/libgomp.so.1 \
   /lib/x86_64-linux-gnu/libgpg-error.so.0 \
+  /lib/i386-linux-gnu/libXau.so.6 \
+  /usr/lib/i386-linux-gnu/libXau.so.6 \
   /lib/x86_64-linux-gnu/libXau.so.6 \
+  /lib/i386-linux-gnu/libXdmcp.so.6 \
+  /usr/lib/i386-linux-gnu/libXdmcp.so.6 \
   /lib/x86_64-linux-gnu/libXdmcp.so.6 \
   /lib/x86_64-linux-gnu/libbrotlicommon.so.1 \
+  /lib/i386-linux-gnu/libbsd.so.0 \
+  /usr/lib/i386-linux-gnu/libbsd.so.0 \
   /lib/x86_64-linux-gnu/libbsd.so.0 \
+  /lib/i386-linux-gnu/libmd.so.0 \
+  /usr/lib/i386-linux-gnu/libmd.so.0 \
   /lib/x86_64-linux-gnu/libmd.so.0
 
 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o:
@@ -266,6 +279,8 @@ CMakeFiles/localiser.dir/OmniRobot.cpp.o:
 /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.6.0:
 
 /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.6.0:
+
+/usr/lib/x86_64-linux-gnu/libtbb.so.12.11:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgViewer.so:
 
@@ -405,6 +420,10 @@ CMakeFiles/localiser.dir/OmniRobot.cpp.o:
 
 /lib/x86_64-linux-gnu/libfontconfig.so.1:
 
+/lib/i386-linux-gnu/libX11.so.6:
+
+/usr/lib/i386-linux-gnu/libX11.so.6:
+
 /lib/x86_64-linux-gnu/libX11.so.6:
 
 /lib/x86_64-linux-gnu/libglib-2.0.so.0:
@@ -451,6 +470,10 @@ CMakeFiles/localiser.dir/OmniRobot.cpp.o:
 
 /lib/x86_64-linux-gnu/libexpat.so.1:
 
+/lib/i386-linux-gnu/libxcb.so.1:
+
+/usr/lib/i386-linux-gnu/libxcb.so.1:
+
 /lib/x86_64-linux-gnu/libxcb.so.1:
 
 /lib/x86_64-linux-gnu/libpcre2-8.so.0:
@@ -467,12 +490,28 @@ CMakeFiles/localiser.dir/OmniRobot.cpp.o:
 
 /lib/x86_64-linux-gnu/libgpg-error.so.0:
 
+/lib/i386-linux-gnu/libXau.so.6:
+
+/usr/lib/i386-linux-gnu/libXau.so.6:
+
 /lib/x86_64-linux-gnu/libXau.so.6:
+
+/lib/i386-linux-gnu/libXdmcp.so.6:
+
+/usr/lib/i386-linux-gnu/libXdmcp.so.6:
 
 /lib/x86_64-linux-gnu/libXdmcp.so.6:
 
 /lib/x86_64-linux-gnu/libbrotlicommon.so.1:
 
+/lib/i386-linux-gnu/libbsd.so.0:
+
+/usr/lib/i386-linux-gnu/libbsd.so.0:
+
 /lib/x86_64-linux-gnu/libbsd.so.0:
+
+/lib/i386-linux-gnu/libmd.so.0:
+
+/usr/lib/i386-linux-gnu/libmd.so.0:
 
 /lib/x86_64-linux-gnu/libmd.so.0:

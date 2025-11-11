@@ -1,8 +1,8 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/usuario/Robotica_g7/actividad2/cmake_install.cmake",
-		"/home/usuario/Robotica_g7/actividad2/generated/cmake_install.cmake"
+		"/home/roberto-vazquez/Escritorio/Git/actividad2/cmake_install.cmake",
+		"/home/roberto-vazquez/Escritorio/Git/actividad2/generated/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

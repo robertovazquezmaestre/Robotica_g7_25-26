@@ -135,6 +135,8 @@ private:
     float calcularDistanciaMinima(const std::optional<RoboCompLidar3D::TPoints>& lidar_data, bool bandera);///< Calcula la dostancia mínima entre FRONT_LEFT_ANGLE y FRONT_RIGHT_ANGLE, si bandera  traue se evalua para 360
     float distanciaAnguloPromedio (const std::optional<RoboCompLidar3D::TPoints>& lidar_data, float ang);
     float calcularDistanciaMinima(const std::optional<RoboCompLidar3D::TPoints>& lidar_data, float rangoA, float rangoB);
+    RoboCompLidar3D::TPoints filter_isolated_points(const RoboCompLidar3D::TPoints &points, float d = 200.0f); ///< Filtra puntos aislados de la nube
+
 
     AbstractGraphicViewer *viewer_room;  // new frame to show the room
     Eigen::Affine2d robot_pose;  // Eigen type to represent a rotation+translation
