@@ -94,17 +94,14 @@ void SpecificWorker::initialize()
 	dist = std::uniform_int_distribution<int>(0, 9);
 	this->dimensions = QRectF(-6000, -3000, 12000, 6000);
 	viewer = new AbstractGraphicViewer(this->frame, this->dimensions);
-	//viewer2 = new AbstractGraphicViewer(this->frame_room, this->dimensions);
 	this->resize(900,450);
 	viewer->show();
 	//viewer2->show();
 	const auto rob = viewer->add_robot(ROBOT_LENGTH, ROBOT_LENGTH, 0, 190, QColor("Blue"));
 	robot_polygon = std::get<0>(rob);
-	//const auto rob2 = viewer2->add_robot(ROBOT_LENGTH, ROBOT_LENGTH, 0, 190, QColor("Blue"));
-	//robot_polygon2 = std::get<0>(rob);
+
 
 	connect(viewer, &AbstractGraphicViewer::new_mouse_coordinates, this, &SpecificWorker::new_target_slot);
-	//connect(viewer2, &AbstractGraphicViewer::new_mouse_coordinates, this, &SpecificWorker::new_target_slot);
 	viewer_room = new AbstractGraphicViewer(this->frame_room, this->dimensions);
 	auto [rr, re] = viewer_room->add_robot(ROBOT_LENGTH, ROBOT_LENGTH, 0, 100, QColor("Blue"));
 	room_draw_robot = rr;
@@ -130,12 +127,12 @@ void SpecificWorker::compute()
     // -----------------------
     try
     {
-        auto data = lidar3d_proxy->getLidarDataWithThreshold2d("helios", 5000, 1);
+        auto data = lidar3d_proxy->getLidarDataWithThreshold2d("helios", 15000, 3);
         if(data.points.empty()) return;
 
-        filter_data = filter_min_distance_cppitertools(data.points);
+        //filter_data = filter_min_distance_cppitertools(data.points);
     	// Nuevo: filtrar puntos aislados
-    	filter_data = filter_isolated_points(filter_data.value(), 200.0f);
+    	filter_data = filter_isolated_points(data.points, 200.0f);
         draw_lidar(filter_data.value(), &viewer->scene);
     }
     catch(const Ice::Exception &e)
@@ -147,20 +144,29 @@ void SpecificWorker::compute()
     // -----------------------
     // Localización usando esquinas
     // -----------------------
-    if (!filter_data.has_value() || filter_data->empty())
+    if (!filter_data.has_value() or filter_data->empty())
         return;
 
     // 1 Extraer esquinas del LIDAR
-    auto measured_corners = room_detector.compute_corners(filter_data.value());
+    auto measured_corners = room_detector.compute_corners(filter_data.value(), &viewer->scene);
+	//qInfo() << measured_corners.size();
 
     // 2 Transformar esquinas nominales al marco del robot
     auto nominal_corners_robot = room.transform_corners_to(robot_pose.inverse());
 
     // 3 Emparejar esquinas usando Hungarian
     auto match = hungarian.match(measured_corners, nominal_corners_robot);
+	for (const auto& m : match) {
+		const auto& measured = std::get<0>(m);
+		const auto& nominal  = std::get<1>(m);
+		double error         = std::get<2>(m);
 
-    if (match.empty())
+		qInfo() << "Error: " << error;
+	}
+
+    if (match.size() < 3)
         return;
+
 
     // 4 Calcular corrección de pose con pseudoinversa
     Eigen::MatrixXd W(match.size() * 2, 3);
@@ -183,6 +189,8 @@ void SpecificWorker::compute()
 
     if (r.array().isNaN().any())
         return;
+
+	// si el cambio de t es muy grande
 
     // 5 Actualizar pose del robot
     robot_pose.translate(Eigen::Vector2d(r(0), r(1)));

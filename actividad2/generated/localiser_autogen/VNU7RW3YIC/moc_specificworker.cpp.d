@@ -1,18 +1,18 @@
-/home/roberto-vazquez/Escritorio/Git/actividad2/generated/localiser_autogen/VNU7RW3YIC/moc_specificworker.cpp: /home/roberto-vazquez/Escritorio/Git/actividad2/src/specificworker.h \
-  /home/roberto-vazquez/Escritorio/Git/actividad2/generated/localiser_autogen/moc_predefs.h \
-  /home/roberto-vazquez/Escritorio/Git/actividad2/generated/GenericBase.h \
-  /home/roberto-vazquez/Escritorio/Git/actividad2/generated/Lidar3D.h \
-  /home/roberto-vazquez/Escritorio/Git/actividad2/generated/OmniRobot.h \
-  /home/roberto-vazquez/Escritorio/Git/actividad2/generated/genericworker.h \
-  /home/roberto-vazquez/Escritorio/Git/actividad2/src/common_types.h \
-  /home/roberto-vazquez/Escritorio/Git/actividad2/src/hungarian.h \
-  /home/roberto-vazquez/Escritorio/Git/actividad2/src/munkres.hpp \
-  /home/roberto-vazquez/Escritorio/Git/actividad2/src/ransac_line_detector.h \
-  /home/roberto-vazquez/Escritorio/Git/actividad2/src/room_detector.h \
-  /home/roberto-vazquez/robocomp/core/classes/ConfigLoader/ConfigLoader.h \
-  /home/roberto-vazquez/robocomp/core/classes/ConfigLoader/ConfigLoader.tpp \
-  /home/roberto-vazquez/robocomp/core/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
-  /home/roberto-vazquez/robocomp/core/classes/grafcetStep/GRAFCETStep.h \
+/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/VNU7RW3YIC/moc_specificworker.cpp: /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/src/specificworker.h \
+  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/localiser_autogen/moc_predefs.h \
+  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/GenericBase.h \
+  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/Lidar3D.h \
+  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/OmniRobot.h \
+  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/generated/genericworker.h \
+  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/src/common_types.h \
+  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/src/hungarian.h \
+  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/src/munkres.hpp \
+  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/src/ransac_line_detector.h \
+  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad2/src/room_detector.h \
+  /home/usuario/robocomp/core/classes/ConfigLoader/ConfigLoader.h \
+  /home/usuario/robocomp/core/classes/ConfigLoader/ConfigLoader.tpp \
+  /home/usuario/robocomp/core/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
+  /home/usuario/robocomp/core/classes/grafcetStep/GRAFCETStep.h \
   /usr/include/GL/gl.h \
   /usr/include/Ice/AsyncResult.h \
   /usr/include/Ice/BatchRequestQueueF.h \
