@@ -8,15 +8,19 @@
   CMakeFiles/localiser.dir/__/src/hungarian.cpp.o \
   CMakeFiles/localiser.dir/__/src/ransac_line_detector.cpp.o \
   CMakeFiles/localiser.dir/__/src/room_detector.cpp.o \
+  CMakeFiles/localiser.dir/__/src/time_series_plotter.cpp.o \
+  CMakeFiles/localiser.dir/__/src/door_detector.cpp.o \
+  CMakeFiles/localiser.dir/__/src/qcustomplot.cpp.o \
   CMakeFiles/localiser.dir/home/robocomp/robocomp/classes/rapplication/rapplication.cpp.o \
   CMakeFiles/localiser.dir/home/robocomp/robocomp/classes/sigwatch/sigwatch.cpp.o \
   CMakeFiles/localiser.dir/home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.cpp.o \
   CMakeFiles/localiser.dir/home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.cpp.o \
   CMakeFiles/localiser.dir/main.cpp.o \
   CMakeFiles/localiser.dir/genericworker.cpp.o \
-  CMakeFiles/localiser.dir/Lidar3D.cpp.o \
+  CMakeFiles/localiser.dir/Camera360RGB.cpp.o \
   CMakeFiles/localiser.dir/GenericBase.cpp.o \
   CMakeFiles/localiser.dir/OmniRobot.cpp.o \
+  CMakeFiles/localiser.dir/Lidar3D.cpp.o \
   /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.6.0 \
   /usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.6.0 \
   /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.6.0 \
@@ -54,6 +58,7 @@
   /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.6.0 \
   /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.6.0 \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libtbb.so \
+  /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libQt6PrintSupport.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgViewer.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosg.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgUtil.so \
@@ -178,6 +183,12 @@ CMakeFiles/localiser.dir/__/src/ransac_line_detector.cpp.o:
 
 CMakeFiles/localiser.dir/__/src/room_detector.cpp.o:
 
+CMakeFiles/localiser.dir/__/src/time_series_plotter.cpp.o:
+
+CMakeFiles/localiser.dir/__/src/door_detector.cpp.o:
+
+CMakeFiles/localiser.dir/__/src/qcustomplot.cpp.o:
+
 CMakeFiles/localiser.dir/home/robocomp/robocomp/classes/rapplication/rapplication.cpp.o:
 
 CMakeFiles/localiser.dir/home/robocomp/robocomp/classes/sigwatch/sigwatch.cpp.o:
@@ -190,11 +201,13 @@ CMakeFiles/localiser.dir/main.cpp.o:
 
 CMakeFiles/localiser.dir/genericworker.cpp.o:
 
-CMakeFiles/localiser.dir/Lidar3D.cpp.o:
+CMakeFiles/localiser.dir/Camera360RGB.cpp.o:
 
 CMakeFiles/localiser.dir/GenericBase.cpp.o:
 
 CMakeFiles/localiser.dir/OmniRobot.cpp.o:
+
+CMakeFiles/localiser.dir/Lidar3D.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.6.0:
 
@@ -269,6 +282,8 @@ CMakeFiles/localiser.dir/OmniRobot.cpp.o:
 /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.6.0:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libtbb.so:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libQt6PrintSupport.so:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgViewer.so:
 

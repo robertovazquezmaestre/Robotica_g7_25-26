@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /snap/clion/393/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /snap/clion/393/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/roberto-vazquez/Escritorio/Git/actividad3
+CMAKE_SOURCE_DIR = /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/roberto-vazquez/Escritorio/Git/actividad3
+CMAKE_BINARY_DIR = /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3
 
 # Utility rule file for ICE_OmniRobot_target.
 
@@ -69,8 +69,8 @@ include generated/CMakeFiles/ICE_OmniRobot_target.dir/progress.make
 generated/CMakeFiles/ICE_OmniRobot_target: generated/OmniRobot.ice
 
 generated/OmniRobot.ice: /home/robocomp/robocomp/interfaces/IDSLs/OmniRobot.idsl
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/roberto-vazquez/Escritorio/Git/actividad3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating /home/roberto-vazquez/Escritorio/Git/actividad3/generated/OmniRobot.ice from /home/robocomp/robocomp//interfaces/IDSLs/OmniRobot.idsl"
-	cd /home/roberto-vazquez/Escritorio/Git/actividad3/generated && robocompdsl /home/robocomp/robocomp//interfaces/IDSLs/OmniRobot.idsl /home/roberto-vazquez/Escritorio/Git/actividad3/generated/OmniRobot.ice
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/OmniRobot.ice from /home/robocomp/robocomp//interfaces/IDSLs/OmniRobot.idsl"
+	cd /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated && robocompdsl /home/robocomp/robocomp//interfaces/IDSLs/OmniRobot.idsl /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/OmniRobot.ice
 
 generated/CMakeFiles/ICE_OmniRobot_target.dir/codegen:
 .PHONY : generated/CMakeFiles/ICE_OmniRobot_target.dir/codegen
@@ -85,10 +85,10 @@ generated/CMakeFiles/ICE_OmniRobot_target.dir/build: ICE_OmniRobot_target
 .PHONY : generated/CMakeFiles/ICE_OmniRobot_target.dir/build
 
 generated/CMakeFiles/ICE_OmniRobot_target.dir/clean:
-	cd /home/roberto-vazquez/Escritorio/Git/actividad3/generated && $(CMAKE_COMMAND) -P CMakeFiles/ICE_OmniRobot_target.dir/cmake_clean.cmake
+	cd /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated && $(CMAKE_COMMAND) -P CMakeFiles/ICE_OmniRobot_target.dir/cmake_clean.cmake
 .PHONY : generated/CMakeFiles/ICE_OmniRobot_target.dir/clean
 
 generated/CMakeFiles/ICE_OmniRobot_target.dir/depend:
-	cd /home/roberto-vazquez/Escritorio/Git/actividad3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/roberto-vazquez/Escritorio/Git/actividad3 /home/roberto-vazquez/Escritorio/Git/actividad3/generated /home/roberto-vazquez/Escritorio/Git/actividad3 /home/roberto-vazquez/Escritorio/Git/actividad3/generated /home/roberto-vazquez/Escritorio/Git/actividad3/generated/CMakeFiles/ICE_OmniRobot_target.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3 /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3 /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/CMakeFiles/ICE_OmniRobot_target.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : generated/CMakeFiles/ICE_OmniRobot_target.dir/depend
 

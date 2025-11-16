@@ -82,7 +82,7 @@ SpecificWorker::~SpecificWorker()
 void SpecificWorker::initialize()
 {
     std::cout << "initialize worker" << std::endl;
-
+	/*
     //initializeCODE
 
     /////////GET PARAMS, OPEND DEVICES....////////
@@ -96,7 +96,7 @@ void SpecificWorker::initialize()
 	viewer = new AbstractGraphicViewer(this->frame, this->dimensions);
 	this->resize(900,450);
 	viewer->show();
-	//viewer2->show();
+
 	const auto rob = viewer->add_robot(ROBOT_LENGTH, ROBOT_LENGTH, 0, 190, QColor("Blue"));
 	robot_polygon = std::get<0>(rob);
 
@@ -113,6 +113,52 @@ void SpecificWorker::initialize()
 	// initialise robot pose
 	robot_pose.setIdentity();
 	robot_pose.translate(Eigen::Vector2d(0.0,0.0));
+	*/
+	if(this->startup_check_flag)
+	{
+		this->startup_check();
+	}
+	else
+	{
+		///////////// Your code ////////
+		// Viewer
+		viewer = new AbstractGraphicViewer(this->frame, params.GRID_MAX_DIM);
+		auto [r, e] = viewer->add_robot(params.ROBOT_WIDTH, params.ROBOT_LENGTH, 0, 100, QColor("Blue"));
+		robot_draw = r;
+		//viewer->show();
+
+
+		viewer_room = new AbstractGraphicViewer(this->frame_room, params.GRID_MAX_DIM);
+		auto [rr, re] = viewer_room->add_robot(params.ROBOT_WIDTH, params.ROBOT_LENGTH, 0, 100, QColor("Blue"));
+		robot_room_draw = rr;
+		// draw room in viewer_room
+
+		viewer_room->scene.addRect(nominal_rooms[0].rect(), QPen(Qt::black, 30));
+		//viewer_room->show();
+		show();
+
+
+		// initialise robot pose
+		robot_pose.setIdentity();
+		robot_pose.translate(Eigen::Vector2d(0.0,0.0));
+
+
+		// time series plotter for match error
+		TimeSeriesPlotter::Config plotConfig;
+		plotConfig.title = "Maximum Match Error Over Time";
+		plotConfig.yAxisLabel = "Error (mm)";
+		plotConfig.timeWindowSeconds = 15.0; // Show a 15-second window
+		plotConfig.autoScaleY = false;       // We will set a fixed range
+		plotConfig.yMin = 0;
+		plotConfig.yMax = 1000;
+		time_series_plotter = std::make_unique<TimeSeriesPlotter>(frame_plot_error, plotConfig);
+		match_error_graph = time_series_plotter->addGraph("", Qt::blue);
+
+
+		// stop robot
+		move_robot(0, 0, 0);
+	}
+
 
 }
 
@@ -125,6 +171,7 @@ void SpecificWorker::compute()
     // -----------------------
     // Leer LIDAR y filtrar
     // -----------------------
+
     try
     {
         auto data = lidar3d_proxy->getLidarDataWithThreshold2d("helios", 15000, 3);
@@ -147,59 +194,86 @@ void SpecificWorker::compute()
     if (!filter_data.has_value() or filter_data->empty())
         return;
 
+	RoboCompLidar3D::TPoints data = read_data();
+	data= door_detector.filter_points(data, &viewer->scene);
+
     // 1 Extraer esquinas del LIDAR
-    auto measured_corners = room_detector.compute_corners(filter_data.value(), &viewer->scene);
+     const auto &[corners, lines] = room_detector.compute_corners(filter_data.value(), &viewer->scene);
 	//qInfo() << measured_corners.size();
+	const auto center_opt = room_detector.estimate_center_from_walls(lines);
+	draw_lidar(data, center_opt, &viewer->scene);
+	// match corners  transforming first nominal corners to robot's frame
+	const auto match = hungarian.match(corners,
+											  nominal_rooms[0].transform_corners_to(robot_pose.inverse()));
 
-    // 2 Transformar esquinas nominales al marco del robot
-    auto nominal_corners_robot = room.transform_corners_to(robot_pose.inverse());
 
-    // 3 Emparejar esquinas usando Hungarian
-    auto match = hungarian.match(measured_corners, nominal_corners_robot);
-	for (const auto& m : match) {
-		const auto& measured = std::get<0>(m);
-		const auto& nominal  = std::get<1>(m);
-		double error         = std::get<2>(m);
-
-		qInfo() << "Error: " << error;
+	// compute max of  match error
+	float max_match_error = 99999.f;
+	if (not match.empty())
+	{
+		const auto max_error_iter = std::ranges::max_element(match, [](const auto &a, const auto &b)
+			{ return std::get<2>(a) < std::get<2>(b); });
+		max_match_error = static_cast<float>(std::get<2>(*max_error_iter));
+		time_series_plotter->addDataPoint(match_error_graph,max_match_error);
+		//print_match(match, max_match_error); //debugging
 	}
 
-    if (match.size() < 3)
-        return;
+
+	// update robot pose
+	if (localised)
+		update_robot_pose(corners, match);
 
 
-    // 4 Calcular corrección de pose con pseudoinversa
-    Eigen::MatrixXd W(match.size() * 2, 3);
-    Eigen::VectorXd b(match.size() * 2);
+	// Process state machine
+	RetVal ret_val = process_state(data, corners, match, viewer);
+	auto [st, adv, rot] = ret_val;
+	state = st;
 
-    for (size_t i = 0; i < match.size(); ++i)
-    {
-        const auto& [meas_c, nom_c, _] = match[i];
-        const auto& [p_meas, __, ___] = meas_c;
-        const auto& [p_nom, ____, _____] = nom_c;
 
-        b(2*i)     = p_nom.x() - p_meas.x();
-        b(2*i+1)   = p_nom.y() - p_meas.y();
+	// Send movements commands to the robot constrained by the match_error
+	//qInfo() << __FUNCTION__ << "Adv: " << adv << " Rot: " << rot;
+	move_robot(adv, rot, max_match_error);
 
-        W.block<1,3>(2*i,0)   << 1.0, 0.0, -p_meas.y();
-        W.block<1,3>(2*i+1,0) << 0.0, 1.0,  p_meas.x();
-    }
 
-    Eigen::Vector3d r = (W.transpose() * W).inverse() * W.transpose() * b;
+	// draw robot in viewer
+	robot_room_draw->setPos(robot_pose.translation().x(), robot_pose.translation().y());
+	const double angle = qRadiansToDegrees(std::atan2(robot_pose.rotation()(1, 0), robot_pose.rotation()(0, 0)));
+	robot_room_draw->setRotation(angle);
 
-    if (r.array().isNaN().any())
-        return;
 
-	// si el cambio de t es muy grande
+	// update GUI
+	time_series_plotter->update();
+	lcdNumber_adv->display(adv);
+	lcdNumber_rot->display(rot);
 
-    // 5 Actualizar pose del robot
-    robot_pose.translate(Eigen::Vector2d(r(0), r(1)));
-    robot_pose.rotate(r(2));
+}
+void  SpecificWorker::move_robot(float adv, float rot, float max_match_error)
+{
 
-    // 6 Actualizar GUI
-    room_draw_robot->setPos(robot_pose.translation().x(), robot_pose.translation().y());
-    double angle = std::atan2(robot_pose.rotation()(1,0), robot_pose.rotation()(0,0));
-    room_draw_robot->setRotation(qRadiansToDegrees(angle));
+}
+
+bool SpecificWorker::update_robot_pose(const Corners &corners, const Match &match)
+{
+
+}
+
+Eigen::Vector3d SpecificWorker::solve_pose(const Corners &corners, const Match &match)
+{
+
+}
+
+void SpecificWorker::predict_robot_pose()
+{
+
+}
+std::tuple<float, float> SpecificWorker::robot_controller(const Eigen::Vector2f &target)
+{
+
+}
+
+RoboCompLidar3D::TPoints SpecificWorker::read_data()
+{
+
 }
 
 

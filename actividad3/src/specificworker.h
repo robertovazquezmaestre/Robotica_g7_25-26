@@ -34,29 +34,21 @@
 #include <vector>
 #include <optional>
 #include <abstract_graphic_viewer/abstract_graphic_viewer.h>
+#include <random>
+#include <doublebuffer/DoubleBuffer.h>
+#include "time_series_plotter.h"
+#ifdef emit
+#undef emit
+#endif
 #include "common_types.h"
 #include "hungarian.h"
 #include "ransac_line_detector.h"
 #include "munkres.hpp"
 #include "room_detector.h"
-struct NominalRoom
-{
-    float width; //  mm
-    float length;
-    Corners corners;
-    explicit NominalRoom(const float width_=10000.f, const float length_=5000.f, Corners  corners_ = {}) : width(width_), length(length_), corners(std::move(corners_)){};
-    Corners transform_corners_to(const Eigen::Affine2d &transform) const  // for room to robot pass the inverse of robot_pose
-    {
-        Corners transformed_corners;
-        for(const auto &[p, _, __] : corners)
-        {
-            auto ep = Eigen::Vector2d{p.x(), p.y()};
-            Eigen::Vector2d tp = transform * ep;
-            transformed_corners.emplace_back(QPointF{static_cast<float>(tp.x()), static_cast<float>(tp.y())}, 0.f, 0.f);
-        }
-        return transformed_corners;
-    }
-};
+#include "nominal_room.h"
+#include "door_detector.h"
+#include "image_processor.h"
+
 
 
 
@@ -186,6 +178,12 @@ private:
         };
         Params params;
 
+        // viewer
+        QGraphicsPolygonItem *robot_draw, *robot_room_draw;
+
+        // rooms
+        std::vector<NominalRoom> nominal_rooms{ NominalRoom{5500.f, 4000.f}, NominalRoom{8000.f, 4000.f}};
+
         // state machine
         enum class STATE {GOTO_DOOR, ORIENT_TO_DOOR, LOCALISE, GOTO_ROOM_CENTER, TURN, IDLE, CROSS_DOOR};
         inline const char* to_string(const STATE s) const
@@ -219,7 +217,6 @@ private:
         RoboCompLidar3D::TPoints read_data();
         std::expected<int, std::string> closest_lidar_index_to_given_angle(const auto &points, float angle);
         RoboCompLidar3D::TPoints filter_same_phi(const RoboCompLidar3D::TPoints &points);
-        RoboCompLidar3D::TPoints filter_isolated_points(const RoboCompLidar3D::TPoints &points, float d);
         void print_match(const Match &match, const float error =1.f) const;
 
         // random number generator

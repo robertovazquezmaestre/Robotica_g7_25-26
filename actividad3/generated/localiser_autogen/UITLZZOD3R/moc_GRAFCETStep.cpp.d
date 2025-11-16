@@ -1,4 +1,4 @@
-/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/localiser_autogen/UITLZZOD3R/moc_GRAFCETStep.cpp: /home/usuario/robocomp/classes/grafcetStep/GRAFCETStep.h \
+/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/localiser_autogen/UITLZZOD3R/moc_GRAFCETStep.cpp: /home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.h \
   /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/localiser_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \

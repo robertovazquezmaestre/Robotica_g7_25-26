@@ -1,7 +1,7 @@
 generated/CMakeFiles/localiser.dir/Camera360RGB.cpp.o: \
- /home/roberto-vazquez/Escritorio/Git/actividad3/generated/Camera360RGB.cpp \
+ /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/Camera360RGB.cpp \
  /usr/include/stdc-predef.h \
- /home/roberto-vazquez/Escritorio/Git/actividad3/generated/Camera360RGB.h \
+ /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/Camera360RGB.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/13/stdlib.h /usr/include/c++/13/cstdlib \
