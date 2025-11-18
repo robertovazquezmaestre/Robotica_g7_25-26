@@ -44,6 +44,6 @@ CMake Warning (dev) at generated/CMakeLists.txt:59 (INSTALL):
   command to set the policy and suppress this warning.
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
--- Configuring done (0.2s)
+-- Configuring done (0.1s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3

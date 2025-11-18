@@ -123,7 +123,7 @@ private:
     // -----------------------
     // Métodos auxiliares
     // -----------------------
-    void draw_lidar(const auto &points, QGraphicsScene* scene); ///< Dibuja los puntos del LIDAR en la escena
+    void draw_lidar(const RoboCompLidar3D::TPoints &points, QGraphicsScene* scene); ///< Dibuja los puntos del LIDAR en la escena
     std::optional<RoboCompLidar3D::TPoints> filter_min_distance_cppitertools(const RoboCompLidar3D::TPoints& points); ///< Filtra la nube de puntos
     float calcularDistanciaMinima(const std::optional<RoboCompLidar3D::TPoints>& lidar_data, bool bandera);///< Calcula la dostancia mínima entre FRONT_LEFT_ANGLE y FRONT_RIGHT_ANGLE, si bandera  traue se evalua para 360
     float distanciaAnguloPromedio (const std::optional<RoboCompLidar3D::TPoints>& lidar_data, float ang);

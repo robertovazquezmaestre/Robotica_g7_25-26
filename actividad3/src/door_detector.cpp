@@ -11,7 +11,8 @@
 Doors DoorDetector::detect(const RoboCompLidar3D::TPoints &points, QGraphicsScene *scene)
 {
     Doors doors;
-    std::vector<RoboCompLidar3D::TPoint> peaks;
+    //std::vector<RoboCompLidar3D::TPoint> peaks;
+    Peaks peaks;
 
     // 1 Detectar picos usando iter::sliding_window(2)
     for (auto &&window : iter::sliding_window(points, 2))
@@ -22,7 +23,14 @@ Doors DoorDetector::detect(const RoboCompLidar3D::TPoints &points, QGraphicsScen
         float diff = std::abs(p2.distance2d - p1.distance2d);
         if (diff > 1000)
         {
-            peaks.push_back(p1.distance2d < p2.distance2d ? p1 : p2);
+            const auto &p = (p1.distance2d < p2.distance2d ? p1 : p2);
+
+
+            Eigen::Vector2f pos(p.x, p.y);    // posición en 2D
+            float angle = p.phi;            // campo del ángulo
+
+            peaks.emplace_back(pos, angle);
+
         }
     }
 
@@ -34,13 +42,14 @@ Doors DoorDetector::detect(const RoboCompLidar3D::TPoints &points, QGraphicsScen
     {
         for (const auto &p : peaks)
         {
+            const auto &pos = std::get<0>(p);
             const auto dp = scene->addRect(-25, -25, 50, 50, pen);
-            dp->setPos(p.x, p.y);
+            dp->setPos(pos.x(), pos.y());
         }
     }
 
-    // 3 Non-maximum suppression (eliminar picos demasiado cercanos)
-    std::vector<RoboCompLidar3D::TPoint> filtered_peaks;
+    /* 3 Non-maximum suppression (eliminar picos demasiado cercanos)
+    Peaks filtered_peaks;
     const float min_dist = 200.0f; // distancia mínima entre picos
 
     for (const auto &p : peaks)
@@ -48,7 +57,8 @@ Doors DoorDetector::detect(const RoboCompLidar3D::TPoints &points, QGraphicsScen
         bool too_close = false;
         for (const auto &fp : filtered_peaks)
         {
-            float dist = std::hypot(p.x - fp.x, p.y - fp.y);
+            const auto &pos = std::get<0>(p);
+            float dist = std::hypot(pos.x() - fp.x, pos.y() - fp.y);
             if (dist < min_dist)
             {
                 too_close = true;
@@ -58,20 +68,30 @@ Doors DoorDetector::detect(const RoboCompLidar3D::TPoints &points, QGraphicsScen
         if (!too_close)
             filtered_peaks.push_back(p);
     }
+    */
+    // non-maximum suppression of peaks: remove peaks closer than 500mm
+    Peaks nms_peaks;
+    for (const auto &[p, a] : peaks)
+        if (const bool too_close = std::ranges::any_of(nms_peaks, [&p](const auto &p2) { return (p - std::get<0>(p2)).norm() < 500.f; }); not too_close)
+            nms_peaks.emplace_back(p, a);
+    peaks = nms_peaks;
+
 
     // 4 Buscar pares de picos que representen puertas
-    for (auto &&pair : iter::combinations(filtered_peaks, 2))
+    for (auto &&pair : iter::combinations(nms_peaks, 2))
     {
-        const auto &a = pair[0];
-        const auto &b = pair[1];
+        const auto &[pa, angA] = pair[0];
+        const auto &[pb, angB] = pair[1];
 
-        float dist = std::hypot(a.x - b.x, a.y - b.y);
+        float dist = (pa - pb).norm();   // esto reemplaza hypot(x-x, y-y)
+
         if (dist >= 800 && dist <= 1200)
         {
             Door door(
-            Eigen::Vector2f(a.x, a.y), a.phi,
-            Eigen::Vector2f(b.x, b.y), b.phi
-        );
+                pa, angA,
+                pb, angB
+            );
+
             doors.push_back(door);
         }
     }

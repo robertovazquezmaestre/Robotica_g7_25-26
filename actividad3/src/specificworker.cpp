@@ -180,7 +180,7 @@ void SpecificWorker::compute()
         //filter_data = filter_min_distance_cppitertools(data.points);
     	// Nuevo: filtrar puntos aislados
     	filter_data = filter_isolated_points(data.points, 200.0f);
-        draw_lidar(filter_data.value(), &viewer->scene);
+        //draw_lidar(filter_data.value(),center_opt, &viewer->scene);
     }
     catch(const Ice::Exception &e)
     {
@@ -274,6 +274,48 @@ std::tuple<float, float> SpecificWorker::robot_controller(const Eigen::Vector2f 
 RoboCompLidar3D::TPoints SpecificWorker::read_data()
 {
 
+}
+
+
+SpecificWorker::RetVal SpecificWorker::goto_door(const RoboCompLidar3D::TPoints &points)
+{
+	// Código de la función
+}
+
+SpecificWorker::RetVal SpecificWorker::orient_to_door(const RoboCompLidar3D::TPoints &points)
+{
+	// Código de la función
+}
+
+SpecificWorker::RetVal SpecificWorker::cross_door(const RoboCompLidar3D::TPoints &points)
+{
+	// Código de la función
+}
+
+SpecificWorker::RetVal SpecificWorker::localise(const Match &match)
+{
+	// Código de la función
+}
+
+SpecificWorker::RetVal SpecificWorker::goto_room_center(const RoboCompLidar3D::TPoints &points)
+{
+	// Código de la función
+}
+
+SpecificWorker::RetVal SpecificWorker::update_pose(const Corners &corners, const Match &match)
+{
+	// Código de la función
+}
+
+SpecificWorker::RetVal SpecificWorker::turn(const Corners &corners)
+{
+	// Código de la función
+}
+
+SpecificWorker::RetVal SpecificWorker::process_state(const RoboCompLidar3D::TPoints &data,const Corners &corners,
+								const Match &match,AbstractGraphicViewer *viewer)
+{
+	// Código de la función
 }
 
 
@@ -639,7 +681,7 @@ int SpecificWorker::startup_check()
 	return 0;
 }
 
-void SpecificWorker::draw_lidar(const auto &points, QGraphicsScene* scene)
+void SpecificWorker::draw_lidar(const RoboCompLidar3D::TPoints &points, std::optional<Eigen::Vector2d> center, QGraphicsScene* scene)
 {
 	static std::vector<QGraphicsItem*> draw_points;
 	for (const auto &p : draw_points)
