@@ -172,33 +172,21 @@ void SpecificWorker::compute()
     // Leer LIDAR y filtrar
     // -----------------------
 
-    try
-    {
-        auto data = lidar3d_proxy->getLidarDataWithThreshold2d("helios", 15000, 3);
-        if(data.points.empty()) return;
 
-        //filter_data = filter_min_distance_cppitertools(data.points);
-    	// Nuevo: filtrar puntos aislados
-    	filter_data = filter_isolated_points(data.points, 200.0f);
-        //draw_lidar(filter_data.value(),center_opt, &viewer->scene);
-    }
-    catch(const Ice::Exception &e)
-    {
-        std::cout << "Error reading Lidar: " << e << std::endl;
-        return;
-    }
 
     // -----------------------
     // Localización usando esquinas
     // -----------------------
-    if (!filter_data.has_value() or filter_data->empty())
-        return;
+    //if (!filter_data.has_value() or filter_data->empty())
+       //return;
 
 	RoboCompLidar3D::TPoints data = read_data();
+	if (data.empty())
+		return;
 	data= door_detector.filter_points(data, &viewer->scene);
 
     // 1 Extraer esquinas del LIDAR
-     const auto &[corners, lines] = room_detector.compute_corners(filter_data.value(), &viewer->scene);
+     const auto &[corners, lines] = room_detector.compute_corners(data, &viewer->scene);
 	//qInfo() << measured_corners.size();
 	const auto center_opt = room_detector.estimate_center_from_walls(lines);
 	draw_lidar(data, center_opt, &viewer->scene);
@@ -231,7 +219,7 @@ void SpecificWorker::compute()
 
 
 	// Send movements commands to the robot constrained by the match_error
-	//qInfo() << __FUNCTION__ << "Adv: " << adv << " Rot: " << rot;
+	qInfo() << __FUNCTION__ << "Adv: " << adv << " Rot: " << rot;
 	move_robot(adv, rot, max_match_error);
 
 
@@ -239,8 +227,8 @@ void SpecificWorker::compute()
 	robot_room_draw->setPos(robot_pose.translation().x(), robot_pose.translation().y());
 	const double angle = qRadiansToDegrees(std::atan2(robot_pose.rotation()(1, 0), robot_pose.rotation()(0, 0)));
 	robot_room_draw->setRotation(angle);
-
-
+ //
+ //
 	// update GUI
 	time_series_plotter->update();
 	lcdNumber_adv->display(adv);
@@ -249,7 +237,7 @@ void SpecificWorker::compute()
 }
 void  SpecificWorker::move_robot(float adv, float rot, float max_match_error)
 {
-
+ omnirobot_proxy->setSpeedBase(0,adv,rot);
 }
 
 bool SpecificWorker::update_robot_pose(const Corners &corners, const Match &match)
@@ -269,10 +257,91 @@ void SpecificWorker::predict_robot_pose()
 std::tuple<float, float> SpecificWorker::robot_controller(const Eigen::Vector2f &target)
 {
 
+    //-----------------------------//
+    // 2. Calcular error de posición
+    //-----------------------------//
+	Eigen::Vector2d robot_pos = robot_pose.translation();   // <-- ESTO ES LO CORRECTO
+	Eigen::Vector2d target_d = target.cast<double>();
+    Eigen::Vector2d diff = target_d - robot_pos;
+
+    double d = diff.norm();            // distancia a la meta (mm)
+    double theta_e = std::atan2(diff.y(), diff.x());   // error angular (rad)
+
+    // Normalizar ángulo a [-π, π]
+    theta_e = std::atan2(std::sin(theta_e), std::cos(theta_e));
+
+    //----------------------------------------//
+    // 3. Condición de llegada: “estoy en el centro”
+    //----------------------------------------//
+
+    //----------------------------------------//
+    // 4. PD Controller para la rotación ω
+    //----------------------------------------//
+
+    static double theta_prev = theta_e;
+    static auto last_time = std::chrono::steady_clock::now();
+
+    auto now = std::chrono::steady_clock::now();
+    double dt = std::chrono::duration<double>(now - last_time).count();
+    last_time = now;
+
+    double dtheta = (theta_e - theta_prev) / std::max(dt, 1e-6);
+    theta_prev = theta_e;
+
+    // Ganancias PD
+    double Kp = 2.0;
+    double Kd = 0.2;
+
+    double w = Kp * theta_e + Kd * dtheta;
+    w = std::clamp(w, -1.5, 1.5);   // limitar ω
+
+    //----------------------------------------//
+    // 5. Braking angular gaussiano
+    //----------------------------------------//
+    double sigma = M_PI / 4.0;  // 45°
+    double f_theta = std::exp(-(theta_e * theta_e) / (2.0 * sigma * sigma));
+
+    //----------------------------------------//
+    // 6. Braking sigmoidal de distancia
+    //----------------------------------------//
+    double dstop = 600.0;  // 0.6 m → en mm
+    double k = 10.0;
+
+    double fd = 1.0 / (1.0 + std::exp(k * (d - dstop) / 1000.0));
+    // OJO: convertir mm a metros en la función logística
+
+    //----------------------------------------//
+    // 7. Velocidad lineal con brakes
+    //----------------------------------------//
+    double vmax = 350.0;   // mm/s
+    double v = vmax * f_theta * fd;
+
+	//----------------------------------------//
+	// 8. Devolver Resultado
+	//----------------------------------------//
+	return {(float)v, (float)w};
 }
 
 RoboCompLidar3D::TPoints SpecificWorker::read_data()
 {
+	RoboCompLidar3D::TData data;
+	RoboCompLidar3D::TPoints filter_data;
+	try
+	{
+		data = lidar3d_proxy->getLidarDataWithThreshold2d("helios", 15000, 3);
+		if(data.points.empty()) return RoboCompLidar3D::TPoints{};
+
+		//filter_data = filter_min_distance_cppitertools(data.points);
+		// Nuevo: filtrar puntos aislados
+		filter_data = filter_isolated_points(data.points, 200.0f);
+		//draw_lidar(filter_data.value(),center_opt, &viewer->scene);
+		return filter_data;
+	}
+	catch(const Ice::Exception &e)
+	{
+		std::cout << "Error reading Lidar: " << e << std::endl;
+		return RoboCompLidar3D::TPoints{};
+	}
 
 }
 
@@ -280,43 +349,117 @@ RoboCompLidar3D::TPoints SpecificWorker::read_data()
 SpecificWorker::RetVal SpecificWorker::goto_door(const RoboCompLidar3D::TPoints &points)
 {
 	// Código de la función
+	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+
 }
 
 SpecificWorker::RetVal SpecificWorker::orient_to_door(const RoboCompLidar3D::TPoints &points)
 {
 	// Código de la función
+	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+
 }
 
 SpecificWorker::RetVal SpecificWorker::cross_door(const RoboCompLidar3D::TPoints &points)
 {
 	// Código de la función
+	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+
 }
 
 SpecificWorker::RetVal SpecificWorker::localise(const Match &match)
 {
 	// Código de la función
+	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+
 }
 
 SpecificWorker::RetVal SpecificWorker::goto_room_center(const RoboCompLidar3D::TPoints &points)
 {
-	// Código de la función
+    //-----------------------------//
+    // 1. Obtener centro de la sala
+    //-----------------------------//
+    auto center_opt = room_detector.estimate_center_from_walls();
+    //if (!center_opt)
+       // return RetVal{STATE::GOTO_ROOM_CENTER, 0.f, 0.f};   // seguimos intentando
+
+	Eigen::Vector2d target_d = *center_opt;     // double
+	Eigen::Vector2f target_f = target_d.cast<float>();   // float
+	auto [v, w] = robot_controller(target_f);
+
+
+    return RetVal{STATE::GOTO_ROOM_CENTER, v, w};
 }
+
 
 SpecificWorker::RetVal SpecificWorker::update_pose(const Corners &corners, const Match &match)
 {
 	// Código de la función
+	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+
 }
 
 SpecificWorker::RetVal SpecificWorker::turn(const Corners &corners)
 {
 	// Código de la función
+	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+
 }
 
-SpecificWorker::RetVal SpecificWorker::process_state(const RoboCompLidar3D::TPoints &data,const Corners &corners,
-								const Match &match,AbstractGraphicViewer *viewer)
+SpecificWorker::RetVal SpecificWorker::process_state(
+		const RoboCompLidar3D::TPoints &data,
+		const Corners &corners,
+		const Match &match,
+		AbstractGraphicViewer *viewer)
 {
-	// Código de la función
+	switch(state)
+	{
+	case STATE::LOCALISE:
+		{
+
+			return localise(match);
+		}
+
+	case STATE::GOTO_DOOR:
+		{
+
+			return goto_door(data);
+		}
+
+	case STATE::ORIENT_TO_DOOR:
+		{
+
+			return orient_to_door(data);
+		}
+
+	case STATE::CROSS_DOOR:
+		{
+
+			return cross_door(data);
+		}
+
+	case STATE::GOTO_ROOM_CENTER:
+		{
+			qInfo() << "Entrando en el go to room" ;
+			return goto_room_center(data);
+		}
+
+	case STATE::TURN:
+		{
+
+			return turn(corners);
+		}
+
+	case STATE::IDLE:
+	default:
+		{
+			// No movimiento, robot quieto
+			qInfo() << "Entrando en el idle" ;
+			return RetVal{STATE::IDLE, 0.0f, 0.0f};
+		}
+	}
 }
+
 
 
 
