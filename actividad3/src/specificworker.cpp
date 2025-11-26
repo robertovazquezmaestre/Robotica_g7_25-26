@@ -228,7 +228,7 @@ bool SpecificWorker::update_robot_pose(const Corners &corners, const Match &matc
 {
 	Eigen::MatrixXd W(match.size() * 2, 3);
 	Eigen::VectorXd b(match.size() * 2);
-	q
+	
 	for (size_t i = 0; i < match.size(); ++i)
 	{
 		const auto& [meas_c, nom_c, _] = match[i];
