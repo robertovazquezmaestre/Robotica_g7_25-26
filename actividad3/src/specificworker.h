@@ -48,9 +48,7 @@
 #include "nominal_room.h"
 #include "door_detector.h"
 #include "image_processor.h"
-
-
-
+#include "pointcloud_center_estimator.h"
 
 class SpecificWorker : public GenericWorker
 {
@@ -248,6 +246,9 @@ private:
         Eigen::Vector3d solve_pose(const Corners &corners, const Match &match);
         void predict_robot_pose();
         std::tuple<float, float> robot_controller(const Eigen::Vector2f &target);
+
+        // Center
+        rc::PointcloudCenterEstimator center_estimator;
 
 signals:
     // void customSignal(); ///< Señal personalizada (si se necesita)

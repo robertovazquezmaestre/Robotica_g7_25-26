@@ -2334,14 +2334,12 @@
 /home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.cpp
 /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/room_detector.cpp
 /home/robocomp/robocomp/classes/rapplication/rapplication.h
+/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.h
 /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/hungarian.h
 /home/robocomp/robocomp/classes/sigwatch/sigwatch.cpp
  miu:moc_sigwatch.cpp
 /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/time_series_plotter.cpp
 /home/robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.cpp
-/home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.cpp
-/home/robocomp/robocomp/classes/rapplication/rapplication.cpp
-/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/ransac_line_detector.h
 /home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.h
  mmc:Q_OBJECT
  mdp:/home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.h
@@ -2728,6 +2726,12 @@
  mdp:/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h
  mdp:/usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h
  mdp:/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+/home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.cpp
+/home/robocomp/robocomp/classes/rapplication/rapplication.cpp
+/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/ransac_line_detector.h
+/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/specificworker.cpp
+/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/hungarian.cpp
+/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.cpp
 /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/ransac_line_detector.cpp
 /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/specificworker.h
  mmc:Q_OBJECT
@@ -2743,6 +2747,7 @@
  mdp:/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/image_processor.h
  mdp:/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/munkres.hpp
  mdp:/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/nominal_room.h
+ mdp:/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.h
  mdp:/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/qcustomplot.h
  mdp:/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/ransac_line_detector.h
  mdp:/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/room_detector.h
@@ -4688,5 +4693,3 @@
  mdp:/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h
  mdp:/usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h
  mdp:/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
-/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/specificworker.cpp
-/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/hungarian.cpp

@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/localiser.dir/__/src/door_detector.cpp.o.d"
   "CMakeFiles/localiser.dir/__/src/hungarian.cpp.o"
   "CMakeFiles/localiser.dir/__/src/hungarian.cpp.o.d"
+  "CMakeFiles/localiser.dir/__/src/pointcloud_center_estimator.cpp.o"
+  "CMakeFiles/localiser.dir/__/src/pointcloud_center_estimator.cpp.o.d"
   "CMakeFiles/localiser.dir/__/src/qcustomplot.cpp.o"
   "CMakeFiles/localiser.dir/__/src/qcustomplot.cpp.o.d"
   "CMakeFiles/localiser.dir/__/src/ransac_line_detector.cpp.o"

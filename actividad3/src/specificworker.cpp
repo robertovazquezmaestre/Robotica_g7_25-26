@@ -167,19 +167,6 @@ void SpecificWorker::initialize()
 void SpecificWorker::compute()
 {
     std::optional<RoboCompLidar3D::TPoints> filter_data;
-
-    // -----------------------
-    // Leer LIDAR y filtrar
-    // -----------------------
-
-
-
-    // -----------------------
-    // Localización usando esquinas
-    // -----------------------
-    //if (!filter_data.has_value() or filter_data->empty())
-       //return;
-
 	RoboCompLidar3D::TPoints data = read_data();
 	if (data.empty())
 		return;
@@ -194,7 +181,6 @@ void SpecificWorker::compute()
 	const auto match = hungarian.match(corners,
 											  nominal_rooms[0].transform_corners_to(robot_pose.inverse()));
 
-
 	// compute max of  match error
 	float max_match_error = 99999.f;
 	if (not match.empty())
@@ -206,11 +192,9 @@ void SpecificWorker::compute()
 		//print_match(match, max_match_error); //debugging
 	}
 
-
 	// update robot pose
 	if (localised)
 		update_robot_pose(corners, match);
-
 
 	// Process state machine
 	RetVal ret_val = process_state(data, corners, match, viewer);
@@ -242,7 +226,32 @@ void  SpecificWorker::move_robot(float adv, float rot, float max_match_error)
 
 bool SpecificWorker::update_robot_pose(const Corners &corners, const Match &match)
 {
+	Eigen::MatrixXd W(match.size() * 2, 3);
+	Eigen::VectorXd b(match.size() * 2);
+	q
+	for (size_t i = 0; i < match.size(); ++i)
+	{
+		const auto& [meas_c, nom_c, _] = match[i];
+		const auto& [p_meas, __, ___] = meas_c;
+		const auto& [p_nom, ____, _____] = nom_c;
 
+		b(2*i)     = p_nom.x() - p_meas.x();
+		b(2*i+1)   = p_nom.y() - p_meas.y();
+
+		W.block<1,3>(2*i,0)   << 1.0, 0.0, -p_meas.y();
+		W.block<1,3>(2*i+1,0) << 0.0, 1.0,  p_meas.x();
+	}
+
+	Eigen::Vector3d r = (W.transpose() * W).inverse() * W.transpose() * b;
+
+	if (r.array().isNaN().any())
+		return false;
+
+	// si el cambio de t es muy grande
+
+	// 5 Actualizar pose del robot
+	robot_pose.translate(Eigen::Vector2d(r(0), r(1)));
+	robot_pose.rotate(r(2));
 }
 
 Eigen::Vector3d SpecificWorker::solve_pose(const Corners &corners, const Match &match)
@@ -254,72 +263,25 @@ void SpecificWorker::predict_robot_pose()
 {
 
 }
+
 std::tuple<float, float> SpecificWorker::robot_controller(const Eigen::Vector2f &target)
 {
+	constexpr float Kp = 0.3f;
+	constexpr float vmax = 1000; // mm/s
+	constexpr float sigma = M_PI / 6;
 
-    //-----------------------------//
-    // 2. Calcular error de posición
-    //-----------------------------//
-	Eigen::Vector2d robot_pos = robot_pose.translation();   // <-- ESTO ES LO CORRECTO
-	Eigen::Vector2d target_d = target.cast<double>();
-    Eigen::Vector2d diff = target_d - robot_pos;
+	// error angle
+	const double theta_e = std::atan2(target.x(), target.y());
+	const float vrot = Kp * theta_e;
+	// Gaussian angle brake
+	const float angle_brake = std::exp(-(theta_e * theta_e) / (2 * sigma * sigma));
+	// adv vel
+	const float adv = vmax * angle_brake;
+	// check exit condition
+	if (target.norm() < 300.f)
+		return {0.f, 0.f};
 
-    double d = diff.norm();            // distancia a la meta (mm)
-    double theta_e = std::atan2(diff.y(), diff.x());   // error angular (rad)
-
-    // Normalizar ángulo a [-π, π]
-    theta_e = std::atan2(std::sin(theta_e), std::cos(theta_e));
-
-    //----------------------------------------//
-    // 3. Condición de llegada: “estoy en el centro”
-    //----------------------------------------//
-
-    //----------------------------------------//
-    // 4. PD Controller para la rotación ω
-    //----------------------------------------//
-
-    static double theta_prev = theta_e;
-    static auto last_time = std::chrono::steady_clock::now();
-
-    auto now = std::chrono::steady_clock::now();
-    double dt = std::chrono::duration<double>(now - last_time).count();
-    last_time = now;
-
-    double dtheta = (theta_e - theta_prev) / std::max(dt, 1e-6);
-    theta_prev = theta_e;
-
-    // Ganancias PD
-    double Kp = 2.0;
-    double Kd = 0.2;
-
-    double w = Kp * theta_e + Kd * dtheta;
-    w = std::clamp(w, -1.5, 1.5);   // limitar ω
-
-    //----------------------------------------//
-    // 5. Braking angular gaussiano
-    //----------------------------------------//
-    double sigma = M_PI / 4.0;  // 45°
-    double f_theta = std::exp(-(theta_e * theta_e) / (2.0 * sigma * sigma));
-
-    //----------------------------------------//
-    // 6. Braking sigmoidal de distancia
-    //----------------------------------------//
-    double dstop = 600.0;  // 0.6 m → en mm
-    double k = 10.0;
-
-    double fd = 1.0 / (1.0 + std::exp(k * (d - dstop) / 1000.0));
-    // OJO: convertir mm a metros en la función logística
-
-    //----------------------------------------//
-    // 7. Velocidad lineal con brakes
-    //----------------------------------------//
-    double vmax = 350.0;   // mm/s
-    double v = vmax * f_theta * fd;
-
-	//----------------------------------------//
-	// 8. Devolver Resultado
-	//----------------------------------------//
-	return {(float)v, (float)w};
+	return {adv, vrot};
 }
 
 RoboCompLidar3D::TPoints SpecificWorker::read_data()
@@ -345,10 +307,10 @@ RoboCompLidar3D::TPoints SpecificWorker::read_data()
 
 }
 
-
 SpecificWorker::RetVal SpecificWorker::goto_door(const RoboCompLidar3D::TPoints &points)
 {
 	// Código de la función
+	//localised=true;
 	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
 
 }
@@ -370,27 +332,32 @@ SpecificWorker::RetVal SpecificWorker::cross_door(const RoboCompLidar3D::TPoints
 SpecificWorker::RetVal SpecificWorker::localise(const Match &match)
 {
 	// Código de la función
+	if (match_error_graph<3){
+		localised=false;
+
+	}
+
 	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
 
 }
 
 SpecificWorker::RetVal SpecificWorker::goto_room_center(const RoboCompLidar3D::TPoints &points)
 {
-    //-----------------------------//
-    // 1. Obtener centro de la sala
-    //-----------------------------//
-    auto center_opt = room_detector.estimate_center_from_walls();
-    //if (!center_opt)
-       // return RetVal{STATE::GOTO_ROOM_CENTER, 0.f, 0.f};   // seguimos intentando
+	const auto center_opt = center_estimator.estimate(points);
+    if (not center_opt)
+    { qWarning() << __FUNCTION__ << "No room center"; return RetVal{STATE::GOTO_ROOM_CENTER, 0.f, 0.f};}
 
-	Eigen::Vector2d target_d = *center_opt;     // double
-	Eigen::Vector2f target_f = target_d.cast<float>();   // float
+	// obtain target
+	const Eigen::Vector2f target_f = center_opt.value().cast<float>();
+
+	// exit condition
+	if (target_f.norm() < 300.f)
+		return RetVal{ STATE::TURN, 0.0f, 0.0f };
+
+	// do my thing
 	auto [v, w] = robot_controller(target_f);
-
-
     return RetVal{STATE::GOTO_ROOM_CENTER, v, w};
 }
-
 
 SpecificWorker::RetVal SpecificWorker::update_pose(const Corners &corners, const Match &match)
 {
@@ -401,9 +368,15 @@ SpecificWorker::RetVal SpecificWorker::update_pose(const Corners &corners, const
 
 SpecificWorker::RetVal SpecificWorker::turn(const Corners &corners)
 {
-	// Código de la función
-	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+	// get variable
+	const auto &[success, spin] = image_processor.check_red_patch_in_image(camera360rgb_proxy, label_img);
 
+	// exit condition
+	if (success)
+		return RetVal{STATE::GOTO_DOOR, 0.0f, 0.0f};
+
+	// do my thing
+	return RetVal{ STATE::TURN, 0.0f, 0.3f };
 }
 
 SpecificWorker::RetVal SpecificWorker::process_state(
@@ -439,6 +412,7 @@ SpecificWorker::RetVal SpecificWorker::process_state(
 		}
 
 	case STATE::GOTO_ROOM_CENTER:
+		//default:
 		{
 			qInfo() << "Entrando en el go to room" ;
 			return goto_room_center(data);
@@ -450,19 +424,15 @@ SpecificWorker::RetVal SpecificWorker::process_state(
 			return turn(corners);
 		}
 
-	case STATE::IDLE:
+	 case STATE::IDLE:
 	default:
 		{
-			// No movimiento, robot quieto
+			 //No movimiento, robot quieto
 			qInfo() << "Entrando en el idle" ;
-			return RetVal{STATE::IDLE, 0.0f, 0.0f};
+			return goto_room_center(data);
 		}
 	}
 }
-
-
-
-
 
 float SpecificWorker::calcularDistanciaMinima(const std::optional<RoboCompLidar3D::TPoints>& lidar_data, bool bandera)
 {
@@ -488,11 +458,6 @@ float SpecificWorker::calcularDistanciaMinima(const std::optional<RoboCompLidar3
 	qInfo() <<"Distancia minima: " << distancia_minima;
 	return distancia_minima;
 }
-
-
-
-
-
 static constexpr int iter_seguras = 2;
 static int contador = 0;
 static float vector_media[iter_seguras];

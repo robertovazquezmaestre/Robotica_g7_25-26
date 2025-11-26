@@ -9,7 +9,7 @@ LIST(APPEND SOURCES
         ../src/time_series_plotter.cpp
         ../src/door_detector.cpp
         ../src/qcustomplot.cpp
-
+        ../src/pointcloud_center_estimator.cpp
 )
 
 # Headers set
@@ -22,6 +22,7 @@ LIST(APPEND HEADERS
         ../src/door_detector.h
         ../src/image_processor.h
         ../src/qcustomplot.h
+        ../src/pointcloud_center_estimator.h
 )
 
 LIST(APPEND LIBS ${LIBS} tbb Qt6PrintSupport)

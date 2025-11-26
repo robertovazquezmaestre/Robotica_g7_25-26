@@ -1769,6 +1769,7 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QImage \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QPixmap \
+ /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.h \
  /usr/local/include/cppitertools/itertools.hpp \
  /usr/local/include/cppitertools/accumulate.hpp \
  /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \

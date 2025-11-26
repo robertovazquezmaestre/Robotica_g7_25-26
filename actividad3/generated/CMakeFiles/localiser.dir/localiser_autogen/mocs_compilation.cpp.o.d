@@ -1777,4 +1777,5 @@ generated/CMakeFiles/localiser.dir/localiser_autogen/mocs_compilation.cpp.o: \
  /usr/include/opencv4/opencv2/video/background_segm.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QImage \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/QPixmap
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/QPixmap \
+ /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/localiser_autogen/VNU7RW3YIC/../../../src/pointcloud_center_estimator.h

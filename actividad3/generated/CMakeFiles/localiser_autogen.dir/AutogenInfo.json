@@ -276,6 +276,12 @@
 			null
 		],
 		[
+			"/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.h",
+			"MU",
+			"VNU7RW3YIC/moc_pointcloud_center_estimator.cpp",
+			null
+		],
+		[
 			"/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/qcustomplot.h",
 			"MU",
 			"VNU7RW3YIC/moc_qcustomplot.cpp",
@@ -430,6 +436,11 @@
 		],
 		[
 			"/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/hungarian.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.cpp",
 			"MU",
 			null
 		],

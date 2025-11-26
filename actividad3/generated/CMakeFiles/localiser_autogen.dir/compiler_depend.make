@@ -4574,6 +4574,8 @@ generated/localiser_autogen/timestamp: /home/robocomp/robocomp/classes/ConfigLoa
   src/mainUI.ui \
   src/munkres.hpp \
   src/nominal_room.h \
+  src/pointcloud_center_estimator.cpp \
+  src/pointcloud_center_estimator.h \
   src/qcustomplot.cpp \
   src/qcustomplot.h \
   src/ransac_line_detector.cpp \
@@ -8081,6 +8083,8 @@ src/time_series_plotter.cpp:
 
 src/ransac_line_detector.cpp:
 
+src/pointcloud_center_estimator.h:
+
 src/nominal_room.h:
 
 src/mainUI.ui:
@@ -9784,6 +9788,8 @@ src/ransac_line_detector.h:
 /snap/clion/393/bin/cmake/linux/x64/share/cmake-4.0/Modules/FindPkgConfig.cmake:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qinputdialog.h:
+
+src/pointcloud_center_estimator.cpp:
 
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 

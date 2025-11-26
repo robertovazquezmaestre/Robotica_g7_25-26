@@ -35,40 +35,21 @@ Doors DoorDetector::detect(const RoboCompLidar3D::TPoints &points, QGraphicsScen
     }
 
     // 2 Dibujar los picos detectados (debug visual)
-    static std::vector<QGraphicsItem*> draw_points;
-    const QColor color("LightGreen");
-    const QPen pen(color, 10);
-    if (scene)
-    {
-        for (const auto &p : peaks)
-        {
-            const auto &pos = std::get<0>(p);
-            const auto dp = scene->addRect(-25, -25, 50, 50, pen);
-            dp->setPos(pos.x(), pos.y());
-        }
-    }
+    // static std::vector<QGraphicsItem*> draw_points;
+    // const QColor color("LightGreen");
+    // const QPen pen(color, 10);
+    // if (scene)
+    // {
+    //      for (const auto &p : peaks)
+    //      {
+    //         const auto &pos = std::get<0>(p);
+    //         const auto dp = scene->addRect(-25, -25, 50, 50, pen);
+    //         dp->setPos(pos.x(), pos.y());
+    //     }
+    // }
 
-    /* 3 Non-maximum suppression (eliminar picos demasiado cercanos)
-    Peaks filtered_peaks;
-    const float min_dist = 200.0f; // distancia mínima entre picos
 
-    for (const auto &p : peaks)
-    {
-        bool too_close = false;
-        for (const auto &fp : filtered_peaks)
-        {
-            const auto &pos = std::get<0>(p);
-            float dist = std::hypot(pos.x() - fp.x, pos.y() - fp.y);
-            if (dist < min_dist)
-            {
-                too_close = true;
-                break;
-            }
-        }
-        if (!too_close)
-            filtered_peaks.push_back(p);
-    }
-    */
+
     // non-maximum suppression of peaks: remove peaks closer than 500mm
     Peaks nms_peaks;
     for (const auto &[p, a] : peaks)
@@ -115,15 +96,16 @@ RoboCompLidar3D::TPoints DoorDetector::filter_points(const RoboCompLidar3D::TPoi
         {
             // Determine if point is within the door's angular range
             bool point_in_angular_range;
+            float offset = 0.15;
             if (angle_wraps)
             {
                 // If the range wraps around, point is in range if it's > p1_angle OR < p2_angle
-                point_in_angular_range = (p.phi > d.p1_angle) or (p.phi < d.p2_angle);
+                point_in_angular_range = (p.phi > d.p1_angle - offset) or (p.phi < d.p2_angle + offset);
             }
             else
             {
                 // Normal case: point is in range if it's between p1_angle and p2_angle
-                point_in_angular_range = (p.phi > d.p1_angle) and (p.phi < d.p2_angle);
+                point_in_angular_range = (p.phi > d.p1_angle - offset) and (p.phi < d.p2_angle + offset);
             }
 
             // Filter out points that are through the door (in angular range and farther than door)

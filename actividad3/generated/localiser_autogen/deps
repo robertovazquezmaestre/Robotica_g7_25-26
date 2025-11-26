@@ -30,6 +30,8 @@ localiser_autogen/timestamp: \
 	/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/image_processor.h \
 	/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/munkres.hpp \
 	/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/nominal_room.h \
+	/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.cpp \
+	/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.h \
 	/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/qcustomplot.cpp \
 	/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
 	/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/ransac_line_detector.cpp \
