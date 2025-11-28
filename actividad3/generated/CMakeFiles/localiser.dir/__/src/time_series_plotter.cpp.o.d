@@ -1,7 +1,7 @@
 generated/CMakeFiles/localiser.dir/__/src/time_series_plotter.cpp.o: \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/time_series_plotter.cpp \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/time_series_plotter.cpp \
  /usr/include/stdc-predef.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/time_series_plotter.h \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/time_series_plotter.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -403,7 +403,7 @@ generated/CMakeFiles/localiser.dir/__/src/time_series_plotter.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvector.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QPointer \

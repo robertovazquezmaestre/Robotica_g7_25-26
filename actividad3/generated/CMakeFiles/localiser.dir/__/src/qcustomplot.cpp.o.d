@@ -1,7 +1,7 @@
 generated/CMakeFiles/localiser.dir/__/src/qcustomplot.cpp.o: \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/qcustomplot.cpp \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/qcustomplot.cpp \
  /usr/include/stdc-predef.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h \
  /usr/include/c++/13/type_traits \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \

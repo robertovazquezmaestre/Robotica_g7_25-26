@@ -403,5 +403,5 @@ generated/CMakeFiles/localiser.dir/home/robocomp/robocomp/classes/sigwatch/sigwa
  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/localiser_autogen/include/moc_sigwatch.cpp \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/localiser_autogen/include/../../../../../../../robocomp/robocomp/classes/sigwatch/sigwatch.h
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/include/moc_sigwatch.cpp \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/include/../../../../../../../../robocomp/robocomp/classes/sigwatch/sigwatch.h

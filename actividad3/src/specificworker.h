@@ -181,6 +181,7 @@ private:
 
         // rooms
         std::vector<NominalRoom> nominal_rooms{ NominalRoom{5500.f, 4000.f}, NominalRoom{8000.f, 4000.f}};
+        bool other_room = false;
 
         // state machine
         enum class STATE {GOTO_DOOR, ORIENT_TO_DOOR, LOCALISE, GOTO_ROOM_CENTER, TURN, IDLE, CROSS_DOOR};
@@ -230,6 +231,9 @@ private:
 
         // doors
         DoorDetector door_detector;
+        Doors doors;
+
+
 
         // image processor
         rc::ImageProcessor image_processor;

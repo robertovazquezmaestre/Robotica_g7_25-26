@@ -170,6 +170,7 @@ void SpecificWorker::compute()
 	RoboCompLidar3D::TPoints data = read_data();
 	if (data.empty())
 		return;
+	doors = door_detector.detect(data,&viewer->scene);
 	data= door_detector.filter_points(data, &viewer->scene);
 
     // 1 Extraer esquinas del LIDAR
@@ -217,6 +218,12 @@ void SpecificWorker::compute()
 	time_series_plotter->update();
 	lcdNumber_adv->display(adv);
 	lcdNumber_rot->display(rot);
+	lcdNumber_x->display(robot_pose.translation().x());
+	lcdNumber_y->display(robot_pose.translation().y());
+	lcdNumber_angle->display(angle);
+	label_state->setText(to_string(state));
+	last_time = std::chrono::high_resolution_clock::now();;
+
 
 }
 void  SpecificWorker::move_robot(float adv, float rot, float max_match_error)
@@ -228,7 +235,11 @@ bool SpecificWorker::update_robot_pose(const Corners &corners, const Match &matc
 {
 	Eigen::MatrixXd W(match.size() * 2, 3);
 	Eigen::VectorXd b(match.size() * 2);
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> fdf0993 (Falta detectar parche verde, pintar puerta y que no llegue tan cerca de la puerta)
 	for (size_t i = 0; i < match.size(); ++i)
 	{
 		const auto& [meas_c, nom_c, _] = match[i];
@@ -252,6 +263,7 @@ bool SpecificWorker::update_robot_pose(const Corners &corners, const Match &matc
 	// 5 Actualizar pose del robot
 	robot_pose.translate(Eigen::Vector2d(r(0), r(1)));
 	robot_pose.rotate(r(2));
+	return true;
 }
 
 Eigen::Vector3d SpecificWorker::solve_pose(const Corners &corners, const Match &match)
@@ -310,34 +322,81 @@ RoboCompLidar3D::TPoints SpecificWorker::read_data()
 SpecificWorker::RetVal SpecificWorker::goto_door(const RoboCompLidar3D::TPoints &points)
 {
 	// Código de la función
-	//localised=true;
-	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+	localised=true;
+	Eigen::Vector2d robot_pos = robot_pose.translation();
+	if (doors.size() == 1)
+	{
+		Door door = doors.front();
+		auto before_center = door.center_before(robot_pos);
+		 if (before_center.hasNaN())
+		 { qWarning() << __FUNCTION__ << "No room center"; return RetVal{STATE::GOTO_DOOR, 0.f, 0.f};}
+		// exit condition
+		if (before_center.norm() < 500.f)
+			return RetVal{ STATE::ORIENT_TO_DOOR, 0.0f, 0.0f };
+
+		// do my thing
+		auto [v, w] = robot_controller(before_center);
+		return RetVal{STATE::GOTO_DOOR, v, w*1.75};
+
+	}
+
+	//return RetVal{ STATE::GOTO_DOOR, 0.0f, 0.0f };
 
 }
 
 SpecificWorker::RetVal SpecificWorker::orient_to_door(const RoboCompLidar3D::TPoints &points)
 {
 	// Código de la función
-	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+	Door door = doors.front();
+	Eigen::Vector2f door_mid = door.center();
+	Eigen::Vector2f robot_pos = robot_pose.translation().cast<float>();
 
+	Eigen::Vector2f robot_to_mid = door_mid - robot_pos;
+	Eigen::Vector2f door_vec = door.p2 - door.p1;
+
+	// Ángulo entre vectores
+	float cos_theta = robot_to_mid.dot(door_vec) / (robot_to_mid.norm() * door_vec.norm());
+	cos_theta = std::clamp(cos_theta, -1.f, 1.f);
+	float angle = std::acos(cos_theta);
+
+	// Si el ángulo ya es aproximadamente perpendicular, detener robot
+	const float target_angle = M_PI_2;
+	const float tolerance = 0.15f; // tolerancia ~0.57 grados
+	if (std::abs(angle - target_angle) < tolerance)
+	{
+		// robot perpendicular → velocidad lineal 0, velocidad angular 0
+		return RetVal{ STATE::CROSS_DOOR, 0.f, 0.f };
+	}
+
+	return RetVal{ STATE::ORIENT_TO_DOOR, 0.f, 0.3f };
 }
 
 SpecificWorker::RetVal SpecificWorker::cross_door(const RoboCompLidar3D::TPoints &points)
 {
-	// Código de la función
-	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+	// Variables estáticas dentro del método
+	static bool firstTime = true;
+	static std::chrono::steady_clock::time_point startTime;
 
-}
-
-SpecificWorker::RetVal SpecificWorker::localise(const Match &match)
-{
-	// Código de la función
-	if (match_error_graph<3){
-		localised=false;
-
+	// Si es la primera vez que entramos al método, guardamos el tiempo inicial
+	if (firstTime) {
+		startTime = std::chrono::steady_clock::now();
+		firstTime = false;
 	}
 
-	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+	// Movimiento del robot
+
+
+	// Calcular cuanto tiempo ha pasado
+	auto currentTime = std::chrono::steady_clock::now();
+	auto elapsed = duration_cast<std::chrono::seconds>(currentTime - startTime).count();
+
+	// Si han pasado 2 segundos, regresamos true indicando que terminamos
+	if (elapsed >= 12) {
+		other_room = !other_room;
+		return RetVal{ STATE::GOTO_ROOM_CENTER, 0.0f, 0.0f };
+
+	}
+	return RetVal{ STATE::CROSS_DOOR, 300.0f, 0.0f };
 
 }
 
@@ -368,15 +427,28 @@ SpecificWorker::RetVal SpecificWorker::update_pose(const Corners &corners, const
 
 SpecificWorker::RetVal SpecificWorker::turn(const Corners &corners)
 {
+
 	// get variable
-	const auto &[success, spin] = image_processor.check_red_patch_in_image(camera360rgb_proxy, label_img);
+	auto result = image_processor.check_red_patch_in_image(camera360rgb_proxy, label_img);
+	auto &[success, spin] = result;
+	if (other_room)
+	{
+		result = image_processor.check_green_patch_in_image(camera360rgb_proxy, label_img);
+		// success y spin ahora apuntan al nuevo resultado
+	}
+	//
+	// const auto &[success, spin] = image_processor.check_red_patch_in_image(camera360rgb_proxy, label_img);
+	// if (other_room)
+	//  {
+	//  	const auto &[success, spin] = image_processor.check_green_patch_in_image(camera360rgb_proxy, label_img);
+	//  }
 
 	// exit condition
 	if (success)
 		return RetVal{STATE::GOTO_DOOR, 0.0f, 0.0f};
 
 	// do my thing
-	return RetVal{ STATE::TURN, 0.0f, 0.3f };
+	return RetVal{ STATE::TURN, 0.0f, 0.3f*spin };
 }
 
 SpecificWorker::RetVal SpecificWorker::process_state(
@@ -387,50 +459,38 @@ SpecificWorker::RetVal SpecificWorker::process_state(
 {
 	switch(state)
 	{
-	case STATE::LOCALISE:
-		{
-
-			return localise(match);
-		}
-
 	case STATE::GOTO_DOOR:
 		{
-
+			qInfo() << "Estoy en el go to door" ;
 			return goto_door(data);
 		}
 
 	case STATE::ORIENT_TO_DOOR:
 		{
-
+			qInfo() << "Estoy en el orient to door" ;
 			return orient_to_door(data);
 		}
 
 	case STATE::CROSS_DOOR:
 		{
-
+			qInfo() << "Estoy en el cross door" ;
 			return cross_door(data);
 		}
 
 	case STATE::GOTO_ROOM_CENTER:
-		//default:
+		default:
 		{
-			qInfo() << "Entrando en el go to room" ;
+			qInfo() << "Estoy en el go to room center" ;
 			return goto_room_center(data);
 		}
 
 	case STATE::TURN:
 		{
-
+			qInfo() << "Estoy en el turn" ;
 			return turn(corners);
 		}
 
-	 case STATE::IDLE:
-	default:
-		{
-			 //No movimiento, robot quieto
-			qInfo() << "Entrando en el idle" ;
-			return goto_room_center(data);
-		}
+
 	}
 }
 
@@ -808,6 +868,19 @@ void SpecificWorker::draw_lidar(const RoboCompLidar3D::TPoints &points, std::opt
 		dp->setPos(p.x, p.y);
 		draw_points.push_back(dp);   // add to the list of points to be deleted next time
 	}
+	// --- Dibujar el centro si existe ---
+	if (center.has_value())
+	{
+		const QColor red(Qt::red);
+		const QPen center_pen(red, 12);
+		const QBrush center_brush(red, Qt::SolidPattern);
+
+		// Punto pequeño (círculo) de radio 25
+		auto cp = scene->addEllipse(-25, -25, 50, 50, center_pen, center_brush);
+		cp->setPos(center->x(), center->y());
+		draw_points.push_back(cp);
+	}
+
 }
 
 

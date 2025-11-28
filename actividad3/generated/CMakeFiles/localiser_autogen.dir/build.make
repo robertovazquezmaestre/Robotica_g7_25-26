@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/393/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/393/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3
+CMAKE_SOURCE_DIR = /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3
+CMAKE_BINARY_DIR = /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3
 
 # Utility rule file for localiser_autogen.
 
@@ -71,9 +71,9 @@ generated/CMakeFiles/localiser_autogen: generated/localiser_autogen/timestamp
 generated/localiser_autogen/timestamp: /usr/lib/qt6/libexec/moc
 generated/localiser_autogen/timestamp: /usr/lib/qt6/libexec/uic
 generated/localiser_autogen/timestamp: generated/CMakeFiles/localiser_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target localiser"
-	cd /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated && /snap/clion/393/bin/cmake/linux/x64/bin/cmake -E cmake_autogen /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/CMakeFiles/localiser_autogen.dir/AutogenInfo.json Debug
-	cd /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated && /snap/clion/393/bin/cmake/linux/x64/bin/cmake -E touch /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/localiser_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target localiser"
+	cd /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated && /home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/bin/cmake -E cmake_autogen /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/CMakeFiles/localiser_autogen.dir/AutogenInfo.json Debug
+	cd /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated && /home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/bin/cmake -E touch /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/timestamp
 
 generated/CMakeFiles/localiser_autogen.dir/codegen:
 .PHONY : generated/CMakeFiles/localiser_autogen.dir/codegen
@@ -88,10 +88,10 @@ generated/CMakeFiles/localiser_autogen.dir/build: localiser_autogen
 .PHONY : generated/CMakeFiles/localiser_autogen.dir/build
 
 generated/CMakeFiles/localiser_autogen.dir/clean:
-	cd /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated && $(CMAKE_COMMAND) -P CMakeFiles/localiser_autogen.dir/cmake_clean.cmake
+	cd /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated && $(CMAKE_COMMAND) -P CMakeFiles/localiser_autogen.dir/cmake_clean.cmake
 .PHONY : generated/CMakeFiles/localiser_autogen.dir/clean
 
 generated/CMakeFiles/localiser_autogen.dir/depend:
-	cd /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3 /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3 /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/CMakeFiles/localiser_autogen.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3 /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3 /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/CMakeFiles/localiser_autogen.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : generated/CMakeFiles/localiser_autogen.dir/depend
 

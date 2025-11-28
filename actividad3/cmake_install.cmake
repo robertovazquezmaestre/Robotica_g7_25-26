@@ -1,4 +1,4 @@
-# Install script for directory: /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3
+# Install script for directory: /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -51,19 +51,19 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/robocomp/robocomp/etc-default" TYPE FILE RENAME "localiser.conf" FILES "/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/etc/config")
+  file(INSTALL DESTINATION "/home/robocomp/robocomp/etc-default" TYPE FILE RENAME "localiser.conf" FILES "/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/etc/config")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/cmake_install.cmake")
+  include("/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/cmake_install.cmake")
 
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/install_local_manifest.txt"
+  file(WRITE "/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -79,6 +79,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

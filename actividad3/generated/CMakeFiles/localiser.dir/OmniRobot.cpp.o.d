@@ -1,7 +1,7 @@
 generated/CMakeFiles/localiser.dir/OmniRobot.cpp.o: \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/OmniRobot.cpp \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/OmniRobot.cpp \
  /usr/include/stdc-predef.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/OmniRobot.h \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/OmniRobot.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/13/stdlib.h /usr/include/c++/13/cstdlib \
@@ -291,4 +291,4 @@ generated/CMakeFiles/localiser.dir/OmniRobot.cpp.o: \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
  /usr/include/c++/13/bits/deque.tcc /usr/include/Ice/FactoryTableInit.h \
  /usr/include/Ice/DefaultValueFactory.h \
- /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad3/generated/GenericBase.h
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/GenericBase.h
