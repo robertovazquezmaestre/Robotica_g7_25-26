@@ -1,7 +1,7 @@
 generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/specificworker.cpp \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/specificworker.cpp \
  /usr/include/stdc-predef.h \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/specificworker.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/specificworker.h \
  /usr/include/c++/13/expected /usr/include/c++/13/initializer_list \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -25,7 +25,7 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/c++/13/bits/concept_check.h \
  /usr/include/c++/13/debug/assertions.h \
  /usr/include/c++/13/bits/utility.h \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/genericworker.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/genericworker.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -935,7 +935,7 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiversion.h \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/include/ui_mainUI.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/localiser_autogen/include/ui_mainUI.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qapplication.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -1039,7 +1039,7 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QEvent \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QtCore \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/Camera360RGB.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/Camera360RGB.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/13/cassert /usr/include/Ice/ProxyHandle.h \
@@ -1082,9 +1082,9 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
  /usr/include/c++/13/bits/deque.tcc /usr/include/Ice/FactoryTableInit.h \
  /usr/include/Ice/DefaultValueFactory.h \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/GenericBase.h \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/Lidar3D.h \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/OmniRobot.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/GenericBase.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/Lidar3D.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/OmniRobot.h \
  /home/robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsScene \
@@ -1113,11 +1113,11 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /home/robocomp/robocomp/classes/threadpool/threadpool.h \
  /usr/include/c++/13/queue /usr/include/c++/13/bits/stl_queue.h \
  /usr/include/c++/13/thread \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/time_series_plotter.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/time_series_plotter.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QColor \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVector \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QPointer \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QSharedPointer \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
@@ -1307,7 +1307,7 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtPrintSupport/qtprintsupportversion.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimeZone \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/common_types.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/common_types.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QPointF \
  /usr/include/Eigen/Dense /usr/include/Eigen/Core \
  /usr/include/Eigen/src/Core/util/DisableStupidWarnings.h \
@@ -1650,11 +1650,11 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/boost/circular_buffer/space_optimized.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QLineF \
  /usr/include/Eigen/src/Geometry/ParametrizedLine.h \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/hungarian.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/hungarian.h \
  /usr/include/Eigen/Geometry \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/munkres.hpp \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/ransac_line_detector.h \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/room_detector.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/munkres.hpp \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/ransac_line_detector.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/room_detector.h \
  /usr/include/opencv4/opencv2/core.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
  /usr/include/opencv4/opencv2/core/version.hpp \
@@ -1682,11 +1682,11 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/opencv4/opencv2/core/optim.hpp \
  /usr/include/opencv4/opencv2/core/ovx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h /usr/include/c++/13/ranges \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/nominal_room.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/nominal_room.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QRectF \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/common_types.h \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/door_detector.h \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/image_processor.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/common_types.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/door_detector.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/image_processor.h \
  /usr/include/opencv4/opencv2/opencv.hpp \
  /usr/include/opencv4/opencv2/calib3d.hpp \
  /usr/include/opencv4/opencv2/features2d.hpp \
@@ -1769,7 +1769,7 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QImage \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QPixmap \
- /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.h \
  /usr/local/include/cppitertools/itertools.hpp \
  /usr/local/include/cppitertools/accumulate.hpp \
  /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \

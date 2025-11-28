@@ -235,11 +235,7 @@ bool SpecificWorker::update_robot_pose(const Corners &corners, const Match &matc
 {
 	Eigen::MatrixXd W(match.size() * 2, 3);
 	Eigen::VectorXd b(match.size() * 2);
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> fdf0993 (Falta detectar parche verde, pintar puerta y que no llegue tan cerca de la puerta)
 	for (size_t i = 0; i < match.size(); ++i)
 	{
 		const auto& [meas_c, nom_c, _] = match[i];
@@ -268,7 +264,7 @@ bool SpecificWorker::update_robot_pose(const Corners &corners, const Match &matc
 
 Eigen::Vector3d SpecificWorker::solve_pose(const Corners &corners, const Match &match)
 {
-
+	return Eigen::Vector3d(0.0, 0.0, 0.0);
 }
 
 void SpecificWorker::predict_robot_pose()
@@ -324,8 +320,8 @@ SpecificWorker::RetVal SpecificWorker::goto_door(const RoboCompLidar3D::TPoints 
 	// Código de la función
 	localised=true;
 	Eigen::Vector2d robot_pos = robot_pose.translation();
-	if (doors.size() == 1)
-	{
+	//if (doors.size() == 1)
+	//{
 		Door door = doors.front();
 		auto before_center = door.center_before(robot_pos);
 		 if (before_center.hasNaN())
@@ -338,7 +334,7 @@ SpecificWorker::RetVal SpecificWorker::goto_door(const RoboCompLidar3D::TPoints 
 		auto [v, w] = robot_controller(before_center);
 		return RetVal{STATE::GOTO_DOOR, v, w*1.75};
 
-	}
+	//}
 
 	//return RetVal{ STATE::GOTO_DOOR, 0.0f, 0.0f };
 
@@ -361,43 +357,46 @@ SpecificWorker::RetVal SpecificWorker::orient_to_door(const RoboCompLidar3D::TPo
 
 	// Si el ángulo ya es aproximadamente perpendicular, detener robot
 	const float target_angle = M_PI_2;
-	const float tolerance = 0.15f; // tolerancia ~0.57 grados
-	if (std::abs(angle - target_angle) < tolerance)
+	const float tolerance = 0.10f; // tolerancia ~0.57 grados
+	// 1. Calcular el error (cuánto me falta)
+	float error = target_angle - angle;
+	if (std::abs(error) < tolerance)
 	{
 		// robot perpendicular → velocidad lineal 0, velocidad angular 0
 		return RetVal{ STATE::CROSS_DOOR, 0.f, 0.f };
 	}
-
-	return RetVal{ STATE::ORIENT_TO_DOOR, 0.f, 0.3f };
+	float w = (error > 0) ? 0.3f : -0.3f;
+	return RetVal{ STATE::ORIENT_TO_DOOR, 0.f, w };
 }
+
+
 
 SpecificWorker::RetVal SpecificWorker::cross_door(const RoboCompLidar3D::TPoints &points)
 {
 	// Variables estáticas dentro del método
-	static bool firstTime = true;
-	static std::chrono::steady_clock::time_point startTime;
+	// NOTA: Inicializamos startTime a 'nulo' (el valor por defecto de un constructor)
+	static std::chrono::steady_clock::time_point startTime = std::chrono::steady_clock::time_point();
 
-	// Si es la primera vez que entramos al método, guardamos el tiempo inicial
-	if (firstTime) {
+	// Comprobamos si el tiempo inicial no ha sido establecido (es decir, es la primera vez que entramos *en este ciclo de cruce*)
+	if (startTime == std::chrono::steady_clock::time_point()) {
 		startTime = std::chrono::steady_clock::now();
-		firstTime = false;
 	}
 
 	// Movimiento del robot
-
 
 	// Calcular cuanto tiempo ha pasado
 	auto currentTime = std::chrono::steady_clock::now();
 	auto elapsed = duration_cast<std::chrono::seconds>(currentTime - startTime).count();
 
-	// Si han pasado 2 segundos, regresamos true indicando que terminamos
+	// Si han pasado 12 segundos, regresamos true indicando que terminamos y reiniciamos el tiempo
 	if (elapsed >= 12) {
 		other_room = !other_room;
+		// IMPORTANTE: REINICIAMOS startTime para el próximo cruce de puerta.
+		startTime = std::chrono::steady_clock::time_point();
 		return RetVal{ STATE::GOTO_ROOM_CENTER, 0.0f, 0.0f };
 
 	}
 	return RetVal{ STATE::CROSS_DOOR, 300.0f, 0.0f };
-
 }
 
 SpecificWorker::RetVal SpecificWorker::goto_room_center(const RoboCompLidar3D::TPoints &points)
@@ -408,7 +407,6 @@ SpecificWorker::RetVal SpecificWorker::goto_room_center(const RoboCompLidar3D::T
 
 	// obtain target
 	const Eigen::Vector2f target_f = center_opt.value().cast<float>();
-
 	// exit condition
 	if (target_f.norm() < 300.f)
 		return RetVal{ STATE::TURN, 0.0f, 0.0f };
@@ -571,7 +569,6 @@ SpecificWorker::FOLLOW_WALL_method(const std::optional<RoboCompLidar3D::TPoints>
 
     // --- Parámetros ---
     const float REFERENCE_DISTANCE = 520.0f;  // mm, distancia ideal a la pared
-    const float DELTA = 100.0f;               // margen aceptable de variación
     const float SAFE_DISTANCE = 400.0f;       // mm, distancia mínima frontal antes de girar
     const float MAX_ADV_SPEED = 900.0f;       // mm/s
     const float ROTATION_GAIN = 0.002f;       // ganancia de rotación proporcional
@@ -644,7 +641,6 @@ SpecificWorker::SPIRAL_method(const std::optional<RoboCompLidar3D::TPoints>& fil
 	float const w0 = 1.2f;     // rad/s -> giro inicial más cerrado (más espiral)
 	float const kv = 80.0f;    // incremento más progresivo de velocidad lineal
 	float const kw = 0.05f;    // decremento más suave de velocidad angular
-	float const r  = 1000.0f; // Radio de seguridad (mm). Si algo está más cerca, se cambia de modo
 
 	// Calculamos la distancia mínima medida por el LIDAR (360º en este caso)
 	float min_dist = calcularDistanciaMinima(filter_data, 1);

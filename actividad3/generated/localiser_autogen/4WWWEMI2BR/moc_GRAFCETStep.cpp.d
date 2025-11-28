@@ -1,5 +1,5 @@
-/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/4WWWEMI2BR/moc_GRAFCETStep.cpp: /home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/moc_predefs.h \
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/localiser_autogen/4WWWEMI2BR/moc_GRAFCETStep.cpp: /home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/localiser_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \

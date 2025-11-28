@@ -125,23 +125,12 @@ namespace rc
             cv::Mat hsv_img;
             cv::cvtColor(display_img, hsv_img, cv::COLOR_RGB2HSV);
 
-            // Green ranges (two intervals)
-            cv::Mat gmask1, gmask2;
-
-            // Primer intervalo: verde bajo
+            // Green
+            cv::Mat mask;
             cv::inRange(hsv_img,
-                        cv::Scalar(35, 100, 100),
-                        cv::Scalar(60, 255, 255),
-                        gmask1);
-
-            // Segundo intervalo: verde alto
-            cv::inRange(hsv_img,
-                        cv::Scalar(60, 100, 100),
-                        cv::Scalar(85, 255, 255),
-                        gmask2);
-
-            // Unión
-            cv::Mat mask = gmask1 | gmask2;
+                        cv::Scalar(35, 50, 50),   // H: 35 (Amarillo-Verdoso), S/V: Mínimo 50 para excluir grises/blancos.
+                        cv::Scalar(90, 255, 255), // H: 90 (Verde-Azulado). S/V: Máximo 255.
+                        mask);
 
 
             const int nonZeroCount = cv::countNonZero(mask);

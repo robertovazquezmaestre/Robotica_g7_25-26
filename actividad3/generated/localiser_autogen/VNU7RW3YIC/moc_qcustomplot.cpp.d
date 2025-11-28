@@ -1,5 +1,5 @@
-/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/VNU7RW3YIC/moc_qcustomplot.cpp: /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/moc_predefs.h \
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/localiser_autogen/VNU7RW3YIC/moc_qcustomplot.cpp: /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/localiser_autogen/moc_predefs.h \
   /usr/include/GL/gl.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \

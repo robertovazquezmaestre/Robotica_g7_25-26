@@ -20,36 +20,36 @@ localiser_autogen/timestamp: \
 	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake \
 	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/MacroAddFileDependencies.cmake \
 	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/SelectLibraryConfigurations.cmake \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/CMakeLists.txt \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/Camera360RGB.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/GenericBase.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/Lidar3D.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/OmniRobot.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/genericworker.cpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/genericworker.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/moc_predefs.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/main.cpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/CMakeLists.txt \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/common_types.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/door_detector.cpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/door_detector.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/hungarian.cpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/hungarian.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/image_processor.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/munkres.hpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/nominal_room.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.cpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/qcustomplot.cpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/ransac_line_detector.cpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/ransac_line_detector.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/room_detector.cpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/room_detector.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/specificworker.cpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/specificworker.h \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/time_series_plotter.cpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/time_series_plotter.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/CMakeLists.txt \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/Camera360RGB.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/GenericBase.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/Lidar3D.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/OmniRobot.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/genericworker.cpp \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/genericworker.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/localiser_autogen/moc_predefs.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/main.cpp \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/CMakeLists.txt \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/common_types.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/door_detector.cpp \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/door_detector.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/hungarian.cpp \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/hungarian.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/image_processor.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/munkres.hpp \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/nominal_room.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.cpp \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/qcustomplot.cpp \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/ransac_line_detector.cpp \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/ransac_line_detector.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/room_detector.cpp \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/room_detector.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/specificworker.cpp \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/specificworker.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/time_series_plotter.cpp \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/time_series_plotter.h \
 	/home/roberto-vazquez/robocomp/core/classes/ConfigLoader/ConfigLoader.h \
 	/home/roberto-vazquez/robocomp/core/classes/ConfigLoader/ConfigLoader.tpp \
 	/home/roberto-vazquez/robocomp/core/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
@@ -1765,5 +1765,5 @@ localiser_autogen/timestamp: \
 	/usr/local/include/toml++/impl/yaml_formatter.inl \
 	/usr/local/include/toml++/toml.h \
 	/usr/local/include/toml++/toml.hpp \
-	/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/mainUI.ui \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/mainUI.ui \
 	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/bin/cmake

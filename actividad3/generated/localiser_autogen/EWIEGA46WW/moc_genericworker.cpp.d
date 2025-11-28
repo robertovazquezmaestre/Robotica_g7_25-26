@@ -1,9 +1,9 @@
-/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/EWIEGA46WW/moc_genericworker.cpp: /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/genericworker.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/moc_predefs.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/Camera360RGB.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/GenericBase.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/Lidar3D.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/OmniRobot.h \
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/localiser_autogen/EWIEGA46WW/moc_genericworker.cpp: /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/genericworker.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/localiser_autogen/moc_predefs.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/Camera360RGB.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/GenericBase.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/Lidar3D.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/OmniRobot.h \
   /home/roberto-vazquez/robocomp/core/classes/ConfigLoader/ConfigLoader.h \
   /home/roberto-vazquez/robocomp/core/classes/ConfigLoader/ConfigLoader.tpp \
   /home/roberto-vazquez/robocomp/core/classes/grafcetStep/GRAFCETStep.h \

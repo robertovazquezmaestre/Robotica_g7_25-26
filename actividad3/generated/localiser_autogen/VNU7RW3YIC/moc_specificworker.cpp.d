@@ -1,21 +1,21 @@
-/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/VNU7RW3YIC/moc_specificworker.cpp: /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/specificworker.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/localiser_autogen/moc_predefs.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/Camera360RGB.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/GenericBase.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/Lidar3D.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/OmniRobot.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/generated/genericworker.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/common_types.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/door_detector.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/hungarian.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/image_processor.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/munkres.hpp \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/nominal_room.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/ransac_line_detector.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/room_detector.h \
-  /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad3/src/time_series_plotter.h \
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/localiser_autogen/VNU7RW3YIC/moc_specificworker.cpp: /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/specificworker.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/localiser_autogen/moc_predefs.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/Camera360RGB.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/GenericBase.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/Lidar3D.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/OmniRobot.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/generated/genericworker.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/common_types.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/door_detector.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/hungarian.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/image_processor.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/munkres.hpp \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/nominal_room.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/pointcloud_center_estimator.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/qcustomplot.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/ransac_line_detector.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/room_detector.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad3/src/time_series_plotter.h \
   /home/roberto-vazquez/robocomp/core/classes/ConfigLoader/ConfigLoader.h \
   /home/roberto-vazquez/robocomp/core/classes/ConfigLoader/ConfigLoader.tpp \
   /home/roberto-vazquez/robocomp/core/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
