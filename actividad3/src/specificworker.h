@@ -178,7 +178,7 @@ private:
 
         // viewer
         QGraphicsPolygonItem *robot_draw, *robot_room_draw;
-
+        bool change_rect = false;
         // rooms
         std::vector<NominalRoom> nominal_rooms{ NominalRoom{5500.f, 4000.f}, NominalRoom{8000.f, 4000.f}};
         bool other_room = false;

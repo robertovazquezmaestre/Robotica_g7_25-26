@@ -419,5 +419,59 @@ Corners Room_Detector::select_minimal_rectangle(const Corners &corners)
 
      return best_rect;
     }
+     void Room_Detector::draw_door_on_2D_tab(const Door &door, QGraphicsScene *scene)
+    {
+        if(scene == nullptr)
+        {
+            qWarning() << "Scene NULL en draw_door_on_2D_tab()";
+            return;
+        }
+
+        // Validación de coordenadas
+        if (!std::isfinite(door.p1.x()) || !std::isfinite(door.p1.y()) ||
+            !std::isfinite(door.p2.x()) || !std::isfinite(door.p2.y()))
+        {
+            qWarning() << "Puerta contiene valores no válidos";
+            return;
+        }
+
+        static std::vector<QGraphicsItem*> door_items;
+
+        // borrar items previos de forma segura
+        for (auto *item : door_items)
+        {
+            if(item)
+            {
+                scene->removeItem(item);
+                delete item;
+            }
+        }
+        door_items.clear();
+        // -----------------------------
+
+        //
+        // 1️⃣DIBUJAR LÍNEA AZUL DE LA PUERTA
+        //
+        QPen pen(QColor("blue"), 20);
+        QLineF qdoor(door.p1.x(), door.p1.y(), door.p2.x(), door.p2.y());
+        auto *line_item = scene->addLine(qdoor, pen);
+        door_items.push_back(line_item);
+
+        //
+        // 2️⃣DIBUJAR BOLAS MAGENTA EN EXTREMOS p1 y p2
+        //
+        const QColor color("darkMagenta");
+        const int radius = 200;   // diámetro 200 → radio 100
+
+        auto *p1_item = scene->addEllipse(-100, -100, radius, radius,
+                                          QPen(color), QBrush(color));
+        p1_item->setPos(door.p1.x(), door.p1.y());
+        door_items.push_back(p1_item);
+
+        auto *p2_item = scene->addEllipse(-100, -100, radius, radius,
+                                          QPen(color), QBrush(color));
+        p2_item->setPos(door.p2.x(), door.p2.y());
+        door_items.push_back(p2_item);
+    }
 
 } // rc

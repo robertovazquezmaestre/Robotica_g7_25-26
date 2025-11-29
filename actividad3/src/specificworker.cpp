@@ -163,7 +163,7 @@ void SpecificWorker::initialize()
 }
 
 
-
+int i  =0;
 void SpecificWorker::compute()
 {
     std::optional<RoboCompLidar3D::TPoints> filter_data;
@@ -178,9 +178,14 @@ void SpecificWorker::compute()
 	//qInfo() << measured_corners.size();
 	const auto center_opt = room_detector.estimate_center_from_walls(lines);
 	draw_lidar(data, center_opt, &viewer->scene);
+	if (!doors.empty() && viewer != nullptr)
+	{
+		room_detector.draw_door_on_2D_tab(doors.front(), &viewer->scene);
+	}
 	// match corners  transforming first nominal corners to robot's frame
 	const auto match = hungarian.match(corners,
 											  nominal_rooms[0].transform_corners_to(robot_pose.inverse()));
+
 
 	// compute max of  match error
 	float max_match_error = 99999.f;
@@ -215,6 +220,21 @@ void SpecificWorker::compute()
  //
  //
 	// update GUI
+
+	if (change_rect)
+	{
+		viewer_room->scene.clear();
+		auto [rr, re] = viewer_room->add_robot(params.ROBOT_WIDTH, params.ROBOT_LENGTH, 0, 100, QColor("Blue"));
+		robot_room_draw = rr;
+		// draw room in viewer_room
+		i = 1-i;
+		viewer_room->scene.addRect(nominal_rooms[i].rect(), QPen(Qt::black, 30));
+		robot_pose.setIdentity();
+		robot_pose.translate(Eigen::Vector2d(0.0,0.0));
+		move_robot(0, 0, 0);
+		change_rect = false;
+	}
+
 	time_series_plotter->update();
 	lcdNumber_adv->display(adv);
 	lcdNumber_rot->display(rot);
@@ -327,18 +347,19 @@ SpecificWorker::RetVal SpecificWorker::goto_door(const RoboCompLidar3D::TPoints 
 		 if (before_center.hasNaN())
 		 { qWarning() << __FUNCTION__ << "No room center"; return RetVal{STATE::GOTO_DOOR, 0.f, 0.f};}
 		// exit condition
-		if (before_center.norm() < 500.f)
+		if (before_center.norm() < 450.f)
 			return RetVal{ STATE::ORIENT_TO_DOOR, 0.0f, 0.0f };
 
 		// do my thing
 		auto [v, w] = robot_controller(before_center);
-		return RetVal{STATE::GOTO_DOOR, v, w*1.75};
+		return RetVal{STATE::GOTO_DOOR, v, w*3.10};
 
 	//}
 
 	//return RetVal{ STATE::GOTO_DOOR, 0.0f, 0.0f };
 
 }
+
 
 SpecificWorker::RetVal SpecificWorker::orient_to_door(const RoboCompLidar3D::TPoints &points)
 {
@@ -360,15 +381,16 @@ SpecificWorker::RetVal SpecificWorker::orient_to_door(const RoboCompLidar3D::TPo
 	const float tolerance = 0.10f; // tolerancia ~0.57 grados
 	// 1. Calcular el error (cuánto me falta)
 	float error = target_angle - angle;
+	qInfo() << std::abs(error);
 	if (std::abs(error) < tolerance)
 	{
 		// robot perpendicular → velocidad lineal 0, velocidad angular 0
 		return RetVal{ STATE::CROSS_DOOR, 0.f, 0.f };
 	}
-	float w = (error > 0) ? 0.3f : -0.3f;
+	float w = (error > 0) ? 0.03f : -0.03f;
+
 	return RetVal{ STATE::ORIENT_TO_DOOR, 0.f, w };
 }
-
 
 
 SpecificWorker::RetVal SpecificWorker::cross_door(const RoboCompLidar3D::TPoints &points)
@@ -389,14 +411,16 @@ SpecificWorker::RetVal SpecificWorker::cross_door(const RoboCompLidar3D::TPoints
 	auto elapsed = duration_cast<std::chrono::seconds>(currentTime - startTime).count();
 
 	// Si han pasado 12 segundos, regresamos true indicando que terminamos y reiniciamos el tiempo
-	if (elapsed >= 12) {
+	if (elapsed >= 8) {
 		other_room = !other_room;
 		// IMPORTANTE: REINICIAMOS startTime para el próximo cruce de puerta.
 		startTime = std::chrono::steady_clock::time_point();
+		change_rect = true;
+		localised=false;
 		return RetVal{ STATE::GOTO_ROOM_CENTER, 0.0f, 0.0f };
 
 	}
-	return RetVal{ STATE::CROSS_DOOR, 300.0f, 0.0f };
+	return RetVal{ STATE::CROSS_DOOR, 500.0f, 0.0f };
 }
 
 SpecificWorker::RetVal SpecificWorker::goto_room_center(const RoboCompLidar3D::TPoints &points)

@@ -47,6 +47,7 @@ namespace rc   // aka RoboComp
             // draw
              void draw_lines_on_2D_tab(const Lines &lines, QGraphicsScene *scene);
              void draw_corners_on_2D_tab(const Corners &corners, const std::vector<Eigen::Vector2d> &model_corners, QGraphicsScene *scene);
+             void draw_door_on_2D_tab(const Door &door, QGraphicsScene *scene);
 
             // local data
              Eigen::Vector2d to_eigen(const QPointF &p);
