@@ -347,12 +347,12 @@ SpecificWorker::RetVal SpecificWorker::goto_door(const RoboCompLidar3D::TPoints 
 		 if (before_center.hasNaN())
 		 { qWarning() << __FUNCTION__ << "No room center"; return RetVal{STATE::GOTO_DOOR, 0.f, 0.f};}
 		// exit condition
-		if (before_center.norm() < 450.f)
+		if (before_center.norm() < 850.f)
 			return RetVal{ STATE::ORIENT_TO_DOOR, 0.0f, 0.0f };
 
 		// do my thing
 		auto [v, w] = robot_controller(before_center);
-		return RetVal{STATE::GOTO_DOOR, v, w*3};
+		return RetVal{STATE::GOTO_DOOR, v, w};
 
 	//}
 
@@ -366,28 +366,18 @@ SpecificWorker::RetVal SpecificWorker::orient_to_door(const RoboCompLidar3D::TPo
 	// Código de la función
 	Door door = doors.front();
 	Eigen::Vector2f door_mid = door.center();
-	Eigen::Vector2f robot_pos = robot_pose.translation().cast<float>();
-
-	Eigen::Vector2f robot_to_mid = door_mid - robot_pos;
-	Eigen::Vector2f door_vec = door.p2 - door.p1;
-
-	// Ángulo entre vectores
-	float cos_theta = robot_to_mid.dot(door_vec) / (robot_to_mid.norm() * door_vec.norm());
-	cos_theta = std::clamp(cos_theta, -1.f, 1.f);
-	float angle = std::acos(cos_theta);
+	const double angle = std::atan2(door_mid.x(), door_mid.y());
 
 	// Si el ángulo ya es aproximadamente perpendicular, detener robot
 	const float target_angle = M_PI_2;
-	const float tolerance = 0.10f; // tolerancia ~0.57 grados
-	// 1. Calcular el error (cuánto me falta)
-	float error = target_angle - angle;
-	qInfo() << std::abs(error);
-	if (std::abs(error) < tolerance)
+	const float tolerance = 0.1f; // tolerancia ~0.57 grados
+
+	if (std::abs(angle) < tolerance)
 	{
 		// robot perpendicular → velocidad lineal 0, velocidad angular 0
 		return RetVal{ STATE::CROSS_DOOR, 0.f, 0.f };
 	}
-	float w = (error > 0) ? -0.03f : 0.03f;
+	float w = (angle > 0) ? 0.3f : -0.3f;
 
 	return RetVal{ STATE::ORIENT_TO_DOOR, 0.f, w };
 }
@@ -411,7 +401,7 @@ SpecificWorker::RetVal SpecificWorker::cross_door(const RoboCompLidar3D::TPoints
 	auto elapsed = duration_cast<std::chrono::seconds>(currentTime - startTime).count();
 
 	// Si han pasado 12 segundos, regresamos true indicando que terminamos y reiniciamos el tiempo
-	if (elapsed >= 8) {
+	if (elapsed >= 4) {
 		other_room = !other_room;
 		// IMPORTANTE: REINICIAMOS startTime para el próximo cruce de puerta.
 		startTime = std::chrono::steady_clock::time_point();
