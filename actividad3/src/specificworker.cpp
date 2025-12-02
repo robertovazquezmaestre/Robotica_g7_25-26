@@ -352,7 +352,7 @@ SpecificWorker::RetVal SpecificWorker::goto_door(const RoboCompLidar3D::TPoints 
 
 		// do my thing
 		auto [v, w] = robot_controller(before_center);
-		return RetVal{STATE::GOTO_DOOR, v, w*3.10};
+		return RetVal{STATE::GOTO_DOOR, v, w*3};
 
 	//}
 
@@ -387,7 +387,7 @@ SpecificWorker::RetVal SpecificWorker::orient_to_door(const RoboCompLidar3D::TPo
 		// robot perpendicular → velocidad lineal 0, velocidad angular 0
 		return RetVal{ STATE::CROSS_DOOR, 0.f, 0.f };
 	}
-	float w = (error > 0) ? 0.03f : -0.03f;
+	float w = (error > 0) ? -0.03f : 0.03f;
 
 	return RetVal{ STATE::ORIENT_TO_DOOR, 0.f, w };
 }
