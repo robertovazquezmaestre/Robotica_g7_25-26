@@ -1,0 +1,972 @@
+/*
+ *    Copyright (C) 2025 by YOUR NAME HERE
+ *
+ *    This file is part of RoboComp
+ *
+ *    RoboComp is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU General Public License as published by
+ *    the Free Software Foundation, either version 3 of the License, or
+ *    (at your option) any later version.
+ *
+ *    RoboComp is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *
+ *    You should have received a copy of the GNU General Public License
+ *    along with RoboComp.  If not, see <http://www.gnu.org/licenses/>.
+ */
+#include "specificworker.h"
+#include <cppitertools/itertools.hpp>
+#include <cppitertools/enumerate.hpp>
+
+#ifdef emit
+#undef emit
+#endif
+
+#include <execution>
+#include <numeric> // para std::iota
+#include <algorithm>
+
+
+//std::chrono::steady_clock::time_point start_time;
+
+
+
+SpecificWorker::SpecificWorker(const ConfigLoader& configLoader, TuplePrx tprx, bool startup_check) : GenericWorker(configLoader, tprx)
+{
+	this->startup_check_flag = startup_check;
+	if(this->startup_check_flag)
+	{
+		this->startup_check();
+	}
+	else
+	{
+		#ifdef HIBERNATION_ENABLED
+			hibernationChecker.start(500);
+		#endif
+		
+		// Example statemachine:
+		/***
+		//Your definition for the statesmachine (if you dont want use a execute function, use nullptr)
+		states["CustomState"] = std::make_unique<GRAFCETStep>("CustomState", period, 
+															std::bind(&SpecificWorker::customLoop, this),  // Cyclic function
+															std::bind(&SpecificWorker::customEnter, this), // On-enter function
+															std::bind(&SpecificWorker::customExit, this)); // On-exit function
+
+		//Add your definition of transitions (addTransition(originOfSignal, signal, dstState))
+		states["CustomState"]->addTransition(states["CustomState"].get(), SIGNAL(entered()), states["OtherState"].get());
+		states["Compute"]->addTransition(this, SIGNAL(customSignal()), states["CustomState"].get()); //Define your signal in the .h file under the "Signals" section.
+
+		//Add your custom state
+		statemachine.addState(states["CustomState"].get());
+		***/
+
+		statemachine.setChildMode(QState::ExclusiveStates);
+		statemachine.start();
+
+		auto error = statemachine.errorString();
+		if (error.length() > 0){
+			qWarning() << error;
+			throw error;
+		}
+	}
+}
+
+SpecificWorker::~SpecificWorker()
+{
+	std::cout << "Destroying SpecificWorker" << std::endl;
+}
+
+
+void SpecificWorker::initialize()
+{
+    std::cout << "initialize worker" << std::endl;
+	/*
+    //initializeCODE
+
+    /////////GET PARAMS, OPEND DEVICES....////////
+    //int period = configLoader.get<int>("Period.Compute") //NOTE: If you want get period of compute use getPeriod("compute")
+    //std::string device = configLoader.get<std::string>("Device.name")
+	srand(static_cast<unsigned int>(time(nullptr)));  // Semilla del generador aleatorio
+	// Inicializar generador aleatorio moderno
+	rng = std::mt19937(std::random_device{}());
+	dist = std::uniform_int_distribution<int>(0, 9);
+	this->dimensions = QRectF(-6000, -3000, 12000, 6000);
+	viewer = new AbstractGraphicViewer(this->frame, this->dimensions);
+	this->resize(900,450);
+	viewer->show();
+
+	const auto rob = viewer->add_robot(ROBOT_LENGTH, ROBOT_LENGTH, 0, 190, QColor("Blue"));
+	robot_polygon = std::get<0>(rob);
+
+
+	connect(viewer, &AbstractGraphicViewer::new_mouse_coordinates, this, &SpecificWorker::new_target_slot);
+	viewer_room = new AbstractGraphicViewer(this->frame_room, this->dimensions);
+	auto [rr, re] = viewer_room->add_robot(ROBOT_LENGTH, ROBOT_LENGTH, 0, 100, QColor("Blue"));
+	room_draw_robot = rr;
+
+	// draw room in viewer_room
+	viewer_room->scene.addRect(this->dimensions, QPen(Qt::black, 30));
+	viewer_room->show();
+
+	// initialise robot pose
+	robot_pose.setIdentity();
+	robot_pose.translate(Eigen::Vector2d(0.0,0.0));
+	*/
+	if(this->startup_check_flag)
+	{
+		this->startup_check();
+	}
+	else
+	{
+		///////////// Your code ////////
+		// Viewer
+		viewer = new AbstractGraphicViewer(this->frame, params.GRID_MAX_DIM);
+		auto [r, e] = viewer->add_robot(params.ROBOT_WIDTH, params.ROBOT_LENGTH, 0, 100, QColor("Blue"));
+		robot_draw = r;
+		//viewer->show();
+
+
+		viewer_room = new AbstractGraphicViewer(this->frame_room, params.GRID_MAX_DIM);
+		auto [rr, re] = viewer_room->add_robot(params.ROBOT_WIDTH, params.ROBOT_LENGTH, 0, 100, QColor("Blue"));
+		robot_room_draw = rr;
+		// draw room in viewer_room
+
+		viewer_room->scene.addRect(nominal_rooms[0].rect(), QPen(Qt::black, 30));
+		//viewer_room->show();
+		show();
+
+
+		// initialise robot pose
+		robot_pose.setIdentity();
+		robot_pose.translate(Eigen::Vector2d(0.0,0.0));
+
+
+		// time series plotter for match error
+		TimeSeriesPlotter::Config plotConfig;
+		plotConfig.title = "Maximum Match Error Over Time";
+		plotConfig.yAxisLabel = "Error (mm)";
+		plotConfig.timeWindowSeconds = 15.0; // Show a 15-second window
+		plotConfig.autoScaleY = false;       // We will set a fixed range
+		plotConfig.yMin = 0;
+		plotConfig.yMax = 1000;
+		time_series_plotter = std::make_unique<TimeSeriesPlotter>(frame_plot_error, plotConfig);
+		match_error_graph = time_series_plotter->addGraph("", Qt::blue);
+
+
+		// stop robot
+		move_robot(0, 0, 0);
+
+	}
+
+
+}
+
+
+int i  =0;
+void SpecificWorker::compute()
+{
+    std::optional<RoboCompLidar3D::TPoints> filter_data;
+	RoboCompLidar3D::TPoints data = read_data();
+	if (data.empty())
+		return;
+	//if (doors.empty())
+		doors = door_detector.detect(data, &viewer->scene);
+	std::sort(doors.begin(), doors.end(),
+		  [](const Door &a, const Door &b)
+		  {
+			  return std::atan2(a.center().y(), a.center().x()) <
+					 std::atan2(b.center().y(), b.center().x());
+		  });
+	data= door_detector.filter_points(data, &viewer->scene);
+
+    // 1 Extraer esquinas del LIDAR
+     const auto &[corners, lines] = room_detector.compute_corners(data, &viewer->scene);
+	//qInfo() << measured_corners.size();
+	const auto center_opt = room_detector.estimate_center_from_walls(lines);
+	draw_lidar(data, center_opt, &viewer->scene);
+	if (!doors.empty() && viewer != nullptr)
+	{
+		room_detector.draw_door_on_2D_tab(doors[n_doors], &viewer->scene);
+	}
+	// match corners  transforming first nominal corners to robot's frame
+	const auto match = hungarian.match(corners,
+											  nominal_rooms[0].transform_corners_to(robot_pose.inverse()));
+
+
+	// compute max of  match error
+	float max_match_error = 99999.f;
+	if (not match.empty())
+	{
+		const auto max_error_iter = std::ranges::max_element(match, [](const auto &a, const auto &b)
+			{ return std::get<2>(a) < std::get<2>(b); });
+		max_match_error = static_cast<float>(std::get<2>(*max_error_iter));
+		time_series_plotter->addDataPoint(match_error_graph,max_match_error);
+		//print_match(match, max_match_error); //debugging
+	}
+
+	// update robot pose
+	if (localised)
+		update_robot_pose(corners, match);
+
+	// Process state machine
+	RetVal ret_val = process_state(data, corners, match, viewer);
+	auto [st, adv, rot] = ret_val;
+	state = st;
+
+
+	// Send movements commands to the robot constrained by the match_error
+	qInfo() << __FUNCTION__ << "Adv: " << adv << " Rot: " << rot;
+	move_robot(adv, rot, max_match_error);
+
+
+	// draw robot in viewer
+	robot_room_draw->setPos(robot_pose.translation().x(), robot_pose.translation().y());
+	const double angle = qRadiansToDegrees(std::atan2(robot_pose.rotation()(1, 0), robot_pose.rotation()(0, 0)));
+	robot_room_draw->setRotation(angle);
+ //
+ //
+	// update GUI
+
+	if (change_rect)
+	{
+		viewer_room->scene.clear();
+		auto [rr, re] = viewer_room->add_robot(params.ROBOT_WIDTH, params.ROBOT_LENGTH, 0, 100, QColor("Blue"));
+		robot_room_draw = rr;
+		// draw room in viewer_room
+		i = 1-i;
+		viewer_room->scene.addRect(nominal_rooms[i].rect(), QPen(Qt::black, 30));
+		robot_pose.setIdentity();
+		robot_pose.translate(Eigen::Vector2d(0.0,0.0));
+		move_robot(0, 0, 0);
+		change_rect = false;
+	}
+
+	time_series_plotter->update();
+	lcdNumber_adv->display(adv);
+	lcdNumber_rot->display(rot);
+	lcdNumber_x->display(robot_pose.translation().x());
+	lcdNumber_y->display(robot_pose.translation().y());
+	lcdNumber_angle->display(angle);
+	label_state->setText(to_string(state));
+	last_time = std::chrono::high_resolution_clock::now();;
+
+
+}
+void  SpecificWorker::move_robot(float adv, float rot, float max_match_error)
+{
+ omnirobot_proxy->setSpeedBase(0,adv,rot);
+}
+
+bool SpecificWorker::update_robot_pose(const Corners &corners, const Match &match)
+{
+	Eigen::MatrixXd W(match.size() * 2, 3);
+	Eigen::VectorXd b(match.size() * 2);
+
+	for (size_t i = 0; i < match.size(); ++i)
+	{
+		const auto& [meas_c, nom_c, _] = match[i];
+		const auto& [p_meas, __, ___] = meas_c;
+		const auto& [p_nom, ____, _____] = nom_c;
+
+		b(2*i)     = p_nom.x() - p_meas.x();
+		b(2*i+1)   = p_nom.y() - p_meas.y();
+
+		W.block<1,3>(2*i,0)   << 1.0, 0.0, -p_meas.y();
+		W.block<1,3>(2*i+1,0) << 0.0, 1.0,  p_meas.x();
+	}
+
+	Eigen::Vector3d r = (W.transpose() * W).inverse() * W.transpose() * b;
+
+	if (r.array().isNaN().any())
+		return false;
+
+	// si el cambio de t es muy grande
+
+	// 5 Actualizar pose del robot
+	robot_pose.translate(Eigen::Vector2d(r(0), r(1)));
+	robot_pose.rotate(r(2));
+	return true;
+}
+
+Eigen::Vector3d SpecificWorker::solve_pose(const Corners &corners, const Match &match)
+{
+	return Eigen::Vector3d(0.0, 0.0, 0.0);
+}
+
+void SpecificWorker::predict_robot_pose()
+{
+
+}
+
+std::tuple<float, float> SpecificWorker::robot_controller(const Eigen::Vector2f &target)
+{
+	constexpr float Kp = 0.3f;
+	constexpr float vmax = 1000; // mm/s
+	constexpr float sigma = M_PI / 6;
+
+	// error angle
+	const double theta_e = std::atan2(target.x(), target.y());
+	const float vrot = Kp * theta_e;
+	// Gaussian angle brake
+	const float angle_brake = std::exp(-(theta_e * theta_e) / (2 * sigma * sigma));
+	// adv vel
+	const float adv = vmax * angle_brake;
+	// check exit condition
+	if (target.norm() < 300.f)
+		return {0.f, 0.f};
+
+	return {adv, vrot};
+}
+
+RoboCompLidar3D::TPoints SpecificWorker::read_data()
+{
+	RoboCompLidar3D::TData data;
+	RoboCompLidar3D::TPoints filter_data;
+	try
+	{
+		data = lidar3d_proxy->getLidarDataWithThreshold2d("helios", 15000, 3);
+		if(data.points.empty()) return RoboCompLidar3D::TPoints{};
+
+		//filter_data = filter_min_distance_cppitertools(data.points);
+		// Nuevo: filtrar puntos aislados
+		filter_data = filter_isolated_points(data.points, 200.0f);
+		//draw_lidar(filter_data.value(),center_opt, &viewer->scene);
+		return filter_data;
+	}
+	catch(const Ice::Exception &e)
+	{
+		std::cout << "Error reading Lidar: " << e << std::endl;
+		return RoboCompLidar3D::TPoints{};
+	}
+
+}
+
+SpecificWorker::RetVal SpecificWorker::goto_door(const RoboCompLidar3D::TPoints &points)
+{
+	// Código de la función
+	localised=true;
+	Eigen::Vector2d robot_pos = robot_pose.translation();
+	qInfo() << "Hay " << doors.size() << "y vamos a la puerta" << n_doors;
+	if (doors.size() > 0)
+	{
+		Door door = doors[n_doors];
+		auto before_center = door.center_before(robot_pos);
+		 if (before_center.hasNaN())
+		 { qWarning() << __FUNCTION__ << "No room center"; return RetVal{STATE::GOTO_DOOR, 0.f, 0.f};}
+		// exit condition
+		if (before_center.norm() < 850.f)
+			return RetVal{ STATE::ORIENT_TO_DOOR, 0.0f, 0.0f };
+
+		// do my thing
+		auto [v, w] = robot_controller(before_center);
+		return RetVal{STATE::GOTO_DOOR, v, w};
+
+	}
+
+	return RetVal{ STATE::GOTO_DOOR, 0.0f, 0.0f };
+
+}
+
+
+SpecificWorker::RetVal SpecificWorker::orient_to_door(const RoboCompLidar3D::TPoints &points)
+{
+	// Código de la función
+	Door door = doors[n_doors];
+	Eigen::Vector2f door_mid = door.center();
+	const double angle = std::atan2(door_mid.x(), door_mid.y());
+
+	// Si el ángulo ya es aproximadamente perpendicular, detener robot
+	const float target_angle = M_PI_2;
+	const float tolerance = 0.15f; // tolerancia ~0.57 grados
+
+	if (std::abs(angle) < tolerance)
+	{
+		// robot perpendicular → velocidad lineal 0, velocidad angular 0
+		return RetVal{ STATE::CROSS_DOOR, 0.f, 0.f };
+	}
+	float w = (angle > 0) ? 0.3f : -0.3f;
+
+	return RetVal{ STATE::ORIENT_TO_DOOR, 0.f, w };
+}
+
+
+SpecificWorker::RetVal SpecificWorker::cross_door(const RoboCompLidar3D::TPoints &points)
+{
+	// Variables estáticas dentro del método
+	// NOTA: Inicializamos startTime a 'nulo' (el valor por defecto de un constructor)
+	static std::chrono::steady_clock::time_point startTime = std::chrono::steady_clock::time_point();
+
+	// Comprobamos si el tiempo inicial no ha sido establecido (es decir, es la primera vez que entramos *en este ciclo de cruce*)
+	if (startTime == std::chrono::steady_clock::time_point()) {
+		startTime = std::chrono::steady_clock::now();
+	}
+
+	// Movimiento del robot
+
+	// Calcular cuanto tiempo ha pasado
+	auto currentTime = std::chrono::steady_clock::now();
+	auto elapsed = duration_cast<std::chrono::seconds>(currentTime - startTime).count();
+
+	// Si han pasado 12 segundos, regresamos true indicando que terminamos y reiniciamos el tiempo
+	if (elapsed >= 4) {
+		other_room = !other_room;
+		// IMPORTANTE: REINICIAMOS startTime para el próximo cruce de puerta.
+		startTime = std::chrono::steady_clock::time_point();
+		change_rect = true;
+		localised=false;
+		n_doors =  1 - n_doors;
+		return RetVal{ STATE::GOTO_ROOM_CENTER, 0.0f, 0.0f };
+
+	}
+	return RetVal{ STATE::CROSS_DOOR, 500.0f, 0.0f };
+}
+
+SpecificWorker::RetVal SpecificWorker::goto_room_center(const RoboCompLidar3D::TPoints &points)
+{
+	const auto center_opt = center_estimator.estimate(points);
+    if (not center_opt)
+    { qWarning() << __FUNCTION__ << "No room center"; return RetVal{STATE::GOTO_ROOM_CENTER, 0.f, 0.f};}
+
+	// obtain target
+	const Eigen::Vector2f target_f = center_opt.value().cast<float>();
+	// exit condition
+	if (target_f.norm() < 300.f)
+		return RetVal{ STATE::TURN, 0.0f, 0.0f };
+
+	// do my thing
+	auto [v, w] = robot_controller(target_f);
+    return RetVal{STATE::GOTO_ROOM_CENTER, v, w};
+}
+
+SpecificWorker::RetVal SpecificWorker::update_pose(const Corners &corners, const Match &match)
+{
+	// Código de la función
+	return RetVal{ STATE::IDLE, 0.0f, 0.0f };
+
+}
+
+SpecificWorker::RetVal SpecificWorker::turn(const Corners &corners)
+{
+
+	// get variable
+	auto result = image_processor.check_red_patch_in_image(camera360rgb_proxy, label_img);
+	auto &[success, spin] = result;
+	if (other_room)
+	{
+		result = image_processor.check_green_patch_in_image(camera360rgb_proxy, label_img);
+		// success y spin ahora apuntan al nuevo resultado
+	}
+	//
+	// const auto &[success, spin] = image_processor.check_red_patch_in_image(camera360rgb_proxy, label_img);
+	// if (other_room)
+	//  {
+	//  	const auto &[success, spin] = image_processor.check_green_patch_in_image(camera360rgb_proxy, label_img);
+	//  }
+
+	// exit condition
+	if (success)
+		return RetVal{STATE::GOTO_DOOR, 0.0f, 0.0f};
+
+	// do my thing
+	return RetVal{ STATE::TURN, 0.0f, 0.3f*spin };
+}
+
+SpecificWorker::RetVal SpecificWorker::process_state(
+		const RoboCompLidar3D::TPoints &data,
+		const Corners &corners,
+		const Match &match,
+		AbstractGraphicViewer *viewer)
+{
+	switch(state)
+	{
+	case STATE::GOTO_DOOR:
+		{
+			qInfo() << "Estoy en el go to door" ;
+			return goto_door(data);
+		}
+
+	case STATE::ORIENT_TO_DOOR:
+		{
+			qInfo() << "Estoy en el orient to door" ;
+			return orient_to_door(data);
+		}
+
+	case STATE::CROSS_DOOR:
+		{
+			qInfo() << "Estoy en el cross door" ;
+			return cross_door(data);
+		}
+
+	case STATE::GOTO_ROOM_CENTER:
+		default:
+		{
+			qInfo() << "Estoy en el go to room center" ;
+			return goto_room_center(data);
+		}
+
+	case STATE::TURN:
+		{
+			qInfo() << "Estoy en el turn" ;
+			return turn(corners);
+		}
+
+
+	}
+}
+
+float SpecificWorker::calcularDistanciaMinima(const std::optional<RoboCompLidar3D::TPoints>& lidar_data, bool bandera)
+{
+	// Comprobamos si hay datos válidos
+	if (!lidar_data.has_value() || lidar_data->empty())
+	{
+		qWarning() << "[calcularDistanciaMinima] No hay datos de LIDAR disponibles";
+		return 1e6f;  // Valor grande por defecto
+	}
+
+	float distancia_minima = 1e6f;
+
+	for (const auto& p : lidar_data.value())
+	{   //Si bandera = true si hace modo 360, si no, restringido
+		if (bandera || (p.phi >= FRONT_RIGHT_ANGLE && p.phi <= FRONT_LEFT_ANGLE)) {
+			float dist = std::hypot(p.x, p.y);
+			if (dist < distancia_minima)
+				distancia_minima = dist;
+		}
+	}
+
+
+	qInfo() <<"Distancia minima: " << distancia_minima;
+	return distancia_minima;
+}
+static constexpr int iter_seguras = 2;
+static int contador = 0;
+static float vector_media[iter_seguras];
+
+std::tuple<SpecificWorker::RobotMode, float, float>
+SpecificWorker::FORWARD_method(const std::optional<RoboCompLidar3D::TPoints>& filter_data)
+{
+	float advance_speed = 1000.0f;  // mm/s
+
+	// Guardamos la distancia mínima en el vector circular
+	vector_media[contador] = calcularDistanciaMinima(filter_data, 0);
+	contador = (contador + 1) % iter_seguras;  // avanza el índice y vuelve a 0
+
+	// Si no hemos llenado suficientes iteraciones, seguimos FORWARD
+	if (contador != 0)
+		return {RobotMode::FORWARD, advance_speed, 0.0f};
+
+	// Calculamos la media de las últimas 'iter_seguras' lecturas
+	float suma = 0.0f;
+	for (int i = 0; i < iter_seguras; ++i)
+		suma += vector_media[i];
+
+	float min_dist = suma / iter_seguras;
+
+	if (min_dist < safe_distance)
+	{
+		advance_speed = 0.0f;
+		return {RobotMode::TURN, advance_speed, 0.0f};
+	}
+
+	int probalidad = dist(rng);
+
+	if (probalidad > 8  && calcularDistanciaMinima(filter_data, 1) >= ROBOT_LENGTH+1000) {
+		qInfo() << "MOOOODO ESPIRAL";
+		return {RobotMode::SPIRAL, 0.0f, 0.0f};
+	}
+
+	return {RobotMode::FORWARD, advance_speed, 0.0f};
+}
+
+
+#include <Eigen/Dense> // para Eigen::Vector2f
+#include <numeric>     // para std::accumulate
+#include <cmath>       // para std::atan2
+
+std::tuple<SpecificWorker::RobotMode, float, float>
+SpecificWorker::FOLLOW_WALL_method(const std::optional<RoboCompLidar3D::TPoints>& filter_data)
+{
+    if (!filter_data.has_value() || filter_data->empty())
+        return {RobotMode::FOLLOW_WALL, 0.0f, 0.0f};
+
+    // --- Parámetros ---
+    const float REFERENCE_DISTANCE = 520.0f;  // mm, distancia ideal a la pared
+    const float SAFE_DISTANCE = 400.0f;       // mm, distancia mínima frontal antes de girar
+    const float MAX_ADV_SPEED = 900.0f;       // mm/s
+    const float ROTATION_GAIN = 0.002f;       // ganancia de rotación proporcional
+
+    float advance_speed = MAX_ADV_SPEED;
+    float rot_speed = 0.0f;
+
+    // --- Paso 1: detectar distancia frontal mínima ---
+    float front_min = calcularDistanciaMinima(filter_data, false);  // usa la versión frontal
+    if (front_min < SAFE_DISTANCE)
+    {
+        qInfo() << "FOLLOW_WALL -> obstáculo frontal detectado, cambiando a TURN";
+        return {RobotMode::TURN, 0.0f, 0.5f};
+    }
+
+    // --- Paso 2: calcular distancia lateral a la pared (por la derecha, por ejemplo) ---
+    // Vamos a tomar un promedio de los puntos que estén hacia la derecha del robot
+    float suma = 0.0f;
+    int cont = 0;
+
+    for (const auto& p : filter_data.value())
+    {
+        // Ángulo negativo: derecha del robot
+        if (p.phi < -M_PI_4 && p.phi > -M_PI_2)  // entre -45° y -90°
+        {
+            float dist = std::hypot(p.x, p.y);
+            suma += dist;
+            cont++;
+        }
+    }
+
+
+    float lateral_dist = suma / cont;
+
+    // --- Paso 3: control de rotación proporcional según la desviación lateral ---
+    float error = REFERENCE_DISTANCE - lateral_dist;
+    rot_speed = ROTATION_GAIN * error;
+
+    // Limitar la rotación para evitar giros bruscos
+    rot_speed = std::clamp(rot_speed, -0.5f, 0.5f);
+
+    // --- Paso 4: control de avance (reducir si hay que girar mucho) ---
+    float brake = exp(-3 * std::abs(rot_speed));  // tipo función gaussiana
+    advance_speed *= brake;
+
+
+    // --- Resultado ---
+    qInfo() << "FOLLOW_WALL -> lateral:" << lateral_dist
+            << " rot:" << rot_speed << " adv:" << advance_speed;
+
+    return {RobotMode::FOLLOW_WALL, advance_speed, rot_speed};
+}
+
+
+
+
+
+
+
+
+// Variable estática que conserva su valor entre llamadas
+// Simula el paso del tiempo para que la espiral se expanda progresivamente
+static float t = 0;
+
+std::tuple<SpecificWorker::RobotMode, float, float>
+SpecificWorker::SPIRAL_method(const std::optional<RoboCompLidar3D::TPoints>& filter_data)
+{
+	// --- Parámetros base de la espiral ---
+	float const v0 = 800.0f;   // mm/s -> arranque más potente
+	float const w0 = 1.2f;     // rad/s -> giro inicial más cerrado (más espiral)
+	float const kv = 80.0f;    // incremento más progresivo de velocidad lineal
+	float const kw = 0.05f;    // decremento más suave de velocidad angular
+
+	// Calculamos la distancia mínima medida por el LIDAR (360º en este caso)
+	float min_dist = calcularDistanciaMinima(filter_data, 1);
+
+	float vt; // Velocidad lineal resultante
+	float wt; // Velocidad angular resultante
+
+	// --- Condición principal del modo espiral ---
+	// Mientras no haya obstáculos cerca (min_dist > r), el robot sigue expandiendo su espiral
+	if (min_dist > safe_distance)
+	{
+		// Aumentamos progresivamente la velocidad lineal y reducimos la angular
+		// Clamp limita los valores para evitar saturaciones o comportamientos bruscos
+		vt = std::clamp(v0 + kv * t, 0.0f, 4000.0f);  // límite alto algo más bajo: evita saltos
+		wt = std::clamp(w0 - kw * t, 0.0f, 4.0f);     // tope coherente con w0
+
+
+		// Incrementamos el tiempo para la siguiente iteración
+		t += 0.05f;
+
+		// Continuamos en el modo espiral con las nuevas velocidades
+		return {RobotMode::SPIRAL, vt, wt};
+	}
+
+	// --- Si se detecta un obstáculo cercano ---
+	// Reiniciamos el tiempo para la próxima espiral
+	t = 0;
+
+	// Cambiamos a modo FORWARD para seguir con el comportamiento general
+	// Se pueden ajustar las velocidades iniciales para suavizar la transición
+	return {RobotMode::TURN, 200.0f, 0.3f};
+}
+
+
+
+
+
+std::tuple<SpecificWorker::RobotMode, float, float>
+SpecificWorker::TURN_method(const std::optional<RoboCompLidar3D::TPoints>& filter_data)
+{
+	float rotation_speed = 1.0f;;   // gira en el sitio
+	float advance_speed = 0.0f;    // no avanza
+	float min_dist = calcularDistanciaMinima(filter_data, 0);
+
+	// Mientras haya obstáculos cerca, sigue girando
+	if (min_dist < safe_distance)
+		return {RobotMode::TURN, advance_speed, rotation_speed};
+
+
+	int probalidad = dist(rng);
+	// Si ya hay espacio libre, decide siguiente modo
+	if ( probalidad > 4) {
+		qInfo() << "Foward";
+		return {RobotMode::FORWARD, advance_speed, 0};
+	}
+	else {
+		qInfo() << "Seguir pared";
+		return {RobotMode::FOLLOW_WALL, advance_speed, 0};
+	}
+}
+
+
+std:: optional<RoboCompLidar3D::TPoints> SpecificWorker::filter_min_distance_cppitertools(const RoboCompLidar3D::TPoints& points)
+{
+	if (points.empty())
+		return {};
+
+	RoboCompLidar3D::TPoints result; result.reserve(points.size());
+	for (auto&& [angle, group ]: iter::groupby(points, [](const auto& p)
+		{float multiplier = std::pow(10.0f, 2); return std::floor(p.phi*multiplier)/multiplier;}))
+	{
+		auto min_it = std:: min_element(std::begin(group), std::end(group),
+			[](const auto&a, const auto&b){return a.r < b.r;});
+		result.emplace_back(RoboCompLidar3D::TPoint{.x=min_it->x, .y=min_it->y, .phi=min_it->phi});
+	}
+	return result;
+}
+
+// Devuelve la distancia promedio de los puntos LIDAR alrededor de un ángulo dado (en radianes)
+float SpecificWorker::distanciaAnguloPromedio(const std::optional<RoboCompLidar3D::TPoints>& lidar_data, float ang_rad)
+{
+	if (!lidar_data.has_value() || lidar_data->empty())
+		return 1e6f;  // No hay datos disponibles
+
+	float distanciaAcum = 0.0f;
+	float margen_rad = 0.1f;
+	int cont = 0;
+
+	for (const auto& p : lidar_data.value())
+	{
+		// Verificar si el punto está dentro del rango angular deseado
+		if (p.phi >= ang_rad - margen_rad && p.phi <= ang_rad + margen_rad)
+		{
+			float dist = std::hypot(p.x, p.y);
+			// Filtrar distancias inválidas o fuera de rango
+			if (dist > 0.1f && dist < 10.0f)  // Ajustar según tu sensor
+			{
+				distanciaAcum += dist;
+				cont++;
+			}
+		}
+	}
+
+	if (cont == 0)
+		return 1e6f;  // No se encontraron puntos válidos
+
+	return distanciaAcum / static_cast<float>(cont);
+}
+
+float SpecificWorker::calcularDistanciaMinima(const std::optional<RoboCompLidar3D::TPoints> &lidar_data,
+	float rangoA, float rangoB) {
+
+	// Comprobamos si hay datos válidos
+	if (!lidar_data.has_value() || lidar_data->empty())
+	{
+		qWarning() << "[calcularDistanciaMinima] No hay datos de LIDAR disponibles";
+		return 1e6f;  // Valor grande por defecto
+	}
+
+	float distancia_minima = 1e6f;
+
+	for (const auto& p : lidar_data.value())
+	{   //Si bandera = true si hace modo 360, si no, restringido
+		if ((p.phi >= rangoA && p.phi <= rangoB)) {
+			float dist = std::hypot(p.x, p.y);
+			if (dist < distancia_minima)
+				distancia_minima = dist;
+		}
+	}
+
+
+	qInfo() <<"Distancia minima: " << distancia_minima;
+	return distancia_minima;
+
+
+
+
+}
+
+RoboCompLidar3D::TPoints SpecificWorker::filter_isolated_points(
+	const RoboCompLidar3D::TPoints &points, float d) // distancia de 200 mm
+{
+	if(points.empty()) return {};
+
+	const float d_squared = d * d;
+	std::vector<bool> hasNeighbor(points.size(), false);
+
+	std::vector<size_t> indices(points.size());
+	std::iota(indices.begin(), indices.end(), size_t{0});
+
+	std::for_each(std::execution::par, indices.begin(), indices.end(), [&](size_t i)
+	{
+		const auto& p1 = points[i];
+		for(auto &&[j,p2] : iter::enumerate(points))
+		{
+			if(i == j) continue;
+			const float dx = p1.x - p2.x;
+			const float dy = p1.y - p2.y;
+			if(dx*dx + dy*dy <= d_squared)
+			{
+				hasNeighbor[i] = true;
+				break;
+			}
+		}
+	});
+
+	RoboCompLidar3D::TPoints result;
+	result.reserve(points.size());
+	for(auto &&[i, p] : iter::enumerate(points))
+		if(hasNeighbor[i])
+			result.push_back(points[i]);
+
+	return result;
+}
+
+
+void SpecificWorker::emergency()
+{
+    std::cout << "Emergency worker" << std::endl;
+    //emergencyCODE
+    //
+    //if (SUCCESSFUL) //The componet is safe for continue
+    //  emmit goToRestore()
+}
+
+
+
+//Execute one when exiting to emergencyState
+void SpecificWorker::restore()
+{
+    std::cout << "Restore worker" << std::endl;
+    //restoreCODE
+    //Restore emergency component
+
+}
+
+
+int SpecificWorker::startup_check()
+{
+	std::cout << "Startup check" << std::endl;
+	QTimer::singleShot(200, QCoreApplication::instance(), SLOT(quit()));
+	return 0;
+}
+
+void SpecificWorker::draw_lidar(const RoboCompLidar3D::TPoints &points, std::optional<Eigen::Vector2d> center, QGraphicsScene* scene)
+{
+	static std::vector<QGraphicsItem*> draw_points;
+	for (const auto &p : draw_points)
+	{
+		scene->removeItem(p);
+		delete p;
+	}
+	draw_points.clear();
+
+	const QColor color("LightGreen");
+	const QPen pen(color, 10);
+	//const QBrush brush(color, Qt::SolidPattern);
+	for (const auto &p : points)
+	{
+		const auto dp = scene->addRect(-25, -25, 50, 50, pen);
+		dp->setPos(p.x, p.y);
+		draw_points.push_back(dp);   // add to the list of points to be deleted next time
+	}
+	// --- Dibujar el centro si existe ---
+	if (center.has_value())
+	{
+		const QColor red(Qt::red);
+		const QPen center_pen(red, 12);
+		const QBrush center_brush(red, Qt::SolidPattern);
+
+		// Punto pequeño (círculo) de radio 25
+		auto cp = scene->addEllipse(-25, -25, 50, 50, center_pen, center_brush);
+		cp->setPos(center->x(), center->y());
+		draw_points.push_back(cp);
+	}
+
+}
+
+
+
+void SpecificWorker::update_ropot_position()
+{
+	try
+	{
+		RoboCompGenericBase:: TBaseState bState;
+		omnirobot_proxy->getBaseState(bState);
+		robot_polygon->setRotation(bState.alpha*180/M_PI);
+		robot_polygon->setPos(bState.x, bState.z);
+		std::cout << bState.alpha <<" " << bState.x << " " << bState.z << std::endl;
+	}
+	catch(const Ice::Exception &e){std::cout << e.what() << std::endl;}
+}
+
+void SpecificWorker::new_target_slot(QPointF p)
+{
+	qInfo() << "World coordinates" << p;
+}
+
+void SpecificWorker:: chocachoca(std::optional<RoboCompLidar3D::TPoints> filter_data,float &advance_speed,float &rotation_speed )
+{
+	const float FRONT_LEFT_ANGLE  = M_PI / 2;
+	const float FRONT_RIGHT_ANGLE = -M_PI / 2;
+
+	float min_dist = 1e6;
+
+	for (const auto& p : filter_data.value())
+	{
+		if (p.phi >= FRONT_RIGHT_ANGLE && p.phi <= FRONT_LEFT_ANGLE)
+		{
+			float dist =std::hypot(p.x,p.y);
+			if (dist < min_dist) min_dist = dist;
+		}
+	}
+
+	float safe_distance = 450; // mm
+	advance_speed = 600;  // mm/s
+	rotation_speed = 0;   // rad/s
+
+	if (min_dist < safe_distance)
+	{
+		advance_speed = 0;
+		rotation_speed = 1;
+	}
+}
+
+// RoboCompLidar3D::TPoint
+// RoboCompLidar3D::TDataImage
+// RoboCompLidar3D::TData
+// RoboCompLidar3D::TDataCategory
+
+/**************************************/
+// From the RoboCompOmniRobot you can call this methods:
+// RoboCompOmniRobot::void this->omnirobot_proxy->correctOdometer(int x, int z, float alpha)
+// RoboCompOmniRobot::void this->omnirobot_proxy->getBasePose(int x, int z, float alpha)
+// RoboCompOmniRobot::void this->omnirobot_proxy->getBaseState(RoboCompGenericBase::TBaseState state)
+// RoboCompOmniRobot::void this->omnirobot_proxy->resetOdometer()
+// RoboCompOmniRobot::void this->omnirobot_proxy->setOdometer(RoboCompGenericBase::TBaseState state)
+// RoboCompOmniRobot::void this->omnirobot_proxy->setOdometerPose(int x, int z, float alpha)
+// RoboCompOmniRobot::void this->omnirobot_proxy->setSpeedBase(float advx, float advz, float rot)
+// RoboCompOmniRobot::void this->omnirobot_proxy->stopBase()
+
+/**************************************/
+// From the RoboCompOmniRobot you can use this types:
+// RoboCompOmniRobot::TMechParams
+
