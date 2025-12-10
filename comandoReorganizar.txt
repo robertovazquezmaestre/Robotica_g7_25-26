@@ -1,0 +1,39 @@
+cd ~/robocomp/components/Robotica4/Robotica_g7_25-26/actividad4
+
+# 1. Verificar el estado de git
+git status
+
+# 2. Añadir y commitear cualquier cambio pendiente
+git add .
+git commit -m "Checkpoint antes de reorganizar para integración DNN"
+
+# 3. Crear la carpeta localiser
+mkdir localiser
+
+# 4. Mover archivos del localiser con git mv (IMPORTANTE: usar git mv, no mv normal)
+# Mover solo los archivos/carpetas del componente localiser original
+
+git mv localiser.cdsl localiser/
+git mv src localiser/
+git mv etc localiser/
+git mv CMakeLists.txt localiser/
+git mv DoxyFile localiser/
+git mv README.md localiser/
+
+# Si existen estos, también moverlos:
+git mv bin localiser/ 2>/dev/null || true
+git mv sub.toml localiser/ 2>/dev/null || true
+git mv subcognitive.py localiser/ 2>/dev/null || true
+
+# 5. NO mover con git estos archivos temporales, simplemente eliminarlos:
+rm -rf CMakeCache.txt
+rm -rf CMakeFiles
+rm -rf Makefile
+rm -rf cmake_install.cmake
+rm -rf cmake-build-debug
+rm -rf Testing
+rm -rf generated  # Este se regenerará al compilar
+
+# 6. Commitear la reorganización
+git add .
+git commit -m "Movido componente localiser a subcarpeta"
