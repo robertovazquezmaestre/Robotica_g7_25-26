@@ -1736,6 +1736,12 @@ generated/CMakeFiles/localiser.dir/main.cpp.o: \
  /usr/include/opencv4/opencv2/core/cvdef.h /usr/include/c++/13/ranges \
  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad4/generated/../src/nominal_room.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QRectF \
+ /usr/local/include/cppitertools/enumerate.hpp \
+ /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \
+ /usr/local/include/cppitertools/internal/iterbase.hpp \
+ /usr/local/include/cppitertools/internal/iterbase.hpp \
+ /usr/local/include/cppitertools/sliding_window.hpp \
+ /usr/local/include/cppitertools/internal/iteratoriterator.hpp \
  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad4/src/common_types.h \
  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad4/generated/../src/door_detector.h \
  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad4/generated/../src/image_processor.h \

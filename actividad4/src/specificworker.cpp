@@ -416,7 +416,7 @@ SpecificWorker::RetVal SpecificWorker::cross_door(const RoboCompLidar3D::TPoints
 		startTime = std::chrono::steady_clock::time_point();
 		change_rect = true;
 		localised=false;
-		n_doors =  1 - n_doors;
+		//n_doors =  1 - n_doors;
 		return RetVal{ STATE::GOTO_ROOM_CENTER, 0.0f, 0.0f };
 
 	}
@@ -466,9 +466,19 @@ SpecificWorker::RetVal SpecificWorker::turn(const Corners &corners)
 	//  }
 
 	// exit condition
-	if (success)
-		return RetVal{STATE::GOTO_DOOR, 0.0f, 0.0f};
+	if (success){
+		int i=0;
+		for (auto &door : doors)
+		{
+			door.p1_global = nominal_rooms[i].get_projection_of_point_on_closest_wall((robot_pose * door.p1.cast<double>()).cast<float>());
+			door.p2_global = nominal_rooms[i].get_projection_of_point_on_closest_wall((robot_pose * door.p2.cast<double>()).cast<float>());
+			// Esta linea de abajo se la hemos copiado a otro grupo
+			// puertas.emplace_back(viewer_room->scene.addLine(door.p1_global.x(), door.p1_global.y(), door.p2_global.x(), door.p2_global.y(),QPen(Qt::red,98)));
+			i++;
+		}
 
+		return RetVal{STATE::GOTO_DOOR, 0.0f, 0.0f};
+	}
 	// do my thing
 	return RetVal{ STATE::TURN, 0.0f, 0.3f*spin };
 }

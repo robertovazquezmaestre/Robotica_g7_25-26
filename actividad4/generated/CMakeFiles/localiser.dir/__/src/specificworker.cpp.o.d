@@ -1684,6 +1684,12 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/opencv4/opencv2/core/cvdef.h /usr/include/c++/13/ranges \
  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad4/src/nominal_room.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QRectF \
+ /usr/local/include/cppitertools/enumerate.hpp \
+ /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \
+ /usr/local/include/cppitertools/internal/iterbase.hpp \
+ /usr/local/include/cppitertools/internal/iterbase.hpp \
+ /usr/local/include/cppitertools/sliding_window.hpp \
+ /usr/local/include/cppitertools/internal/iteratoriterator.hpp \
  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad4/src/common_types.h \
  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad4/src/door_detector.h \
  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad4/src/image_processor.h \
@@ -1772,11 +1778,7 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /home/usuario/Robotica_g7/Robotica_g7_25-26/actividad4/src/pointcloud_center_estimator.h \
  /usr/local/include/cppitertools/itertools.hpp \
  /usr/local/include/cppitertools/accumulate.hpp \
- /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \
- /usr/local/include/cppitertools/internal/iterbase.hpp \
- /usr/local/include/cppitertools/internal/iterbase.hpp \
  /usr/local/include/cppitertools/batched.hpp \
- /usr/local/include/cppitertools/internal/iteratoriterator.hpp \
  /usr/local/include/cppitertools/chain.hpp \
  /usr/local/include/cppitertools/internal/iter_tuples.hpp \
  /usr/local/include/cppitertools/internal/iterator_wrapper.hpp \
@@ -1808,7 +1810,6 @@ generated/CMakeFiles/localiser.dir/__/src/specificworker.cpp.o: \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
  /usr/local/include/cppitertools/unique_justseen.hpp \
- /usr/local/include/cppitertools/enumerate.hpp \
  /usr/include/c++/13/execution \
  /usr/include/c++/13/pstl/glue_execution_defs.h \
  /usr/include/c++/13/pstl/algorithm_impl.h \
