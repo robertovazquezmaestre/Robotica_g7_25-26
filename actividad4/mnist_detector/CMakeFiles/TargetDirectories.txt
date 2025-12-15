@@ -1,0 +1,7 @@
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles/ICE_Camera360RGB_target.dir
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles/create_symlink.dir
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles/edit_cache.dir
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles/rebuild_cache.dir
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/src/CMakeFiles/edit_cache.dir
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/src/CMakeFiles/rebuild_cache.dir
