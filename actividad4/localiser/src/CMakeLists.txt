@@ -23,6 +23,7 @@ LIST(APPEND HEADERS
         ../src/image_processor.h
         ../src/qcustomplot.h
         ../src/pointcloud_center_estimator.h
+        ../src/door_crossing_tracker.h
 )
 
 LIST(APPEND LIBS ${LIBS} tbb Qt6PrintSupport)

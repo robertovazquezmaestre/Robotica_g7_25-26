@@ -1,4 +1,6 @@
 # Hashes of file build rules.
 f3f00d134a966636a38066ba2cd909fa CMakeFiles/ICE_Camera360RGB_target
+f3f00d134a966636a38066ba2cd909fa CMakeFiles/ICE_MNIST_target
 e3efa6bedf63bf9080df59390b2a74f3 CMakeFiles/create_symlink
 d1070235e7905f564636afb523b569ab generated/Camera360RGB.ice
+f03974241a509ac58cd25efffff03711 generated/MNIST.ice

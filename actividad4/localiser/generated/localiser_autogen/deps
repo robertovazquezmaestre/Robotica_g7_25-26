@@ -1,29 +1,9 @@
 localiser_autogen/timestamp: \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/CMakeFindDependencyMacro.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/CheckCXXCompilerFlag.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/CheckCXXSourceCompiles.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/CheckIncludeFile.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/CheckLibraryExists.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/FeatureSummary.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/FindIce.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/FindOpenGL.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/FindPackageMessage.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/FindPkgConfig.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/FindThreads.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/FindVulkan.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/GNUInstallDirs.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/Internal/CheckCompilerFlag.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/Internal/CheckFlagCommonConfig.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/MacroAddFileDependencies.cmake \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/share/cmake-4.0/Modules/SelectLibraryConfigurations.cmake \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/CMakeLists.txt \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/Camera360RGB.h \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/GenericBase.h \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/Lidar3D.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/MNIST.h \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/OmniRobot.h \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/genericworker.cpp \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/genericworker.h \
@@ -31,6 +11,7 @@ localiser_autogen/timestamp: \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/main.cpp \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/CMakeLists.txt \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/common_types.h \
+	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/door_crossing_tracker.h \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/door_detector.cpp \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/door_detector.h \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/hungarian.cpp \
@@ -50,25 +31,25 @@ localiser_autogen/timestamp: \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/specificworker.h \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/time_series_plotter.cpp \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/time_series_plotter.h \
+	/home/roberto-vazquez/robocomp/classes/ConfigLoader/ConfigLoader.cpp \
+	/home/roberto-vazquez/robocomp/classes/ConfigLoader/ConfigLoader.h \
+	/home/roberto-vazquez/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.cpp \
+	/home/roberto-vazquez/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
+	/home/roberto-vazquez/robocomp/classes/grafcetStep/GRAFCETStep.cpp \
+	/home/roberto-vazquez/robocomp/classes/grafcetStep/GRAFCETStep.h \
+	/home/roberto-vazquez/robocomp/classes/rapplication/rapplication.cpp \
+	/home/roberto-vazquez/robocomp/classes/rapplication/rapplication.h \
+	/home/roberto-vazquez/robocomp/classes/sigwatch/sigwatch.cpp \
+	/home/roberto-vazquez/robocomp/classes/sigwatch/sigwatch.h \
+	/home/roberto-vazquez/robocomp/cmake/modules/opencv4.cmake \
+	/home/roberto-vazquez/robocomp/cmake/modules/qt.cmake \
+	/home/roberto-vazquez/robocomp/cmake/robocomp.cmake \
 	/home/roberto-vazquez/robocomp/core/classes/ConfigLoader/ConfigLoader.h \
 	/home/roberto-vazquez/robocomp/core/classes/ConfigLoader/ConfigLoader.tpp \
 	/home/roberto-vazquez/robocomp/core/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
 	/home/roberto-vazquez/robocomp/core/classes/doublebuffer/DoubleBuffer.h \
 	/home/roberto-vazquez/robocomp/core/classes/grafcetStep/GRAFCETStep.h \
 	/home/roberto-vazquez/robocomp/core/classes/threadpool/threadpool.h \
-	/home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.cpp \
-	/home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.h \
-	/home/robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.cpp \
-	/home/robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
-	/home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.cpp \
-	/home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.h \
-	/home/robocomp/robocomp/classes/rapplication/rapplication.cpp \
-	/home/robocomp/robocomp/classes/rapplication/rapplication.h \
-	/home/robocomp/robocomp/classes/sigwatch/sigwatch.cpp \
-	/home/robocomp/robocomp/classes/sigwatch/sigwatch.h \
-	/home/robocomp/robocomp/cmake/modules/opencv4.cmake \
-	/home/robocomp/robocomp/cmake/modules/qt.cmake \
-	/home/robocomp/robocomp/cmake/robocomp.cmake \
 	/usr/include/GL/gl.h \
 	/usr/include/Ice/AsyncResult.h \
 	/usr/include/Ice/BatchRequestQueueF.h \
@@ -1770,5 +1751,26 @@ localiser_autogen/timestamp: \
 	/usr/local/include/toml++/impl/yaml_formatter.inl \
 	/usr/local/include/toml++/toml.h \
 	/usr/local/include/toml++/toml.hpp \
+	/usr/share/cmake-3.28/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake \
+	/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake \
+	/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake \
+	/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake \
+	/usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake \
+	/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake \
+	/usr/share/cmake-3.28/Modules/FeatureSummary.cmake \
+	/usr/share/cmake-3.28/Modules/FindIce.cmake \
+	/usr/share/cmake-3.28/Modules/FindOpenGL.cmake \
+	/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake \
+	/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake \
+	/usr/share/cmake-3.28/Modules/FindPkgConfig.cmake \
+	/usr/share/cmake-3.28/Modules/FindThreads.cmake \
+	/usr/share/cmake-3.28/Modules/FindVulkan.cmake \
+	/usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake \
+	/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake \
+	/usr/share/cmake-3.28/Modules/Internal/CheckFlagCommonConfig.cmake \
+	/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake \
+	/usr/share/cmake-3.28/Modules/MacroAddFileDependencies.cmake \
+	/usr/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake \
 	/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/mainUI.ui \
-	/home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cmake/linux/x64/bin/cmake
+	/usr/bin/cmake

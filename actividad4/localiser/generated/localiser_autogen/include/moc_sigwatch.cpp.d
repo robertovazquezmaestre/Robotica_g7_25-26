@@ -1,4 +1,4 @@
-/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/localiser_autogen/include/moc_sigwatch.cpp: /home/robocomp/robocomp/classes/sigwatch/sigwatch.h \
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/localiser_autogen/include/moc_sigwatch.cpp: /home/roberto-vazquez/robocomp/classes/sigwatch/sigwatch.h \
   /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/localiser_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \

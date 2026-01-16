@@ -143,6 +143,19 @@ ICE_Camera360RGB_target/fast:
 .PHONY : ICE_Camera360RGB_target/fast
 
 #=============================================================================
+# Target rules for targets named ICE_MNIST_target
+
+# Build rule for target.
+ICE_MNIST_target: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ICE_MNIST_target
+.PHONY : ICE_MNIST_target
+
+# fast build rule for target.
+ICE_MNIST_target/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICE_MNIST_target.dir/build.make CMakeFiles/ICE_MNIST_target.dir/build
+.PHONY : ICE_MNIST_target/fast
+
+#=============================================================================
 # Target rules for targets named create_symlink
 
 # Build rule for target.
@@ -165,6 +178,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector"
 	@echo "... ICE_Camera360RGB_target"
+	@echo "... ICE_MNIST_target"
 	@echo "... create_symlink"
 .PHONY : help
 

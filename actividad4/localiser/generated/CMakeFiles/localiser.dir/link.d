@@ -60,10 +60,6 @@
   /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.6.0 \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libtbb.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libQt6PrintSupport.so \
-  /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgViewer.so \
-  /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosg.so \
-  /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgUtil.so \
-  /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgGA.so \
   /usr/lib/x86_64-linux-gnu/libQt6OpenGL.so.6.4.2 \
   /usr/lib/x86_64-linux-gnu/libQt6Xml.so.6.4.2 \
   /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2 \
@@ -302,14 +298,6 @@ CMakeFiles/localiser.dir/Lidar3D.cpp.o:
 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libtbb.so:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libQt6PrintSupport.so:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgViewer.so:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosg.so:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgUtil.so:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libosgGA.so:
 
 /usr/lib/x86_64-linux-gnu/libQt6OpenGL.so.6.4.2:
 

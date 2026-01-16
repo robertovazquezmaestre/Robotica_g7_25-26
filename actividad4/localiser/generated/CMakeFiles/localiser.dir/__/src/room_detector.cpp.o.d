@@ -1393,7 +1393,7 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
- /home/robocomp/robocomp/classes/grafcetStep/GRAFCETStep.h \
+ /home/roberto-vazquez/robocomp/classes/grafcetStep/GRAFCETStep.h \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/QState \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstate.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetaobject.h \
@@ -1402,7 +1402,7 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qtstatemachine-config.h \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qtstatemachineexports.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
- /home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.h \
+ /home/roberto-vazquez/robocomp/classes/ConfigLoader/ConfigLoader.h \
  /usr/include/c++/13/fstream \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
@@ -1456,8 +1456,8 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/local/include/toml++/impl/toml_formatter.inl \
  /usr/local/include/toml++/impl/json_formatter.inl \
  /usr/local/include/toml++/impl/yaml_formatter.inl \
- /home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.tpp \
- /home/robocomp/robocomp/classes/ConfigLoader/ConfigLoader.h \
+ /home/roberto-vazquez/robocomp/classes/ConfigLoader/ConfigLoader.tpp \
+ /home/roberto-vazquez/robocomp/classes/ConfigLoader/ConfigLoader.h \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/QStateMachine \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstatemachine.h \
  /usr/include/x86_64-linux-gnu/qt6/QtStateMachine/qstate.h \
@@ -1465,8 +1465,9 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/Camera360RGB.h \
  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/GenericBase.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/MNIST.h \
  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/OmniRobot.h \
- /home/robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
+ /home/roberto-vazquez/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsView \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsview.h \
@@ -1487,9 +1488,9 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsPolygonItem \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsitem.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpainterpath.h \
- /home/robocomp/robocomp/classes/doublebuffer/DoubleBuffer.h \
+ /home/roberto-vazquez/robocomp/classes/doublebuffer/DoubleBuffer.h \
  /usr/include/c++/13/shared_mutex \
- /home/robocomp/robocomp/classes/threadpool/threadpool.h \
+ /home/roberto-vazquez/robocomp/classes/threadpool/threadpool.h \
  /usr/include/c++/13/queue /usr/include/c++/13/bits/stl_queue.h \
  /usr/include/c++/13/thread \
  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/time_series_plotter.h \
@@ -1774,4 +1775,5 @@ generated/CMakeFiles/localiser.dir/__/src/room_detector.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QImage \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QPixmap \
- /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/pointcloud_center_estimator.h
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/pointcloud_center_estimator.h \
+ /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/door_crossing_tracker.h

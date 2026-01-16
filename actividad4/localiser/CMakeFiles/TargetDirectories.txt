@@ -8,7 +8,7 @@
 /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/CMakeFiles/ICE_Camera360RGB_target.dir
 /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/CMakeFiles/ICE_GenericBase_target.dir
 /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/CMakeFiles/ICE_OmniRobot_target.dir
-/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/CMakeFiles/ICE_Lidar3D_target.dir
+/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/CMakeFiles/ICE_MNIST_target.dir
 /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/CMakeFiles/localiser.dir
 /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/CMakeFiles/edit_cache.dir
 /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/CMakeFiles/rebuild_cache.dir

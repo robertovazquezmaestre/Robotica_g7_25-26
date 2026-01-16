@@ -25,7 +25,7 @@ QT_BEGIN_NAMESPACE
 class Ui_guiDlg
 {
 public:
-    QVBoxLayout *verticalLayout_5;
+    QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_17;
     QFrame *frame;
@@ -53,6 +53,12 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label_state_name;
     QLabel *label_state;
+    QHBoxLayout *horizontalLayout_11;
+    QLabel *label_6;
+    QLabel *label_localised;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *label_state_name_2;
+    QLCDNumber *lcdNumber_room;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton_stop;
     QFrame *frame_plot_error;
@@ -63,8 +69,8 @@ public:
         if (guiDlg->objectName().isEmpty())
             guiDlg->setObjectName("guiDlg");
         guiDlg->resize(1224, 773);
-        verticalLayout_5 = new QVBoxLayout(guiDlg);
-        verticalLayout_5->setObjectName("verticalLayout_5");
+        verticalLayout_3 = new QVBoxLayout(guiDlg);
+        verticalLayout_3->setObjectName("verticalLayout_3");
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName("verticalLayout_2");
         horizontalLayout_17 = new QHBoxLayout();
@@ -115,6 +121,8 @@ public:
         QFont font;
         font.setBold(true);
         lcdNumber_x->setFont(font);
+        lcdNumber_x->setFrameShape(QFrame::NoFrame);
+        lcdNumber_x->setFrameShadow(QFrame::Plain);
 
         horizontalLayout_2->addWidget(lcdNumber_x);
 
@@ -131,6 +139,7 @@ public:
         lcdNumber_y = new QLCDNumber(guiDlg);
         lcdNumber_y->setObjectName("lcdNumber_y");
         lcdNumber_y->setFont(font);
+        lcdNumber_y->setFrameShape(QFrame::NoFrame);
 
         horizontalLayout_3->addWidget(lcdNumber_y);
 
@@ -147,6 +156,7 @@ public:
         lcdNumber_angle = new QLCDNumber(guiDlg);
         lcdNumber_angle->setObjectName("lcdNumber_angle");
         lcdNumber_angle->setFont(font);
+        lcdNumber_angle->setFrameShape(QFrame::NoFrame);
 
         horizontalLayout_6->addWidget(lcdNumber_angle);
 
@@ -167,6 +177,7 @@ public:
 
         lcdNumber_adv = new QLCDNumber(guiDlg);
         lcdNumber_adv->setObjectName("lcdNumber_adv");
+        lcdNumber_adv->setFrameShape(QFrame::NoFrame);
 
         horizontalLayout_4->addWidget(lcdNumber_adv);
 
@@ -182,6 +193,8 @@ public:
 
         lcdNumber_rot = new QLCDNumber(guiDlg);
         lcdNumber_rot->setObjectName("lcdNumber_rot");
+        lcdNumber_rot->setFont(font);
+        lcdNumber_rot->setFrameShape(QFrame::NoFrame);
 
         horizontalLayout_5->addWidget(lcdNumber_rot);
 
@@ -200,11 +213,47 @@ public:
 
         label_state = new QLabel(guiDlg);
         label_state->setObjectName("label_state");
+        QFont font1;
+        font1.setPointSize(12);
+        font1.setBold(true);
+        label_state->setFont(font1);
 
         horizontalLayout->addWidget(label_state);
 
 
         verticalLayout->addLayout(horizontalLayout);
+
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName("horizontalLayout_11");
+        label_6 = new QLabel(guiDlg);
+        label_6->setObjectName("label_6");
+
+        horizontalLayout_11->addWidget(label_6);
+
+        label_localised = new QLabel(guiDlg);
+        label_localised->setObjectName("label_localised");
+
+        horizontalLayout_11->addWidget(label_localised);
+
+
+        verticalLayout->addLayout(horizontalLayout_11);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setObjectName("horizontalLayout_10");
+        label_state_name_2 = new QLabel(guiDlg);
+        label_state_name_2->setObjectName("label_state_name_2");
+
+        horizontalLayout_10->addWidget(label_state_name_2);
+
+        lcdNumber_room = new QLCDNumber(guiDlg);
+        lcdNumber_room->setObjectName("lcdNumber_room");
+        lcdNumber_room->setFont(font);
+        lcdNumber_room->setFrameShape(QFrame::NoFrame);
+
+        horizontalLayout_10->addWidget(lcdNumber_room);
+
+
+        verticalLayout->addLayout(horizontalLayout_10);
 
 
         horizontalLayout_18->addLayout(verticalLayout);
@@ -240,7 +289,7 @@ public:
         verticalLayout_2->addWidget(label_img);
 
 
-        verticalLayout_5->addLayout(verticalLayout_2);
+        verticalLayout_3->addLayout(verticalLayout_2);
 
 
         retranslateUi(guiDlg);
@@ -258,6 +307,9 @@ public:
         label_5->setText(QCoreApplication::translate("guiDlg", "rot", nullptr));
         label_state_name->setText(QCoreApplication::translate("guiDlg", "state:", nullptr));
         label_state->setText(QCoreApplication::translate("guiDlg", "TextLabel", nullptr));
+        label_6->setText(QCoreApplication::translate("guiDlg", "localised", nullptr));
+        label_localised->setText(QCoreApplication::translate("guiDlg", "TextLabel", nullptr));
+        label_state_name_2->setText(QCoreApplication::translate("guiDlg", "room", nullptr));
         pushButton_stop->setText(QCoreApplication::translate("guiDlg", "Stop", nullptr));
         label_img->setText(QCoreApplication::translate("guiDlg", "TextLabel", nullptr));
     } // retranslateUi

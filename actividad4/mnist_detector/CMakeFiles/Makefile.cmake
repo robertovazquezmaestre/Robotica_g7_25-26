@@ -131,5 +131,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/DependInfo.cmake"
   "CMakeFiles/ICE_Camera360RGB_target.dir/DependInfo.cmake"
+  "CMakeFiles/ICE_MNIST_target.dir/DependInfo.cmake"
   "CMakeFiles/create_symlink.dir/DependInfo.cmake"
   )

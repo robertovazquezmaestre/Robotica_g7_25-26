@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/activi
 # The main recursive "all" target.
 all: CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/all
 all: CMakeFiles/ICE_Camera360RGB_target.dir/all
+all: CMakeFiles/ICE_MNIST_target.dir/all
 all: CMakeFiles/create_symlink.dir/all
 all: src/all
 .PHONY : all
@@ -76,6 +77,7 @@ preinstall: src/preinstall
 # The main recursive "clean" target.
 clean: CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/clean
 clean: CMakeFiles/ICE_Camera360RGB_target.dir/clean
+clean: CMakeFiles/ICE_MNIST_target.dir/clean
 clean: CMakeFiles/create_symlink.dir/clean
 clean: src/clean
 .PHONY : clean
@@ -100,6 +102,7 @@ src/clean:
 
 # All Build rule for target.
 CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/all: CMakeFiles/ICE_Camera360RGB_target.dir/all
+CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/all: CMakeFiles/ICE_MNIST_target.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/build.make CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/build.make CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles --progress-num= "Built target ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector"
@@ -107,7 +110,7 @@ CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles 0
 .PHONY : CMakeFiles/ICES__home_roberto-vazquez_Escritorio_Git_Robotica_g7_25-26_actividad4_mnist_detector.dir/rule
@@ -148,13 +151,39 @@ CMakeFiles/ICE_Camera360RGB_target.dir/clean:
 .PHONY : CMakeFiles/ICE_Camera360RGB_target.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/ICE_MNIST_target.dir
+
+# All Build rule for target.
+CMakeFiles/ICE_MNIST_target.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICE_MNIST_target.dir/build.make CMakeFiles/ICE_MNIST_target.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICE_MNIST_target.dir/build.make CMakeFiles/ICE_MNIST_target.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles --progress-num=2 "Built target ICE_MNIST_target"
+.PHONY : CMakeFiles/ICE_MNIST_target.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ICE_MNIST_target.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ICE_MNIST_target.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles 0
+.PHONY : CMakeFiles/ICE_MNIST_target.dir/rule
+
+# Convenience name for target.
+ICE_MNIST_target: CMakeFiles/ICE_MNIST_target.dir/rule
+.PHONY : ICE_MNIST_target
+
+# clean rule for target.
+CMakeFiles/ICE_MNIST_target.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICE_MNIST_target.dir/build.make CMakeFiles/ICE_MNIST_target.dir/clean
+.PHONY : CMakeFiles/ICE_MNIST_target.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/create_symlink.dir
 
 # All Build rule for target.
 CMakeFiles/create_symlink.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/create_symlink.dir/build.make CMakeFiles/create_symlink.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/create_symlink.dir/build.make CMakeFiles/create_symlink.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles --progress-num=2 "Built target create_symlink"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/mnist_detector/CMakeFiles --progress-num=3 "Built target create_symlink"
 .PHONY : CMakeFiles/create_symlink.dir/all
 
 # Build rule for subdir invocation for target.

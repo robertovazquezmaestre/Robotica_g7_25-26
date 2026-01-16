@@ -3,9 +3,11 @@
   /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/Camera360RGB.h \
   /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/GenericBase.h \
   /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/Lidar3D.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/MNIST.h \
   /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/OmniRobot.h \
   /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/genericworker.h \
   /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/common_types.h \
+  /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/door_crossing_tracker.h \
   /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/door_detector.h \
   /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/hungarian.h \
   /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/image_processor.h \

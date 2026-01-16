@@ -47,7 +47,6 @@ namespace rc   // aka RoboComp
             // draw
              void draw_lines_on_2D_tab(const Lines &lines, QGraphicsScene *scene);
              void draw_corners_on_2D_tab(const Corners &corners, const std::vector<Eigen::Vector2d> &model_corners, QGraphicsScene *scene);
-             void draw_door_on_2D_tab(const Door &door, QGraphicsScene *scene);
 
             // local data
              Eigen::Vector2d to_eigen(const QPointF &p);
@@ -60,8 +59,9 @@ namespace rc   // aka RoboComp
              std::optional<Eigen::Vector2d>
              estimate_center_from_walls(const Lines &lines) const;
 
-            std::optional<Eigen::Vector2d> estimate_center_from_walls() const;
-
+            [[nodiscard]] std::optional<Eigen::Vector2d> estimate_center_from_walls() const;
+            [[nodiscard]] std::optional<Eigen::Vector2d> estimate_center_from_walls_simple(const Lines &lines) const;
+            [[nodiscard]] std::optional<Eigen::Vector2d> estimate_center_from_walls_opencv(const Lines &lines) const;
              Corners select_minimal_rectangle(const Corners &corners);
 
              /// Normalize a line so that sqrt(a^2 + b^2) = 1 and choose a consistent sign.
@@ -76,9 +76,6 @@ namespace rc   // aka RoboComp
 
              /// Intersection of two lines ax + by + c = 0.
              static Eigen::Vector2d intersect_(const Eigen::Vector3d &L1, const Eigen::Vector3d &L2);
-
-             // Walls
-             Walls compute_Walls(const RoboCompLidar3D::TPoints &points, QGraphicsScene *scene= nullptr);
 
         private:
               Lines current_walls;
