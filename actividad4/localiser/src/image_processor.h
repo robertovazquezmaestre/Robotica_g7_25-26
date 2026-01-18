@@ -116,20 +116,20 @@ namespace rc
                 default: return "UNKNOWN";
             }
         }
-        static std::tuple<bool, int> check_for_number(RoboCompMNIST::MNISTPrxPtr mnist_proxy)
+        static std::tuple<bool, int, int> check_for_number(RoboCompMNIST::MNISTPrxPtr mnist_proxy)
         {
             if (!mnist_proxy)
             {
                 std::cerr << "Error: MNISTProxy es nulo" << std::endl;
-                return {false, -1};
+                return {false, -1, 1};
             }
             try
             {
                 auto res = mnist_proxy->getNumber();
-                if (res.num != -1 && (res.x >= 900 && res.x <= 930) )
+                if (res.num != -1 && (res.x >= 900 && res.x <= 930) && (res.num == 1 || res.num == 2) )
                 {
                     std::cout << "Número detectado: " << res.num << " en posición X: " << res.x << std::endl;
-                    return {true, res.num};
+                    return {true, res.num-1, 1};
                 }
             }
             catch (const Ice::Exception &e)
@@ -137,7 +137,7 @@ namespace rc
                 std::cerr << "Error comunicando con el componente MNIST: " << e.what() << std::endl;
             }
 
-            return {false, -1};
+            return {false, -1, 1};
         }
     };
 }

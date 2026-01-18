@@ -53,10 +53,10 @@ RM = /home/roberto-vazquez/Escritorio/CLion/CLion-2025.2.2/clion-2025.2.2/bin/cm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser
+CMAKE_SOURCE_DIR = /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser
+CMAKE_BINARY_DIR = /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser
 
 # Utility rule file for ICE_Lidar3D_target.
 
@@ -69,8 +69,8 @@ include generated/CMakeFiles/ICE_Lidar3D_target.dir/progress.make
 generated/CMakeFiles/ICE_Lidar3D_target: generated/Lidar3D.ice
 
 generated/Lidar3D.ice: /home/robocomp/robocomp/interfaces/IDSLs/Lidar3D.idsl
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/Lidar3D.ice from /home/robocomp/robocomp//interfaces/IDSLs/Lidar3D.idsl"
-	cd /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated && robocompdsl /home/robocomp/robocomp//interfaces/IDSLs/Lidar3D.idsl /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/Lidar3D.ice
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/generated/Lidar3D.ice from /home/robocomp/robocomp//interfaces/IDSLs/Lidar3D.idsl"
+	cd /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/generated && robocompdsl /home/robocomp/robocomp//interfaces/IDSLs/Lidar3D.idsl /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/generated/Lidar3D.ice
 
 generated/CMakeFiles/ICE_Lidar3D_target.dir/codegen:
 .PHONY : generated/CMakeFiles/ICE_Lidar3D_target.dir/codegen
@@ -85,10 +85,10 @@ generated/CMakeFiles/ICE_Lidar3D_target.dir/build: ICE_Lidar3D_target
 .PHONY : generated/CMakeFiles/ICE_Lidar3D_target.dir/build
 
 generated/CMakeFiles/ICE_Lidar3D_target.dir/clean:
-	cd /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated && $(CMAKE_COMMAND) -P CMakeFiles/ICE_Lidar3D_target.dir/cmake_clean.cmake
+	cd /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/generated && $(CMAKE_COMMAND) -P CMakeFiles/ICE_Lidar3D_target.dir/cmake_clean.cmake
 .PHONY : generated/CMakeFiles/ICE_Lidar3D_target.dir/clean
 
 generated/CMakeFiles/ICE_Lidar3D_target.dir/depend:
-	cd /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/CMakeFiles/ICE_Lidar3D_target.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/generated /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/generated /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/generated/CMakeFiles/ICE_Lidar3D_target.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : generated/CMakeFiles/ICE_Lidar3D_target.dir/depend
 

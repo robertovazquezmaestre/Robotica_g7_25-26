@@ -1,7 +1,7 @@
 generated/CMakeFiles/localiser.dir/MNIST.cpp.o: \
- /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/MNIST.cpp \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/generated/MNIST.cpp \
  /usr/include/stdc-predef.h \
- /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/MNIST.h \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/generated/MNIST.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/13/stdlib.h /usr/include/c++/13/cstdlib \

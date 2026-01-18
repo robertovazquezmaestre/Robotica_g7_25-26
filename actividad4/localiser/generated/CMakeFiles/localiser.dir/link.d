@@ -20,8 +20,9 @@
   CMakeFiles/localiser.dir/genericworker.cpp.o \
   CMakeFiles/localiser.dir/Camera360RGB.cpp.o \
   CMakeFiles/localiser.dir/GenericBase.cpp.o \
-  CMakeFiles/localiser.dir/OmniRobot.cpp.o \
   CMakeFiles/localiser.dir/Lidar3D.cpp.o \
+  CMakeFiles/localiser.dir/OmniRobot.cpp.o \
+  CMakeFiles/localiser.dir/MNIST.cpp.o \
   /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.6.0 \
   /usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.6.0 \
   /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.6.0 \
@@ -219,9 +220,11 @@ CMakeFiles/localiser.dir/Camera360RGB.cpp.o:
 
 CMakeFiles/localiser.dir/GenericBase.cpp.o:
 
+CMakeFiles/localiser.dir/Lidar3D.cpp.o:
+
 CMakeFiles/localiser.dir/OmniRobot.cpp.o:
 
-CMakeFiles/localiser.dir/Lidar3D.cpp.o:
+CMakeFiles/localiser.dir/MNIST.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.6.0:
 

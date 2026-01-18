@@ -1,8 +1,8 @@
 generated/CMakeFiles/localiser.dir/__/src/door_detector.cpp.o: \
- /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/door_detector.cpp \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/src/door_detector.cpp \
  /usr/include/stdc-predef.h \
- /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/door_detector.h \
- /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/src/common_types.h \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/src/door_detector.h \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/src/common_types.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -642,7 +642,7 @@ generated/CMakeFiles/localiser.dir/__/src/door_detector.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qline.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qpoint.h \
  /usr/include/Eigen/src/Geometry/ParametrizedLine.h \
- /home/roberto-vazquez/Escritorio/Git/Robotica_g7_25-26/actividad4/localiser/generated/Lidar3D.h \
+ /home/roberto-vazquez/Escritorio/Git2/Robotica_g7_25-26/actividad4/localiser/generated/Lidar3D.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/future \
